@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maher Salem</title>
+    <style>
+    body {
+        font-family: 'Open Sans', Arial, sans-serif; /* Clean and modern font */
+        font-size: 14px; /* Maintained font size for readability */
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        transition: background-color 0.5s; /* Smooth background transition */
+    }
+
+    header {
+        background-image: linear-gradient(to right, #add8e6, #ffffff); /* Light blue to white gradient */
+        color: #333; /* Darker text for contrast */
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: background 0.3s;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        font-size: 24px; /* Original font size */
+        color: #FFFF00; /* Bright yellow */
+    }
+
+    .header-left img {
+        width: 200px; /* Original logo size */
+        height: 200px; /* Original logo size */
+        border-radius: 100%; /* Circular image */
+        margin-right: 20px;
+        transition: transform 0.3s; /* Animation for hover effect */
+    }
+
+    .header-left img:hover {
+        transform: scale(1.1); /* Slightly enlarge the image on hover */
+    }
+
+    .header-right {
+        font-size: 0.9em;
+        color: #777;
+    }
+
+    nav {
+        width: 180px; /* Original width */
+        background-color: #007BFF; /* Changed to a vibrant blue */
+        color: white;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        top: 240px; /* Adjusted to accommodate the header */
+        transition: transform 0.3s; /* Smooth transition for sidebar */
+    }
+
+    nav h2 {
+        font-size: 1.5em;
+        margin-top: 0;
+        transition: color 0.3s; /* Transition for heading color */
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s; /* Transition for link color */
+    }
+
+    nav ul li a:hover {
+        color: #FFFF00; /* Change link color on hover */
+    }
+
+    section {
+        margin-left: 220px; /* Space for the sidebar */
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s; /* Smooth background transition */
+    }
+
+    h2 {
+        color: #007BFF;
+        transition: color 0.3s; /* Transition for heading color */
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9em;
+        color: #777;
+    }
+
+    .project, .expandable {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 15px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s; /* Added transform transition */
+    }
+
+    .project:hover, .expandable:hover {
+        background: #f3f3f3;
+        transform: translateY(-2px); /* Lift effect on hover */
+    }
+
+    .details {
+        display: none;
+        margin-top: 10px;
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="C:\Users\k2144343\== KCL Local Folder ==\Official Document\Maher - Personla Webpage\maher_salem.jpg" alt="Your Photo">
+       <!-- <h2><p>Maher Salem</p></h2> -->
+	   <h2 style="display: flex; align-items: center;">
+    <p style="margin: 0; padding-right: 10px;">Maher Salem</p>
+    <a href="https://www.linkedin.com/in/maher-j-a-salem" target="_blank">
+        <img src="C:\Users\k2144343\== KCL Local Folder ==\Official Document\Maher - Personla Webpage\logos\icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 5px;">
+    </a>
+    <a href="https://scholar.google.com/citations?user=WYlwawwAAAAJ&hl=en" target="_blank">
+        <img src="C:\Users\k2144343\== KCL Local Folder ==\Official Document\Maher - Personla Webpage\logos\icons8-google-scholar-48.png" alt="Google Scholar" style="width: 24px; height: 24px; margin-right: 5px;">
+    </a>
+    <a href="https://github.com/maherjas" target="_blank">
+        <img src="C:\Users\k2144343\== KCL Local Folder ==\Official Document\Maher - Personla Webpage\logos\icons8-github-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 5px;">
+    </a>
+    <a href="https://uk.mathworks.com/matlabcentral/profile/authors/4205686" target="_blank">
+        <img src="C:\Users\k2144343\== KCL Local Folder ==\Official Document\Maher - Personla Webpage\logos\icons8-matlab-48.png" alt="Mathlab" style="width: 24px; height: 24px;">
+    </a>
+</h2>
+    </div>
+    <div class="header-right">
+        <p>Contact: <a href="mailto:maher.salem@kcl.ac.uk">Email Me</a></p>
+    </div>
+</header>
+
+<nav>
+   <!-- <h2>Menu</h2> -->
+    <ul>
+        <li><a href="#" onclick="showSection('summary')">Summary</a></li>
+        <li><a href="#" onclick="showSection('education')">Education</a></li>
+		<li><a href="#" onclick="showSection('AwardandMemberships')">Award and Memberships</a></li>
+		<li><a href="#" onclick="showSection('Positions')">Positions</a></li>
+        <li><a href="#" onclick="showSection('projects')">Projects/Grants</a></li>
+        <li><a href="#" onclick="showSection('experience')">Experience</a></li>
+		<li><a href="#" onclick="showSection('Teaching')">Teaching</a></li>
+        <li><a href="#" onclick="showSection('certifications')">Certifications</a></li>
+        <li><a href="#" onclick="showSection('Services')">Services</a></li>
+		<li><a href="#" onclick="showSection('Publications')">Publications</a></li>
+        <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+    </ul>
+</nav>
+
+<section id="summary">
+    <h2>Summary</h2>
+    
+        <p>I am currently an Associate Professor at King's College London (Online Cybersecurity Module Lead | Deputy Chair Cybersecurity | Digital Learning Expert | Career and Employability Lead | SFHEA). Highly accomplished cybersecurity expert with over two decades of experience in both industry and academia, bridging the gap between cutting-edge research and education. With a strong background in computer science and engineering, I am dedicated to advancing cybersecurity knowledge and fostering the next generation of professionals. As a specialist in active learning and innovative methodologies, my goal is to make significant contributions to cybersecurity research, laying a solid foundation for the future of this critical field. Additionally, I leverage my expertise as an active reviewer for top-tier journals, such as Elsevier Computer Security, and as a project proposal assessor for large-scale international government projects, further solidifying my commitment to shaping the cybersecurity landscape.</p>
+		<p><Strong> Languages</strong>
+		<li> Arabic - Mother tongue </li>
+		<li> English - Proficient  </li>
+		<li> German - Advanced </li>
+		</p>
+   
+</section>
+
+
+
+<section id="AwardandMemberships">
+    <h2>Academic Awards and Professional Affiliations</h2>
+    
+	<div class="project" onclick="toggleDetails(this)">
+    <h3>Academic Honors and Awards</h3>
+    <div class="details">
+        <ul>
+            <li>King’s Education Award <i>(Nominated)</i> – King's College London . 2024</li>
+            <li>SFHEA - Senior Fellow Higher Education Academy Certificate – Advance HE . 2024</li>
+            <li>Recognition Award for Contribution at King’s – King's College London . 2022 & 2023</li>
+        </ul>
+    </div>
+	</div>
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+    <h3>Membership of Professional Bodies</h3>
+    <div class="details">
+        <ul>
+            <li>Evaluator and Assessor of Funding Projects – KAUST . September 2024</li>
+            <li>Member of the Society for Research into Higher Education (SRHE) . January 2024 - Present</li>
+            <li>Member of CSE Connect King's College London . Cyber Security Education Network (UK) . January 2024 - Present</li>
+			<li>Member of the Association for Learning Development in Higher Education (ALDinHE) . December 2023 - Present</li>
+			<li>Member at King’s Academy of Education and Innovation . January 2022 - Present</li>
+			<li>Cybersecurity Speaker . Al Arabiya news television channel in the UK . January 2022 - Present</li>
+			<li>Member at King's College . Cybersecurity Group – Enterprise and Engagement Group . Sep 2021 - Present</li>
+			<li>Member of Campus Council . Higher Colleges of Technology . September 2019 - July 2021 </li>
+			
+        </ul>
+    </div>
+	</div>
+	
+	
+</section>
+
+
+
+
+
+<section id="Positions">
+    <h2>Positions</h2>
+    
+        <ul>
+    <li>Module Lead of Advanced Cybersecurity for Postgraduate at King’s College London. September 2021.</li>
+    <li>Deputy Chair of the online cybersecurity assessment sub-board committee. Collaborate with the external examiner to evaluate academic programs, provide feedback on assessment standards, and ensure quality assurance at the program. December 2021 – present.</li>
+    <li>Employability and Career Lead, Informatics, Natural Mathematics and Engineering, King’s College London, United Kingdom, December 2021 – Current.</li>
+    <li>Acting Chair, Computer Information Systems, Higher Colleges of Technology, United Arab Emirates, 09/2017 – 07/2018.</li>
+    <li>Campus Council Member, Al-Ain Campuses, Higher Colleges of Technology, United Arab Emirates, 09/2018 – 07/2021.</li>
+    <li>System Course Team Leader, Computer Information Systems, Higher Colleges of Technology, United Arab Emirates, 09/2015 – 07/2021.</li>
+    <li>Program Academic Committee Member, Computer Information Systems, Higher Colleges of Technology, United Arab Emirates, 09/2019 – 07/2021.</li>
+</ul>
+   
+</section>
+
+
+
+<section id="education">
+    <h2>Education</h2>
+    
+        <ul>
+            <li><strong>Doctor of Philosophy (Ph.D. Engineering) <a href="https://www.uni-kassel.de/uni/en/" target="_blank">University Kassel</a> . Germany . Aug 2014</strong>
+                <p>Title: “Adaptive Real-time Anomaly-based Intrusion Detection using Data Mining and Machine Learning Techniques” <a href="https://kobra.uni-kassel.de/handle/123456789/2014091546010" target="_blank">LINK</a></p>
+            </li>
+            <li><strong>Master of Science (M.Sc. Computer Engineering) <a href="https://www.uni-due.de/en/" target="_blank">University Duisburg-Essen</a> . Germany . May 2006</strong>
+                <p>Title: “Developing of a secure web-based application for administrating Linux Cluster”</p>
+            </li>
+            <li><strong>Bachelor of Science (B.Sc. Computer Engineering) <a href="https://www.just.edu.jo/Pages/Default.aspx" target="_blank">Jordan University of Science and Technology</a> . Jordan . May 2002</strong>
+                <p>Title: “Design and Implementation of a magnetic suspension and elevation system”</p>
+            </li>
+        </ul>
+    
+</section>
+
+<section id="projects">
+    <h2>Projects (Selected)</h2>
+    
+	<div class="project" onclick="toggleDetails(this)">
+    <h3>Level Up Your Research: Gamified Learning for First-Year Students <i>(Pending)</i></h3>
+    <div class="details">
+        <ul>
+            <li>Council of Professors and Head of Computing - King's College London. December 2024</li>
+            <li>Design and develop an innovative and engaging framework to improve first-year students' skills in research and scholarly work.</li>
+            <li>Budget = £5000</li>
+        </ul>
+    </div>
+</div>
+	
+<div class="project" onclick="toggleDetails(this)">
+    <h3>Levelling the Playing Field: Fostering EDI in Postgraduate Computer Science Programs for Re-Engaging Professionals <i>(Pending)</i></h3>
+    <div class="details">
+        <ul>
+            <li>Society for Research into Higher Education (SRHE) - King's College London. December 2024 </li>
+            <li>Design and develop a comprehensive cybersecurity training framework for professionals.</li>
+            <li>Budget = £10000</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>King’s Undergraduate Research Fellowship</h3>
+    <div class="details">
+        <ul>
+            <li>King's College London. July 2023 & July 2024</li>
+            <li>Lead and supervise UG and PG students in summer research projects.</li>
+            <li>Coordinate multiple projects for UG in cybersecurity research.</li>
+            <li>Budget = £10000</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>Measuring the Effectiveness of Online Cybersecurity Postgraduate Programs from Career Perspectives</h3>
+    <div class="details">
+        <ul>
+            <li>King's College London. May 2023 - February 2024</li>
+            <li>Design and investigate the feasibility of using cybersecurity in higher education.</li>
+            <li>Contribute to the building of a successful cybersecurity training for professionals.</li>
+            <li>Linking academia with industry from a cybersecurity perspective.</li>
+            <li>Budget = £5000</li>
+        </ul>
+    </div>
+</div>
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>Challenges of Integrating Robots with Embodied Intelligence (CIREI) in the Homes of Older People Living with Frailty: Towards a Smart Middleware Architecture</h3>
+    <div class="details">
+        <ul>
+            <li>UKRI – EMERGENCE - King’s College London. 2023 - 2024</li>
+            <li>The CIREI project is doing the basic engineering that will make it easier to securely connect different devices in and around our homes.</li>
+            <li>Multi-disciplinary projects to improve health systems flexibility and security.</li>
+            <li>Budget = £80,000</li>
+        </ul>
+    </div>
+</div>
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>Cybersecurity Training Qatar Central Bank</h3>
+    <div class="details">
+        <ul>
+            <li>King's College London - Qatar Central Bank. 2023 - October 2023</li>
+            <li>Design, develop and deliver a full cybersecurity training program about advanced topics.</li>
+            <li>Demonstrate real-life scenarios of advanced threats.</li>
+            <li>Budget = £15,000</li>
+        </ul>
+    </div>
+</div>
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>Determinants and Implications of the Blockchain Technology in the UAE Financial Markets: Towards a New Clearing and Settlement Platform</h3>
+    <div class="details">
+        <ul>
+            <li>Higher Colleges of Technology. September 2020 - August 2022</li>
+            <li>Investigate the feasibility of blockchain deployment in the financial sector in the UAE.</li>
+            <li>Design a business process model for the securities transactions.</li>
+            <li>Budget = 200,000 AED</li>
+        </ul>
+    </div>
+</div>
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>(UAE-STUB): UAE - Securing Transportation Using Blockchain</h3>
+    <div class="details">
+        <ul>
+            <li>Higher Colleges of Technology. October 2019 - July 2020</li>
+            <li>Design and develop blockchain-based technology to identify malicious vehicles.</li>
+            <li>Design and develop a secure monitoring system for transportation.</li>
+            <li>Budget = 5000 AED</li>
+        </ul>
+    </div>
+</div>
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>Application of Blockchain in Trading, Clearing and Settlement System of Abu Dhabi Securities Exchange</h3>
+    <div class="details">
+        <ul>
+            <li>Higher Colleges of Technology. January 2019 - December 2019</li>
+            <li>Research Grant Fund from Zayed Excellence Center to investigate the use of Blockchain in UAE.</li>
+            <li>Budget = 200,000 AED</li>
+        </ul>
+    </div>
+</div>
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>IntErA - Intelligent Detection of Cyber-Attacks on IT-Infrastructures</h3>
+    <div class="details">
+        <ul>
+            <li>Kassel University. Sep 2014 - Dec 2017</li>
+            <li>Write a full proposal and secure the funding of 400K Euros.</li>
+            <li>Design and draft the use of advanced and adaptive intrusion detection.</li>
+            <li>Propose the idea of an adaptive database to automatically build malware patterns.</li>
+            <li>Budget = 370,000 Euros</li>
+        </ul>
+    </div>
+</div>
+
+<div class="project" onclick="toggleDetails(this)">
+    <h3>SecMonet - Research Project in Network Security</h3>
+    <div class="details">
+        <ul>
+            <li>Kassel University. January 2011 - May 2014</li>
+            <li>Lead and supervise the project.</li>
+            <li>Design and build an advanced feature selection method.</li>
+            <li>Design and develop an adaptive intrusion detection system using Machine Learning.</li>
+            <li>Organize and coordinate multiple national and international events and workshops.</li>
+            <li>Budget = 370,000 Euros</li>
+        </ul>
+    </div>
+</div>
+	
+	
+	
+</section>
+
+<section id="experience">
+    <h2>Academic-Industrial experiences</h2>
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Associate Professor at King's College London <p style="text-align: right; float: right;"> September 2021 - Present, London </P></h3>
+        <div class="details">
+        <ul>
+            <li>Design and development of advanced postgraduate-level cybersecurity modules aiming to equip students with practical knowledge. </li>
+            <li>Secured multiple research funding projects with industrial bodies to enhance research profile. </li>
+			<li>Teaching, supervising, and tutoring undergraduate and postgraduate students in the informatics department, emphasizing hands-on experience in cybersecurity practices </li>
+            <li>Recipient of the King’s Recognition Award (2021/2022) and nominated for the King’s Teaching Excellence Award (2022/2023), reflecting a commitment to excellence in cybersecurity education </li>
+			<li>Deputy Chair of the online cybersecurity assessment sub-board committee, contributing to the enhancement of assessment methodologies, especially those related to cybersecurity skills. </li>
+            <li>Active public speaker, panellist, workshop facilitator, media presenter, and advocate for cybersecurity awareness, promoting the importance of education in cybersecurity </li>
+			<li>IT consultant and advisor for national and international SMEs, providing insights into cybersecurity education strategies </li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Assistant Professor at Higher Colleges of Technology <p style="text-align: right; float: right;"> September 2015 - July 2022, United Arab Emirates </P></h3>
+        <div class="details">
+        <ul>
+            <li>Spearheading the design and delivery of undergraduate courses in Computer Science/cybersecurity education.</li>
+            <li>Serving as Deputy Division Chair of Computer Information Science. </li>
+			<li>Teaching, supervising, and tutoring undergraduate students in the CIS department </li> 
+			<li>Recognized with an Appreciation Award for excellence in Cybersecurity Teaching and engagement.</li>
+            <li>Contributing to the Program Academic Committee (PAC) to enhance the cybersecurity track.</li>
+			<li>Leading graduate projects, focusing on machine learning, security operations, and cybercrime. </li>
+            <li>Secured multiple research funding projects with industrial bodies to enhance research profile.</li>
+			<li>IT consultant and advisor for national and international SMEs, providing insights into cybersecurity education strategies </li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Automotive Cybersecurity Specialist - AUDI <p style="text-align: right; float: right;"> October 2014 - August 2015, Germany </P></h3>
+        <div class="details">
+        <ul>
+            <li>Innovated cybersecurity solutions for Car2X and in-vehicle networking.</li>
+            <li>Led a machine learning-based in-vehicle Intrusion Detection system project. </li>
+			<li>Design, integrated security elements, and conducted penetration testing for automotive insights.</li> 
+		</ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Cybersecurity Project Lead - Kassel University <p style="text-align: right; float: right;"> January 2011 - May 2014, Germany </P></h3>
+        <div class="details">
+        <ul>
+            <li>Led SecMonet project, implementing adaptive machine learning based IDS/IPS for severe cyber-attacks.</li>
+			<li>Supervising undergraduate and postgraduate graduation projects.</li>
+            <li>Served as Principal Support Investigator for IntErA, driving advancements in cybersecurity research. </li>
+			<li>Directed real-time data analysis using data mining, offering insights for practical cybersecurity education scenarios.</li> 
+			<li>Coordinated and supervised students, fostering hands-on skills.</li> 
+			<li>Instructor for the Network Security UG course and the cybersecurity lab. </li> 
+
+		</ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>IT Engineer - 118000-innovations GmbH   <p style="text-align: right; float: right;"> January 2010 - December 2010, Germany </P></h3>
+        <div class="details">
+        <ul>
+            <li>Oversaw planning, management, and monitoring of a robust, secure network infrastructure for cybersecurity.</li>
+			<li>Developed advanced scripts for secure data synchronization and replication, emphasizing practical applications in cybersecurity scenarios.</li>
+            <li>Maintained 24/7 IT support, ensuring a resilient and responsive IT environment and implementing security measures to enhance cybersecurity practices. </li>
+		</ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Network and System Security Engineer - Nokia, E-Plus, Philips, JoVision  <p style="text-align: right; float: right;"> March 2004 - January 2010, Germany </P></h3>
+        <div class="details">
+        <ul>
+            <li>Serve as a cybersecurity consultant, specializing in securing client resources and implementing robust cybersecurity measures.</li>
+			<li>Led multiple projects in cybersecurity threat detection and prevention.</li>
+		</ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<section id="Teaching">
+    <h2>Teaching experiences</h2>
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Summary of Courses Taught <p style="text-align: right; float: right;">   </P></h3>
+        <div class="details">
+     <ul>
+		<li>7CCSONCF, Computer Forensics and Cybercrime</li>
+		<li>7CCSONSE, Security Engineering</li>
+		<li>7CCSONST, Security Testing (Pentest and Ethical Hacking)</li>
+		<li>7CCSONAR, Cybersecurity Analysis and Reporting</li>
+		<li>CSF3203, Ethical Hacking and Intrusion Detection</li>
+		<li>CSF3103, Incident Response Planning</li>
+		<li>CSF4003, Risk Management</li>
+		<li>CIN 3103, Network Security and IDS/IPS</li>
+		<li>CSF 3403, Computer Forensics</li>
+		<li>CSF 4203, Security Intelligence</li>
+	</ul>
+        </div>
+    </div>
+
+
+<div class="project" onclick="toggleDetails(this)">
+        <h3>Participation in Academic Accreditation <p style="text-align: right; float: right;">   </P></h3>
+        <div class="details">
+      <ul>
+		<li>Artificial Intelligence Undergraduate Program, Academic Career Lead, King’s College London, British Computer Society, 06/2023 – 06/2026</li>
+		<li>Online Cybersecurity Post-Graduate Program, Module Lead, King’s College London, National Cybersecurity Centre (NCSC), 03/2024 - 03/2017</li>
+		<li>Computer Information System Undergraduate Program, Course Contribution, Higher Colleges of Technology, Canada’s Association of IT Professionals (CIPS), 05/2018 – 05/2021</li>
+	</ul>
+        </div>
+    </div>
+    
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Research Students Supervised/Trained <p style="text-align: right; float: right;">   </P></h3>
+        <div class="details">
+        <ul>
+    <li>2024/2025 Critical Software Vulnerability Discovery using AI – PhD: <i>open</i></li>
+    <li>2024/2025 Combating Social Network Fake Accounts Using Threat Intelligence - BSc</li>
+    <li>2023/2024 Building a self-contained inclusive Virtual Machine for Security Testing for the online cybersecurity programs - BSc</li>
+    <li>2023/2023 Investigating the use of AI in Protecting Senior Citizens from Cybercriminals – MSc</li>
+    <li>2022/2023 A project-based learning approach for Cybersecurity online programmes – BSc</li>
+    <li>2021/2022: Adaptive Malware Pattern Generation Using Machine Learning (Best Project Award) – MSc</li>
+    <li>2021/2022: Evaluation of Machine Learning Techniques for Detecting Malware in WhatsApp Messages – BSc</li>
+    <li>2021/2022: Investigating Malware Detection Techniques Using Growing Hierarchical Self-Organizing Map – MSc</li>
+    <li>2022/2023: Analyzing Student Feedback of an Online Cybersecurity Program Using ML – BSc</li>
+    <li>2015 – 2020: Supervised 50 BSc Graduation Projects in the Cybersecurity Domains.</li>
+    <li>2011 – 2014: Supervised Two MSc Projects in IPv6 Security and Four BSc Projects in the Intrusion Detection Area.</li>
+</ul>
+        </div>
+    </div>
+	
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Academic Training <p style="text-align: right; float: right;">   </P></h3>
+        <div class="details">
+       <ul>
+    <li>Module Design, King’s Academy, United Kingdom, 09/2021</li>
+    <li>Tutorship Training Program, King’s Academy, United Kingdom, 09/2021</li>
+    <li>PhD Supervision Training, King’s Academy, United Kingdom, 04/2022</li>
+    <li>Diversity Matter and Active Bystander, King’s Academy, United Kingdom, 2022/2023</li>
+    <li>Creating Interactive Learning Resources, King’s Academy, United Kingdom</li>
+    <li>Personalising the Learning Experience, King’s Academy, United Kingdom</li>
+    <li>Becker Management Services, Becker Professional Academy, USA, 07/2020</li>
+    <li>Designing Exemplary Online Learning Spaces, Higher Colleges of Technology, 2019-2020</li>
+    <li>Analysing Technology Integration in Your Classes, Higher Colleges of Technology, 2019-2020</li>
+    <li>Classroom Observation Standards & the UKPSF, Higher Colleges of Technology, 2019-2020</li>
+    <li>Adding Interactivity in Your Online Class, Higher Colleges of Technology, 2019-2020</li>
+    <li>Technology Integration: Collaborating Online with Office 365, Teams, and OneNote for Content Sharing, and Creating Interactive Lessons with Nearpod, Higher Colleges of Technology, 2019-2020</li>
+    <li>Blackboard Essential Certificates, Higher Colleges of Technology, 2019-2020</li>
+    <li>Blackboard Teacher Certificate, Higher Colleges of Technology, 2019-2020</li>
+</ul>
+        </div>
+    </div>
+	
+	
+</section>
+
+
+
+
+
+
+<section id="Services">
+    <h2>Services (Selected)</h2>
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Committee member <p style="text-align: right; float: right;"> September 2017 - Present </P></h3>
+        <div class="details">
+        <ul>
+            <li>2022 International Conference on Innovations in Computing Research (ICR’22)  </li>
+            <li>IEEE - HCT Information Technology Trends (ITT) Conference </li>
+			<li>Public Chair at ISICS 2020 conference  </li>
+           </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Lead Cybersecurity Educator – Harbour Education(Beijing) <p style="text-align: right; float: right;"> Jan 2022 - Jul 2023 </P></h3>
+        <div class="details">
+        <ul>
+            <li>Design and develop three main cybersecurity module for professionals and elite students in China. </li>
+            <li>Deliver hybrid sessions and webinars of advance topics in cybersecurity. </li>
+		</ul>
+        </div>
+    </div>
+	
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Reviewer at Elsevier top tier (Q1) Journals<p style="text-align: right; float: right;"> Jan 2020 - Present </P></h3>
+        <div class="details">
+        <ul>
+            <li>Journal Computers & Security  </li>
+            <li>Journal of Information Security and Applications. </li>
+		</ul>
+        </div>
+    </div>
+	
+	
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Service to Professional / Public / Industry<p style="text-align: right; float: right;"> Jan 2015 - Present </P></h3>
+        <div class="details">
+        <ul>
+    <li>King’s College London Representative for CTF Competitions for London University</li>
+    <li>Panel Member of King’s Professional Recognition in Teaching and Learning programme</li>
+    <li>Professional Development Participator for Cybersecurity Education</li>
+    <li>Lead Career and employability</li>
+    <li>Panel member for the KCL Tech Summit. October 7th, 2023.</li>
+    <li>Conference committee member. International Conference on Innovations in Computing Research (ICR’22).</li>
+    <li>Co-organizing Tech Start-ups event at King’s College London. October 13, 2022</li>
+    <li>Secure industrial partnerships with TryTerra and Sahaj to employ graduate students. Accordingly, they become members of the Industrial Advisory Board. 2022 and 2023.</li>
+    <li>Co-organizing Cybersecurity Workshop Day at King’s College London. May 2023.</li>
+    <li>Lead a workshop of Cybersecurity employability and Career pathway. May 2023</li>
+    <li>Lead a workshop of Collaboration with Microsoft Digital Skills. June 20, 2003.</li>
+    <li>Lead a workshop of collaboration with Apple Secure Programming. October 30, 2024.</li>
+    <li>Interview Panel member for cybersecurity hiring at King’s College London. April 23, 2024.</li>
+    <li>Invited Speaker for Lighting Lunch about Cybersecurity EDI at King’s College London. October 2nd, 2024.</li>
+    <li>Invited Speaker for lunch with lecturer about Cybersecurity Education and AI at King’s College London. November 30, 2022.</li>
+    <li>Invited panel member at Women Of MENA In Technology about Cybersecurity Defense and Offense using AI. June 27, 2024.</li>
+    <li>Invited speaker at Al-Arabiya net about Cybercriminal threats. November 2023.</li>
+    <li>Lead and deliver as a cybersecurity trainer about advanced topics in cybersecurity in Qatar Central Bank. October 2023.</li>
+    <li>Campus Council Member at the Higher College of Technology, Al Ain. Sep 2019 – Oct 2020.</li>
+</ul>
+        </div>
+    </div>
+	
+	
+	
+</section>
+
+
+<section id="Publications">
+    <h2>Publications (Selected)</h2>
+
+        <ul>
+    <li>Salem, M., Al Tamimi, A., Samara, K. (2024). <i>Navigating Challenges in Online Cybersecurity Education: Insights from Postgraduate Students and Prospects for a Standardized Framework</i>. ACM Transaction on Computing Education (TOCE). – Revised -</li>
+    <li>M. Salem (2024) <i>‘Enhancing Equality, Diversity, and Inclusion in Online Cybersecurity Education: A Multi-Layered Approach’</i>, HE Teaching Development Conference, Royal Holloway. Published</li>
+    <li>Salem, M., Samara, K., Pray, J., & Hussein, M. (2024, May). <i>Evaluating the Effectiveness of Online Cybersecurity Program in Higher Education</i>. In 2024 IEEE Global Engineering Education Conference (EDUCON) (pp. 1-9). IEEE.</li>
+    <li>M. Salem and A. -K. Al-Tamimi, "A Novel Threat Intelligence Detection Model Using Neural Networks," in <i>IEEE Access</i>, vol. 10, pp. 131229-131245, 2022, doi: 10.1109/ACCESS.2022.3229495.</li>
+    <li>T Alwada’n, AK Al-Tamimi, AH Mohammad, M Salem, Y Muhammad (2023) <i>‘Dynamic congestion management system for cloud service broker’</i>, International Journal of Electrical and Computer Engineering (IJECE), 13(1), pp. 872–883.</li>
+    <li>Al-Tamimi, A.-K., Salem, M. and Al-Alami, A. (2020) <i>‘On the Use of Feature Selection for Music Genre Classification’</i>, in 2020 Seventh International Conference on Information Technology Trends (ITT). IEEE, pp. 1–6.</li>
+	<li>Salem, M. (2020). <i>Blockchain-Based Authentication Approach for Securing Transportation System.</i> In: Brito-Loeza, C., Espinosa-Romero, A., Martin-Gonzalez, A., Safi, A. (eds) Intelligent Computing Systems. ISICS 2020. Communications in Computer and Information Science, vol 1187. Springer, Cham. https://doi.org/10.1007/978-3-030-43364-2_6</li>
+    <li>Hassan, D. et al. (2019) <i>‘Comparative study of using data mining techniques for bank telemarketing data’</i>, in 2019 Sixth HCT Information Technology Trends (ITT). IEEE, pp. 177–181.</li>
+    <li>Salem, M. (2020) <i>‘Blockchain-based authentication approach for securing transportation system’</i>, in International Symposium on Intelligent Computing Systems. Springer, Cham, pp. 55–64.</li>
+    <li>Manasrah, A. M., Abu Nasir, M. and Salem, M. (2020) <i>‘A privacy-preserving multi-keyword search approach in cloud computing’</i>, Soft Computing. Springer Berlin Heidelberg, 24(8), pp. 5609–5631.</li>
+    <li>Salem, M., Mohammed, M. and Rodan, A. (2019) <i>‘Security approach for in-vehicle networking using blockchain technology’</i>, in International Conference on Emerging Internetworking, Data & Web Technologies. Springer, Cham, pp. 504–515.</li>
+    <li>Salem, M. and Mohammed, M. (2019) <i>‘Feasibility approach based on SecMonet framework to protect networks from advanced persistent threat attacks’</i>, in International Conference on Emerging Internetworking, Data & Web Technologies. Springer, Cham, pp. 333–343.</li>
+    <li>Salem, M., Samara, K. and Aldhaheri, M. S. (2019) <i>‘A novel integrated framework for securing online instructor-student communication’</i>, International Journal of Grid and Utility Computing. Inderscience Publishers (IEL), 10(1), pp. 42–52.</li>
+    <li>Salem, M. and Buehler, U. (2014) <i>‘Transforming voluminous data flow into continuous connection vectors for IDS’</i>, International Journal of Internet Technology and Secured Transactions 8. Inderscience Publishers Ltd, 5(4), pp. 307–326.</li>
+    <li>Salem, M. (2014) <i>Adaptive Real-time Anomaly-based Intrusion Detection using Data Mining and Machine Learning Techniques</i>.</li>
+    <li>Salem, M., Buehler, U. and Reissmann, S. (2014) <i>‘Persistent Dataset Generation using Real-Time Operative Framework’</i>, in IEEE International Conference on Computing, Networking and Communications (ICNC). IEEE, pp. 1023–1027.</li>
+    <li>Salem, M. and Buehler, U. (2013) <i>‘Reinforcing network security by converting massive data flow to continuous connections for IDS’</i>, in 8th International Conference for Internet Technology and Secured Transactions (ICITST-2013). IEEE, pp. 570–575.</li>
+    <li>Salem, M. and Buehler, U. (2013) <i>‘An Enhanced GHSOM for IDS’</i>, in Systems, Man, and Cybernetics (SMC), 2013 IEEE International Conference on. IEEE, pp. 1138–1143.</li>
+    <li>Salem, M. and Buehler, U. (2012) <i>‘Mining Techniques in Network Security to Enhance Intrusion Detection Systems’</i>, International Journal of Network Security & Its Applications (IJNSA), 4(6).</li>
+</ul>
+    
+</section>
+
+
+<section id="skills">
+    <h2>Acaademic-Industrial experiences</h2>
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Technical Skills</h3>
+        <div class="details">
+        <ul>
+            <li>Network Security: Understanding of firewalls, intrusion detection/prevention systems (IDS/IPS), virtual private networks (VPNs), and secure network architecture.</li>
+            <li>Endpoint Security: Proficiency in securing end-user devices through antivirus, encryption, patch management, and endpoint detection and response (EDR) solutions.</li>
+            <li>Application Security: Knowledge of secure coding practices, vulnerability testing (SAST/DAST)</li>
+			<li>Incident Response: Skills in identifying, responding to, and mitigating cyber incidents, including forensic analysis and root cause investigation</li>
+            <li>Threat Intelligence and Analysis: Ability to gather, analyze, and respond to threat intelligence data, staying ahead of emerging threats and attack vectors.</li>
+			<li>Penetration Testing & Ethical Hacking: Proficient in penetration testing techniques, vulnerability assessment, and the use of tools such as Metasploit, Burp Suite, and Wireshark></li>
+			<li>Cryptography: Understanding encryption algorithms, key management, and secure communication protocols (SSL/TLS, VPN, etc.).</li>
+            <li>Compliance and Risk Management: Knowledge of industry standards and regulations (e.g., GDPR, HIPAA, ISO 27001) and the ability to guide organizations in implementing compliance frameworks.</li>
+			<li>Security Operations: Familiarity with Security Information and Event Management (SIEM) systems, log analysis, and continuous monitoring</li>
+			<li>Malware Analysis and Reverse Engineering: Capable of identifying, dissecting, and understanding the behavior of malware to devise defense strategies.</li>
+			<li>Identity and Access Management (IAM): Good in managing and implementing authentication, authorization, and access controls across systems.</li>
+			<li><!-- Skill --></li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Instructional Skills</h3>
+        <div class="details">
+        <ul>
+            <li>Curriculum Design: Ability to develop structured training programs that cater to different learning levels, from beginners to advanced professionals</li>
+            <li>Classroom and Remote Instruction: Competence in both in-person and virtual teaching environments, leveraging online tools to deliver effective training</li>
+            <li>Hands-On Lab Experience: Development of hands-on exercises and labs to provide learners with practical experience, using simulation tools and real-world scenarios</li>
+			<li>Tailored Content Delivery: Adapting training materials to suit diverse audiences (technical and non-technical staff, management, etc.).</li>
+            <li>Assessment Creation: Designing quizzes, exams, and practical assessments to evaluate the learners’ understanding and application of cybersecurity concepts.</li>
+			<li><!-- Skill --></li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Soft Skills</h3>
+        <div class="details">
+            <ul>
+            <li>Communication: Ability to simplify complex technical concepts for non-experts and present clear, actionable recommendations to various stakeholders</li>
+            <li>Leadership: Leading training sessions, mentoring students, and fostering a collaborative learning environment. </li>
+            <li>Critical Thinking: Analytical skills to assess cybersecurity risks and devise effective teaching strategies to address them </li>
+			<li>Problem-Solving: Strong problem-solving skills, enable effective troubleshooting and provide learners with strategies to address real-world security challenges </li>
+            <li>Time Management: Managing training schedules, adapting content to time constraints, and ensuring learners grasp the material in a structured time frame </li>
+			<li><!-- Skill --></li>
+        </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Industry Knowledge & Research</h3>
+        <div class="details">
+            <ul>
+            <li>Up-to-Date with Cybersecurity Trends: Staying current with the latest cybersecurity threats, tools, techniques, and best practices</li>
+            <li>Cross-Domain Knowledge: Understanding adjacent fields like data privacy, software development lifecycle (SDLC), DevSecOps, and IT governance to provide a holistic view of security</li>
+           	<li><!-- Skill --></li>
+        </ul>
+        </div>
+    </div>
+	
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>Educational Technologies</h3>
+        <div class="details">
+            <ul>
+            <li>Learning Management Systems (LMS): Familiarity with platforms such as Moodle, Blackboard, or custom LMS systems for managing course delivery</li>
+            <li>Training Tools and Simulators: Proficiency in using cybersecurity training tools such as TryHackMe, Hack The Box, or custom-built virtual environments</li>
+           	<li>Content Development Tools: Competence in developing training materials using tools</li>
+			<li>Collaboration Platforms: Experience with collaboration tools (Slack, Zoom, Microsoft Teams) for interactive and real-time teaching</li>
+			<li><!-- Skill --></li>
+        </ul>
+        </div>
+    </div>
+	
+	 <div class="project" onclick="toggleDetails(this)">
+        <h3>Ethical and Legal Knowledge</h3>
+        <div class="details">
+            <ul>
+            <li>Ethical Hacking Standards: knowledge of ethical hacking laws and guidelines, ensuring ethical conduct in penetration testing and vulnerability assessments</li>
+            <li>Data Privacy and Compliance: Awareness of data protection laws such as GDPR</li>
+           	<li>Professional Ethics: Upholding and teaching the principles of cybersecurity ethics, including the responsible use of information, tools, and access to sensitive data.</li>
+			<li><!-- Skill --></li>
+        </ul>
+        </div>
+    </div>
+	
+</section>
+
+
+
+
+<section id="certifications">
+    <h2>Certifications (Selected)</h2>
+    <div class="project" onclick="toggleDetails(this)">
+        <h3>CISSP (Certified Information Systems Security Professional) 		<p style="text-align: right; float: right;"> ISC2 2024 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>(Note) : in the process of obtaining this certificate</li>
+            <li>CISSP is a globally recognized certification in information security. It validates your knowledge and expertise in a wide range of security domains</li>
+			<li><!-- Skill --></li>
+        </ul>
+        </div>
+    </div>
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Data Protection and Information Security  		<p style="text-align: right; float: right;"> King's College London . 2021 </p> </h3>
+        <div class="details">
+        <ul>
+			<li>Completing a full training course of personal tutor.  </li>
+        </ul>
+        </div>
+    </div>
+	
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Personal Tutor Training certificate  		<p style="text-align: right; float: right;"> King's College London . 2021 </p> </h3>
+        <div class="details">
+        <ul>
+			<li>Completing a full training course of personal tutor.  </li>
+        </ul>
+        </div>
+    </div>
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Ethical Hacking: Exploit and The Complete Malware Analysis Process  		<p style="text-align: right; float: right;"> Coursera . 2020 </p> </h3>
+        <div class="details">
+        <ul>
+			<li>Advances in Malware analysis and the use of top ethical hacking tools and scripts </li>
+        </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>IBM Blockchain Developer Training and Certification 		<p style="text-align: right; float: right;"> IBM . 2020 </p> </h3>
+        <div class="details">
+        <ul>
+			<li>This certificate provides individuals with the skills and knowledge needed to develop and deploy blockchain applications on the Hyperledger Fabric platform. Through comprehensive training programs, participants gain hands-on experience with blockchain concepts, architecture, and development tools. The certification validates their expertise and opens up opportunities for careers in blockchain technology.</li>
+        </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Management Services (CPE) 		<p style="text-align: right; float: right;"> Becker Professional Education . 2020 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>Becker Professional Education offers a variety of Management Services (CPE) courses designed to help professionals maintain their continuing professional education requirements. These courses cover a wide range of topics, including leadership, management, business strategy, and ethics.</li>
+        </ul>
+        </div>
+    </div>
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>certificate of Appreciation 		<p style="text-align: right; float: right;"> HCT Academic Succes Center . 2020 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>In recognition of my dedication and valuable contribution as a Faculty Tutor at Academic Success Center in the HCT</li>
+        </ul>
+        </div>
+    </div>
+	
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>IBM Security Intelligence - IBM Q Radar 		<p style="text-align: right; float: right;"> IBM - Higher Colleges of Technology . 2019 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>IBM QRadar is a comprehensive security information and event management (SIEM) platform that helps organizations detect and respond to cyber threats. It collects and analyzes data from various sources, including network devices, servers, and applications, to identify suspicious activity and potential security breaches. QRadar provides real-time threat detection, incident response capabilities, and compliance reporting, enabling organizations to protect their valuable assets and maintain a strong security posture.</li>
+        </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>CCNA Security Certificate 		<p style="text-align: right; float: right;"> CISCO Academy . 2019 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>Cover all important network security fundamentals</li>
+        </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Hikvision Certified Security Associate (HCSA) Certificate		<p style="text-align: right; float: right;"> HikVision . 2019 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>The Hikvision Certified Security Associate (HCSA) certificate is a valuable credential for individuals working in the security industry. It demonstrates a solid understanding of Hikvision security products and solutions, including video surveillance systems, access control, and intrusion detection. By obtaining the HCSA certification, individuals can enhance their career prospects, increase their earning potential, and gain a competitive edge in the job market.</li>
+        </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>AccessData (FTK) Certified Examiner 		<p style="text-align: right; float: right;"> Exterro (Former is AccessData) . 2018 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>Very well certificate covering advances in digital forensics</li>
+        </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Emirates Technology Innovation Competition (Cybersecurity) 		<p style="text-align: right; float: right;"> Emirates Technology Innovation Competition (Cybersecurity) . 2017 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>My Team won the Gold Award ( 1st Rank) in Cybersecurity Competition nation wide </li>
+        </ul>
+        </div>
+    </div>
+	
+	<div class="project" onclick="toggleDetails(this)">
+        <h3>Elsevier Certificate of reviewing 		<p style="text-align: right; float: right;"> November, 2017 </p> </h3>
+        <div class="details">
+        <ul>
+            <li>Recognition of the review contributed to the journal of King Saud University - Computer and Information Sciences </li>
+        </ul>
+        </div>
+    </div>
+	
+</section>
+
+<script>
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show the selected section
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+        }
+    }
+
+    // Show the summary section by default
+    showSection('summary');
+
+    function toggleDetails(element) {
+        const details = element.querySelector('.details');
+        if (details.style.display === 'block') {
+            details.style.display = 'none';
+        } else {
+            details.style.display = 'block';
+        }
+    }
+</script>
+
+<footer>
+    <p>Contact: <a href="mailto:maher.salem@kcl.ac.uk">Email Me</a></p>
+	<div style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+    <p>&copy; 2024 Maher Salem. All rights reserved.</p>
+</div>
+</footer>
+
+</body>
+</html>
