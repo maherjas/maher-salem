@@ -126,6 +126,49 @@
         margin-top: 10px;
         color: #555;
     }
+
+.news-ticker {
+            width: 800px; /* Adjust the width to 80% of the page, or you can use pixels like 600px */
+            height: 200px; /* Adjust the height as needed */
+            background-color: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            padding: 10px 0;
+            margin: 0 auto; /* Center the ticker */
+        }
+
+        .news-items {
+            display: inline-block;
+            position: absolute;
+            top: 100%; /* Start below the visible area */
+            animation: scroll-news 15s linear infinite;
+        }
+
+        .news-items span {
+            display: block;
+            padding: 10px;
+            font-size: 0.8em;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        @keyframes scroll-news {
+            0% {
+                top: 100%; /* Start below the view */
+            }
+            100% {
+                top: -100%; /* Move to above the view */
+            }
+        }
+
+        /* Pauses the animation when hovering */
+        .news-items:hover {
+            animation-play-state: paused;
+        }
+
+	    
 </style>
 </head>
 <body>
@@ -155,6 +198,14 @@
         <img src="https://maherjas.github.io\maher-salem\images\icons8-researchgate-32.png" alt="Researchgate" style="width: 24px; height: 24px;  margin-right: 5px;">
     </a>
 </h2>
+
+<div class="news-ticker">
+    <div class="news-items">
+        <span><li>News coming soon !!</li></span>
+        <span><li>News coming soon !!</li></span>
+    </div>
+</div>
+	    
     </div>
     <div class="header-right">
         <p>Contact: <a href="mailto:maher.salem@kcl.ac.uk">Email Me</a></p>
