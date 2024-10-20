@@ -168,6 +168,18 @@
             animation-play-state: paused;
         }
 
+
+	    .right-sidebar {
+            width: 180px; /* Right sidebar width */
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 80px; /* Adjusted to accommodate the header */
+            right: 0; /* Position on the right side */
+            transition: transform 0.3s; /* Sidebar transition */
+        }
 	    
 </style>
 </head>
@@ -228,6 +240,20 @@
         <li><a href="#" onclick="showSection('skills')">Skills</a></li>
     </ul>
 </nav>
+
+<!-- Right side navigator -->
+
+<div class="right-sidebar">
+    <h2>Latest News</h2>
+    <ul>
+        <li><a href="#">News Item 1</a></li>
+        <li><a href="#">News Item 2</a></li>
+        <li><a href="#">News Item 3</a></li>
+        <li><a href="#">News Item 4</a></li>
+    </ul>
+</div>
+
+	
 
 <section id="summary">
     <h2>Summary</h2>
