@@ -23,31 +23,30 @@
         align-items: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         position: fixed; /* Fixes the header to the top */
-		top: 0;
-		left: 0;
-		height: 180px;
-		width: 100%; /* Ensures the header spans the full width of the screen */
-		z-index: 1000; /* Keeps the header above other content */
-		transition: background 0.3s;
+        top: 0;
+        left: 0;
+        height: 180px;
+        width: 100%; /* Ensures the header spans the full width of the screen */
+        z-index: 1000; /* Keeps the header above other content */
+        transition: background 0.3s;
     }
 
     .header-left {
         display: flex;
         align-items: center;
-        font-size: 32px; /* Original font size 24px */
+        font-size: 2em; /* Adjusted for scaling on smaller screens */
         color: #FFDD00; /* Bright yellow */
     }
-	
-	.header-left .subtitle {
-    font-size: 0.4em; /* Smaller font size for the subtitle */
-    margin: 0; /* Remove default margin */
-    color: #FFFFFF; /* Optional: change color for better contrast */
-	}
 
+    .header-left .subtitle {
+        font-size: 0.4em; /* Smaller font size for the subtitle */
+        margin: 0; /* Remove default margin */
+        color: #FFFFFF; /* Optional: change color for better contrast */
+    }
 
     .header-left img {
-        width: 200px; /* Original logo size */
-        height: 200px; /* Original logo size */
+        width: 150px; /* Responsive logo size */
+        height: auto; /* Maintain aspect ratio */
         border-radius: 100%; /* Circular image */
         margin-right: 20px;
         transition: transform 0.3s; /* Animation for hover effect */
@@ -56,11 +55,10 @@
     .header-left img:hover {
         transform: scale(1.2); /* Slightly enlarge the image on hover */
     }
-	
-	
-	.social img {
-        width: 200px; /* Original logo size */
-        height: 200px; /* Original logo size */
+
+    .social img {
+        width: 150px; /* Responsive logo size */
+        height: auto; /* Maintain aspect ratio */
         border-radius: 100%; /* Circular image */
         margin-right: 20px;
         transition: transform 0.3s; /* Animation for hover effect */
@@ -69,8 +67,6 @@
     .social img:hover {
         transform: scale(1.8); /* Slightly enlarge the image on hover */
     }
-	
-	
 
     .header-right {
         font-size: 0.9em;
@@ -82,10 +78,11 @@
         background: linear-gradient(135deg, #6a11cb, #2575fc); /* Changed to a vibrant blue */
         color: white;
         padding: 20px;
-        height: 100vh;
+        height: calc(100vh - 200px); /* Adjusted to accommodate the header */
         position: fixed;
         top: 200px; /* Adjusted to accommodate the header */
         transition: transform 0.3s; /* Smooth transition for sidebar */
+        overflow-y: auto; /* Enables scrolling */
     }
 
     nav h2 {
@@ -115,13 +112,13 @@
 
     section {
         margin-left: 220px; /* Space for the sidebar */
-		margin-right: 380px; /* Space for the sidebar */
+        margin-right: 380px; /* Adjusted for responsiveness */
         padding: 20px;
         background: white;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
         transition: background 0.3s; /* Smooth background transition */
-		padding-top: 220px;
+        padding-top: 220px;
     }
 
     h2 {
@@ -157,63 +154,88 @@
         color: #555;
     }
 
-.news-ticker {
-            width: 800px; /* Adjust the width to 80% of the page, or you can use pixels like 600px */
-            height: 200px; /* Adjust the height as needed */
-            background-color: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: white;
-            overflow: hidden;
-            position: relative;
-            box-sizing: border-box;
-            padding: 10px 0;
-            margin: 0 auto; /* Center the ticker */
+    .news-ticker {
+        width: 80%; /* Responsive width */
+        max-width: 800px; /* Maximum width */
+        height: 200px; /* Adjust the height as needed */
+        background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fixed background color */
+        color: white;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        padding: 10px 0;
+        margin: 0 auto; /* Center the ticker */
+    }
+
+    .news-items {
+        display: inline-block;
+        position: absolute;
+        top: 100%; /* Start below the visible area */
+        animation: scroll-news 15s linear infinite;
+    }
+
+    .news-items span {
+        display: block;
+        padding: 10px;
+        font-size: 0.4em;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    @keyframes scroll-news {
+        0% {
+            top: 100%; /* Start below the view */
+        }
+        100% {
+            top: -100%; /* Move to above the view */
+        }
+    }
+
+    /* Pauses the animation when hovering */
+    .news-items:hover {
+        animation-play-state: paused;
+    }
+
+    .right-sidebar {
+        width: 20%; /* Right sidebar width */
+        background: linear-gradient(180deg, #2575fc, #6a11cb);
+        color: white;
+        padding: 20px;
+        height: calc(100vh - 110px);
+        position: fixed;
+        top: 200px; /* Adjusted to accommodate the header */
+        right: 0; /* Position on the right side */
+        transition: transform 0.3s; /* Sidebar transition */
+        overflow-y: auto; /* Enables scrolling */
+        box-sizing: border-box;
+        box-shadow: 5px 2px 5px rgba(0.9, 0.9, 0.9, 0.9);
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .header-left {
+            font-size: 1.5em; /* Adjust header font size */
         }
 
-        .news-items {
-            display: inline-block;
-            position: absolute;
-            top: 100%; /* Start below the visible area */
-            animation: scroll-news 15s linear infinite;
+        nav {
+            width: 100%; /* Full width on smaller screens */
+            height: auto; /* Adjust height */
+            position: relative; /* Change positioning */
+            top: 0; /* Reset position */
         }
 
-        .news-items span {
-            display: block;
-            padding: 10px;
-            font-size: 0.4em;
-            font-family: Arial, sans-serif;
-            text-align: center;
+        section {
+            margin-left: 0; /* Remove left margin */
+            margin-right: 0; /* Remove right margin */
         }
 
-        @keyframes scroll-news {
-            0% {
-                top: 100%; /* Start below the view */
-            }
-            100% {
-                top: -100%; /* Move to above the view */
-            }
+        .right-sidebar {
+            width: 100%; /* Full width on smaller screens */
+            height: auto; /* Adjust height */
+            position: relative; /* Change positioning */
+            top: 0; /* Reset position */
         }
-
-        /* Pauses the animation when hovering */
-        .news-items:hover {
-            animation-play-state: paused;
-        }
-
-
-	    .right-sidebar {
-            width: 20%; /* Right sidebar width */
-            background: linear-gradient(180deg, #2575fc, #6a11cb);
-            color: white;
-            padding: 20px;
-            height: calc(100vh - 110px);
-            position: fixed;
-            top: 200px; /* Adjusted to accommodate the header */
-            right: 0; /* Position on the right side */
-            transition: transform 0.3s; /* Sidebar transition */
-			overflow-y: auto; /* Enables scrolling */
-			box-sizing: border-box;
-			box-shadow: 5px 2px 5px rgba(0.9, 0.9, 0.9, 0.9);
-
-        }
+    }
 	    
 </style>
 </head>
@@ -303,9 +325,13 @@
         <h2 style="color: #FFDD00;">Recent News <img src="https://maherjas.github.io\maher-salem\images\icons8-speaker-48.png" alt="ORCID" style="width: 24px; height: 24px;  margin-right: 5px;"></h2>
         <!--div class="news-ticker"-->
             <!--div class="news-items"-->
-                <p><li>October 2024: Accepted Article in ACM-TOCE</li></p>
-                <p><li>August 2024: Submitted 3 projects for funding</li></p>
-                <p><li>September 2024: Collaborated with Microsoft on Digital Skills</li></p>
+               <ul>
+                <p><li><strong>30 October, 2014:</strong> Organising and hostin an event with Apple on KCL campus, titled "Apple & KCL - Formal Verification Tech Talk " </li></p>
+				<p><li><strong>October 2024:</strong> Accepted Article in ACM-TOCE</li></p>
+                <p><li><strong>August 2024:</strong> Submitted 3 projects for funding</li></p>
+                <p><li><strong>September 2024:</strong> Collaborated with Microsoft on Digital Skills</li></p>
+		</ul>
+				
  </div>
 
 
