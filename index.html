@@ -14,6 +14,11 @@
         transition: background-color 0.5s; /* Smooth background transition */
     }
 
+	    #visitorCount {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
     header {
         background: linear-gradient(135deg, #6a11cb, #2575fc); /* Light blue to white gradient */
         color: #333; /* Darker text for contrast */
@@ -1159,6 +1164,20 @@
 	<div style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
     <p>&copy; 2024 Maher Salem. All rights reserved.</p>
 </div>
+
+
+<div id="visitorCount">Visitors: 0</div>
+
+    <script>
+        fetch('count-visitor.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('visitorCount').innerText = `Visitors: ${data}`;
+            });
+    </script>
+
+
+	
 </footer>
 
 </body>
