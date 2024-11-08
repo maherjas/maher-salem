@@ -20,58 +20,82 @@
         }
 
     header {
-        background: linear-gradient(135deg, #6a11cb, #2575fc); /* Light blue to white gradient */
-        color: #333; /* Darker text for contrast */
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        position: fixed; /* Fixes the header to the top */
-        top: 0;
-        left: 0;
-        height: 180px;
-        width: 100%; /* Ensures the header spans the full width of the screen */
-        z-index: 1000; /* Keeps the header above other content */
-        transition: background 0.3s;
-    }
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Light blue to white gradient */
+    color: #333; /* Darker text for contrast */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fixes the header to the top */
+    top: 0;
+    left: 0;
+    height: 180px;
+    width: 100%; /* Ensures the header spans the full width of the screen */
+    z-index: 1000; /* Keeps the header above other content */
+    transition: background 0.3s;
+}
 
-    .header-left {
-        display: flex;
-        align-items: center;
-        font-size: 2em; /* Adjusted for scaling on smaller screens */
-        color: #FFDD00; /* Bright yellow */
-    }
 
-    .header-left .subtitle {
-        font-size: 0.4em; /* Smaller font size for the subtitle */
-        margin: 0; /* Remove default margin */
-        color: #FFFFFF; /* Optional: change color for better contrast */
-    }
+.header-input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px; /* Space below input */
+        }
+        .header-button {
+            background-color: #FFDD00;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #ffc107; /* Darken on hover */
+        }
 
-    .header-left img {
-        width: 150px; /* Responsive logo size */
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 100%; /* Circular image */
-        margin-right: 20px;
-        transition: transform 0.3s; /* Animation for hover effect */
-    }
 
-    .header-left img:hover {
-        transform: scale(1.2); /* Slightly enlarge the image on hover */
-    }
 
-    .social img {
-        width: 150px; /* Responsive logo size */
-        height: auto; /* Maintain aspect ratio */
-        border-radius: 100%; /* Circular image */
-        margin-right: 20px;
-        transition: transform 0.3s; /* Animation for hover effect */
-    }
+.header-left {
+    display: flex;
+    align-items: center;
+    font-size: 2em; /* Adjusted for scaling on smaller screens */
+    color: #FFDD00; /* Bright yellow */
+    
+}
 
-    .social img:hover {
-        transform: scale(1.8); /* Slightly enlarge the image on hover */
-    }
+.header-left .subtitle {
+    font-size: 0.4em; /* Smaller font size for the subtitle */
+    margin: 0; /* Remove default margin */
+    color: #FFFFFF; /* Optional: change color for better contrast */
+}
+
+.header-left img {
+    width: 150px; /* Responsive logo size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 100%; /* Circular image */
+    margin-right: 20px; /* Adjust margin if needed */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.header-left img:hover {
+    transform: scale(1.2); /* Slightly enlarge the image on hover */
+}
+
+.social img {
+    width: 150px; /* Responsive logo size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 100%; /* Circular image */
+    margin-right: 20px; /* Space between social icons */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.social img:hover {
+    transform: scale(1.8); /* Slightly enlarge the image on hover */
+}
 
     .header-right {
         font-size: 0.9em;
@@ -161,17 +185,19 @@
     }
 
     .news-ticker {
-        width: 80%; /* Responsive width */
-        max-width: 800px; /* Maximum width */
-        height: 200px; /* Adjust the height as needed */
-        background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fixed background color */
-        color: white;
-        overflow: hidden;
-        position: relative;
-        box-sizing: border-box;
-        padding: 10px 0;
-        margin: 0 auto; /* Center the ticker */
-    }
+    width: 20%; /* Responsive width */
+    max-width: 800px; /* Maximum width */
+    height: 200px; /* Adjust the height as needed */
+    background: linear-gradient(#2575fc); /* Fixed background color */
+    color: white;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin: 0; /* Remove auto margin to prevent centering */
+    position: absolute; /* Use absolute positioning */
+    right: 0; /* Align to the right side */
+	}
 
     .news-items {
         display: inline-block;
@@ -226,7 +252,6 @@
         transition: transform 0.3s; /* Sidebar transition */
         overflow-y: auto; /* Enables scrolling */
         box-sizing: border-box;
-        box-shadow: 5px 2px 5px rgba(0.9, 0.9, 0.9, 0.9);
     }
 
     /* Media Queries for Responsiveness */
@@ -255,41 +280,64 @@
             top: 0; /* Reset position */
         }
 
-	h1 {
+		h1 {
             color: #333;
-        }
-        .game-container {
-            background-color: #fff;
+		}
+        
+.game-container {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
+            color: #fff;
             width: 300px;
         }
+        h1 {
+            font-size: 2em;
+            margin: 0;
+            padding-bottom: 10px; /* Space between h1 and h3 */
+        }
+        .subtitle {
+            font-size: 1.2em;
+            margin: 0; /* No margin for tight spacing */
+            padding-bottom: 15px; /* Space below subtitle */
+        }
         input {
-            width: 80%;
+            width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 5px;
+            margin-bottom: 15px; /* Space below input */
         }
         button {
-            background-color: #28a745;
-            color: white;
+            background-color: #FFDD00;
+            color: #333;
             border: none;
-            padding: 10px 20px;
             border-radius: 5px;
+            padding: 10px;
             cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #ffc107; /* Darken on hover */
         }
         .result {
-            margin-top: 20px;
-            font-weight: bold;
+            margin-top: 20px; /* Space above result */
+            font-size: 1.1em;
         }
+        .highlight {
+            background-color: black; /* Black background */
+            color: white;            /* White text color */
+            padding: 5px;           /* Optional: add some padding */
+            border-radius: 3px;     /* Optional: rounded corners */
+            display: inline-block;   /* Ensure it wraps the text */
+        }		     
 
-	    
+
+
+			 
     }
 	    
 </style>
@@ -304,45 +352,47 @@
 			<h3 class="subtitle">Associate Professor </h3>
 			<h3 class="subtitle">Ph.D. Eng. | SFHEA</h3>
 			<h3 class="subtitle">Digital Teaching & Learning Expert </h3>
+			
+			<div class="social">
+			<a href="https://www.linkedin.com/in/maher-j-a-salem" target="_blank">
+			<img src="https://maherjas.github.io\maher-salem\images\icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 5px;">
+			</a>
+			<a href="https://scholar.google.com/citations?user=WYlwawwAAAAJ&hl=en" target="_blank">
+				<img src="https://maherjas.github.io\maher-salem\images\icons8-google-scholar-48.png" alt="Google Scholar" style="width: 24px; height: 24px; margin-right: 5px;">
+			</a>
+			<a href="https://github.com/maherjas" target="_blank">
+				<img src="https://maherjas.github.io\maher-salem\images\icons8-github-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 5px;">
+			</a>
+			<a href="https://kcl.academia.edu/MaherSalem" target="_blank">
+				<img src="https://maherjas.github.io\maher-salem\images\icons8-academia-48.png" alt="Academia" style="width: 24px; height: 24px;  margin-right: 5px;">
+			</a>
+			<a href="https://orcid.org/0000-0002-6479-4335" target="_blank">
+				<img src="https://maherjas.github.io\maher-salem\images\icons8-orcid-32.png" alt="ORCID" style="width: 24px; height: 24px;  margin-right: 5px;">
+			</a>
+			<a href="https://www.researchgate.net/profile/Maher-Salem" target="_blank">
+				<img src="https://maherjas.github.io\maher-salem\images\icons8-researchgate-32.png" alt="Researchgate" style="width: 24px; height: 24px;  margin-right: 5px;">
+			</a>
+			<a href="mailto:maher.salem@kcl.ac.uk"><img src="https://maherjas.github.io\maher-salem\images\icons8-email-48.png" style="width: 24px; height: 24px;  margin-right: 5px;"></a>
+
+			</div>
 		</div>
 	</div>
-	<div class="social">
-	   <h2 style="display: flex; align-items: right;">
-    <a href="https://www.linkedin.com/in/maher-j-a-salem" target="_blank">
-        <img src="https://maherjas.github.io\maher-salem\images\icons8-linkedin-48.png" alt="LinkedIn" style="width: 24px; height: 24px; margin-right: 5px;">
-    </a>
-    <a href="https://scholar.google.com/citations?user=WYlwawwAAAAJ&hl=en" target="_blank">
-        <img src="https://maherjas.github.io\maher-salem\images\icons8-google-scholar-48.png" alt="Google Scholar" style="width: 24px; height: 24px; margin-right: 5px;">
-    </a>
-    <a href="https://github.com/maherjas" target="_blank">
-        <img src="https://maherjas.github.io\maher-salem\images\icons8-github-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 5px;">
-    </a>
-    <a href="https://kcl.academia.edu/MaherSalem" target="_blank">
-        <img src="https://maherjas.github.io\maher-salem\images\icons8-academia-48.png" alt="Academia" style="width: 24px; height: 24px;  margin-right: 5px;">
-    </a>
-    <a href="https://orcid.org/0000-0002-6479-4335" target="_blank">
-        <img src="https://maherjas.github.io\maher-salem\images\icons8-orcid-32.png" alt="ORCID" style="width: 24px; height: 24px;  margin-right: 5px;">
-    </a>
-    <a href="https://www.researchgate.net/profile/Maher-Salem" target="_blank">
-        <img src="https://maherjas.github.io\maher-salem\images\icons8-researchgate-32.png" alt="Researchgate" style="width: 24px; height: 24px;  margin-right: 5px;">
-    </a>
-	<a href="mailto:maher.salem@kcl.ac.uk"><img src="https://maherjas.github.io\maher-salem\images\icons8-email-48.png" alt="Researchgate" style="width: 24px; height: 24px;  margin-right: 5px;"></a>
-	</h2>
+
+
+	<div class="game-container">
+		<h1>Password Checker</h1>
+		<h3 class="subtitle">This Tool is just for Awareness purposes only - nothing is recorded !</h3>
+		<input type="password" id="password" placeholder="Enter your password" />
+		<button onclick="checkPassword()">Check Password</button>
+		<div class="result" id="result"></div>
 	</div>
 
-<!--div class="news-ticker">
-    <div class="news-items">
-        <span><li>October 2024: Accepted Article in ACM-TOCE</li></span>
-	<span><li>August-October 2024: Submitted 3 projects for funding</li></span>
-    </div>
-</div-->
-	    
-   
-	
-    <div class="header-right">
+	 
+	<div class="header-right">
         <!--p>Contact: <a href="mailto:maher.salem@kcl.ac.uk">Email Me</a></p-->
 		<!--p><a href="mailto:maher.salem@kcl.ac.uk"><img src="https://maherjas.github.io\maher-salem\images\icons8-email-48.png" alt="Researchgate" style="width: 24px; height: 24px;  margin-right: 5px;"></a></p-->
     </div>
+	
 </header>
 
 <nav>
@@ -1216,6 +1266,34 @@
         }
     }
 </script>
+
+
+<script>
+        function checkPassword() {
+    const password = document.getElementById('password').value;
+    const resultDiv = document.getElementById('result');
+    let strength = 'Weak';
+    let color = 'red';
+
+    if (password.length >= 8) {
+        strength = 'Moderate';
+        color = 'orange';
+        if (/[A-Z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*]/.test(password)) {
+            strength = 'Strong';
+            color = 'white';
+        }
+    }
+
+    // Set the innerHTML to include a span with the highlight class
+    resultDiv.innerHTML = `<span class="highlight" style="color: ${color};">Password Strength: ${strength}</span>`;
+
+    // Reset password field
+    document.getElementById('password').value = '';
+}
+    </script>
+
+
+
 
 <footer>
     <p class ="social">Contact: <a href="mailto:maher.salem@kcl.ac.uk"><img src="https://maherjas.github.io\maher-salem\images\icons8-email-48.png" alt="Researchgate" style="width: 24px; height: 24px;  margin-right: 5px;"></a></p>
