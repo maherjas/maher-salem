@@ -444,41 +444,7 @@
     		</div>
 	</div>
 
-	<div class="project" onclick="toggleDetails(this)">
-    		<h3>Password Checker</h3>
-    		<div class="details">
-
-
-	<div class="game-container">
-        <h1>Password Checker</h1>
-        <input type="password" id="password" placeholder="Enter your password" />
-        <button onclick="checkPassword()">Check Password</button>
-        <div class="result" id="result"></div>
-    	</div>
-
-    	<script>
-        function checkPassword() {
-            const password = document.getElementById('password').value;
-            const resultDiv = document.getElementById('result');
-            let strength = 'Weak';
-            let color = 'red';
-
-            if (password.length >= 8) {
-                strength = 'Moderate';
-                color = 'orange';
-                if (/[A-Z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*]/.test(password)) {
-                    strength = 'Strong';
-                    color = 'green';
-                }
-            }
-
-            resultDiv.textContent = `Password Strength: ${strength}`;
-            resultDiv.style.color = color;
-
-            // Reset password field
-            document.getElementById('password').value = '';
-        }
-    </script>
+	
 	   
 </section>
 
