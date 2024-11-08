@@ -254,6 +254,42 @@
             position: relative; /* Change positioning */
             top: 0; /* Reset position */
         }
+
+	h1 {
+            color: #333;
+        }
+        .game-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+	    
     }
 	    
 </style>
@@ -407,6 +443,42 @@
 		</p>
     		</div>
 	</div>
+
+	<div class="project" onclick="toggleDetails(this)">
+    		<h3>Password Checker</h3>
+    		<div class="details">
+
+
+	<div class="game-container">
+        <h1>Password Checker</h1>
+        <input type="password" id="password" placeholder="Enter your password" />
+        <button onclick="checkPassword()">Check Password</button>
+        <div class="result" id="result"></div>
+    	</div>
+
+    	<script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+            let strength = 'Weak';
+            let color = 'red';
+
+            if (password.length >= 8) {
+                strength = 'Moderate';
+                color = 'orange';
+                if (/[A-Z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*]/.test(password)) {
+                    strength = 'Strong';
+                    color = 'green';
+                }
+            }
+
+            resultDiv.textContent = `Password Strength: ${strength}`;
+            resultDiv.style.color = color;
+
+            // Reset password field
+            document.getElementById('password').value = '';
+        }
+    </script>
 	   
 </section>
 
