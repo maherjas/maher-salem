@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maher Salem</title>
+    <title>Maher Salem - Personal Homepage</title>
     <style>
     body {
         font-family: 'Open Sans', Arial, sans-serif; /* Clean and modern font */
@@ -20,7 +20,7 @@
         }
 
     header {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Light blue to white gradient */
+    background: #003366; /*linear-gradient(135deg, #6a11cb, #2575fc); /* Light blue to white gradient */
     color: #333; /* Darker text for contrast */
     padding: 20px;
     display: flex;
@@ -85,17 +85,24 @@
     transform: scale(1.2); /* Slightly enlarge the image on hover */
 }
 
+.social {
+    display: flex; /* Ensure it behaves like a flex container */
+    align-items: left; /* Center items vertically */
+    margin-left: 0px; /* Decrease margin to bring closer to header-left */
+}
+
 .social img {
     width: 150px; /* Responsive logo size */
     height: auto; /* Maintain aspect ratio */
     border-radius: 100%; /* Circular image */
-    margin-right: 20px; /* Space between social icons */
+    margin-right: 80px; /* Space between social icons */
     transition: transform 0.3s; /* Animation for hover effect */
 }
 
 .social img:hover {
     transform: scale(1.8); /* Slightly enlarge the image on hover */
 }
+
 
     .header-right {
         font-size: 0.9em;
@@ -104,7 +111,7 @@
 
     nav {
         width: 180px; /* Original width */
-        background: linear-gradient(135deg, #6a11cb, #2575fc); /* Changed to a vibrant blue */
+        background: #003366; /*linear-gradient(135deg, #6a11cb, #2575fc); /* Changed to a vibrant blue */
         color: white;
         padding: 20px;
         height: calc(100vh - 200px); /* Adjusted to accommodate the header */
@@ -218,13 +225,32 @@
             color: red; /* Change this to your desired color */
         }
 
-	.references {
-   	 font-family: 'Georgia', serif; /* or use 'Arial', sans-serif; */
-   	 font-size: 14px;
-   	 line-height: 1.5;
-  	  color: #333; /* Dark gray for better readability */
-  	  margin-top: 20px;
-	}
+.references {
+    font-family: 'Georgia', serif; /* or use 'Arial', sans-serif; */
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333; /* Dark gray for better readability */
+    margin-top: 20px;
+}
+
+.references a {
+    color: #003366; /* Dark blue for links */
+    text-decoration: none; /* Remove underline */
+    background-color: #ffcc00; /* Yellow background */
+    padding: 2px 2px; /* Padding to create an oval shape */
+    border-radius: 15px; /* Rounded corners for oval shape */
+}
+
+.references a:hover {
+    color: #ff9900; /* Change link color on hover */
+    text-decoration: underline; /* Optional: add underline on hover */
+}
+
+.references li {
+    margin-bottom: 20px;
+}
+
+		
 
     @keyframes scroll-news {
         0% {
@@ -242,7 +268,7 @@
 
     .right-sidebar {
         width: 20%; /* Right sidebar width */
-        background: linear-gradient(180deg, #2575fc, #6a11cb);
+        background:#003366; 
         color: white;
         padding: 20px;
         height: calc(100vh - 110px);
@@ -253,6 +279,19 @@
         overflow-y: auto; /* Enables scrolling */
         box-sizing: border-box;
     }
+	
+	
+	.right-sidebar a {
+    color: Yellow; /* Change link color to white */
+    text-decoration: none; /* Remove underline */
+}
+
+.right-sidebar a:hover {
+    color: #ffcc00; /* Change link color on hover */
+    text-decoration: underline; /* Optional: add underline on hover */
+}
+		
+		
 
     /* Media Queries for Responsiveness */
     @media (max-width: 768px) {
@@ -273,19 +312,14 @@
 	    margin-top: 200px; /* Prevents section content from hiding under the header */
         }
 
-        .right-sidebar {
-            width: 100%; /* Full width on smaller screens */
-            height: auto; /* Adjust height */
-            position: relative; /* Change positioning */
-            top: 0; /* Reset position */
-        }
+      
 
 		h1 {
             color: #333;
 		}
         
 .game-container {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background: #003300; /*linear-gradient(135deg, #6a11cb, #2575fc);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -335,7 +369,7 @@
             display: inline-block;   /* Ensure it wraps the text */
         }		     
 
-
+		
 
 			 
     }
@@ -351,7 +385,8 @@
 			Maher Salem
 			<h3 class="subtitle">Associate Professor </h3>
 			<h3 class="subtitle">Ph.D. Eng. | SFHEA</h3>
-			<h3 class="subtitle">Digital Teaching & Learning Expert </h3>
+			<h3 class="subtitle">Cybersecurity Expert </h3>
+			<h3 class="subtitle">Educational Expert Visionary </h3>
 			
 			<div class="social">
 			<a href="https://www.linkedin.com/in/maher-j-a-salem" target="_blank">
@@ -379,13 +414,13 @@
 	</div>
 
 
-	<div class="game-container">
-		<h1>Password Checker</h1>
-		<h3 class="subtitle">This Tool is just for Awareness purposes only - nothing is recorded !</h3>
+	<!--div class="game-container">
+		<h1 style="color: white;">Password Checker</h1>
+		<h3 class="subtitle" style="color: white;">This Tool is just for Awareness purposes only - nothing is recorded !</h3>
 		<input type="password" id="password" placeholder="Enter your password" />
 		<button onclick="checkPassword()">Check Password</button>
 		<div class="result" id="result"></div>
-	</div>
+	</div-->
 
 	 
 	<div class="header-right">
@@ -400,17 +435,17 @@
     <ul>
         <li><a href="#" onclick="showSection('summary')">Summary</a></li>
         <li><a href="#" onclick="showSection('education')">Education</a></li>
-	<li><a href="#" onclick="showSection('AwardandMemberships')">Award and Memberships</a></li>
-	<li><a href="#" onclick="showSection('Positions')">Positions</a></li>
+		<li><a href="#" onclick="showSection('AwardandMemberships')">Award and Memberships</a></li>
+		<li><a href="#" onclick="showSection('Positions')">Positions</a></li>
         <li><a href="#" onclick="showSection('projects')">Projects/Grants</a></li>
         <li><a href="#" onclick="showSection('experience')">Experience</a></li>
-	<li><a href="#" onclick="showSection('Teaching')">Teaching</a></li>
+		<li><a href="#" onclick="showSection('Teaching')">Teaching</a></li>
         <li><a href="#" onclick="showSection('certifications')">Certifications</a></li>
         <li><a href="#" onclick="showSection('ProfessionalExperience')">Professional Experience</a></li>
-	<li><a href="#" onclick="showSection('Publications')">Publications</a></li>
+		<li><a href="#" onclick="showSection('Publications')">Publications</a></li>
         <li><a href="#" onclick="showSection('skills')">Skills</a></li>
-	<li>-------</li>  
-	<li><a href="#" onclick="showSection('Tools')">Tools</a></li>
+		<li>-------</li>  
+		<li><a href="#" onclick="showSection('Tools')">Tools</a></li>
     </ul>
 </nav>
 
@@ -433,10 +468,10 @@
         <!--div class="news-ticker"-->
             <!--div class="news-items"-->
                <ul>
-               <p><li>My Latest Publication on ACM transaction TOCE is <a href="https://link.growkudos.com/1qa9c4bstmo" target="_blank"> HERE </a></li></p>
-		<p><li>Accepted paper in the <a href="https://blogs.shu.ac.uk/socmedhe/socmedhe24/" target="_blank">SocMedHE24 </a> conference</li></p>
-		<p><li><strong>30 October, 2024:</strong> Organising and hosting an event with Apple on KCL campus, titled "Apple & KCL - Formal Verification Tech Talk " </li></p>
-		<p><li><strong>October 2024:</strong> Accepted Article in <a href="https://dl.acm.org/journal/TOCE" target="_blank"> ACM-TOCE </a></li></p>
+				<p><li>My Latest Publication on ACM Transaction TOCE:  <a href="https://link.growkudos.com/1qa9c4bstmo" target="_blank"> Available here! </a></li></p>
+				<p><li>Accepted paper in the <a href="https://blogs.shu.ac.uk/socmedhe/socmedhe24/" target="_blank">SocMedHE24 </a> conference</li></p>
+				<p><li><strong>30 October, 2024:</strong> Organising and hosting an event with Apple on KCL campus, titled "Apple & KCL - Formal Verification Tech Talk " </li></p>
+				<p><li><strong>October 2024:</strong> Accepted Article in <a href="https://dl.acm.org/journal/TOCE" target="_blank"> ACM-TOCE </a></li></p>
                 <p><li><strong>August 2024:</strong> Submitted 3 projects for funding</li></p>
                 <p><li><strong>July 2024:</strong> Event Organiser and Lead in Collaboration with Microsoft on Digital Skills "Upskilling for Success" <a href="https://blogs.kcl.ac.uk/kingscareers/informatics-microsoft-digital-skills-event/" target="_blank"> Details </a></li></p>
 		<p><li><strong>July 2024:</strong> Invited Panlist in "International Event – Women of MENA in Technology" <a href="https://blogs.kcl.ac.uk/kingscareers/advancing-ai-in-cybersecurity-event/" target="_blank"> Details </a></li></p>
@@ -521,7 +556,6 @@
     <h3>Membership of Professional Bodies</h3>
     <div class="details">
         <ul>
-            <li>Evaluator and Assessor of Funding Projects – KAUST . September 2024</li>
             <li>Member of the Society for Research into Higher Education (SRHE) . January 2024 - Present</li>
             <li>Member of CSE Connect King's College London . Cyber Security Education Network (UK) . January 2024 - Present</li>
 			<li>Member of the Association for Learning Development in Higher Education (ALDinHE) . December 2023 - Present</li>
@@ -546,7 +580,7 @@
     
         <ul>
     <li>Module Lead of Advanced Cybersecurity for Postgraduate at King’s College London. September 2021.</li>
-    <li>Deputy Chair of the online cybersecurity assessment sub-board committee. Collaborate with the external examiner to evaluate academic programs, provide feedback on assessment standards, and ensure quality assurance at the program. December 2021 – present.</li>
+    <li>Deputy Chair of the online cybersecurity assessment sub-board committee. December 2021 – present.</li>
     <li>Employability and Career Lead, Informatics, Natural Mathematics and Engineering, King’s College London, United Kingdom, December 2021 – Current.</li>
     <li>Acting Chair, Computer Information Systems, Higher Colleges of Technology, United Arab Emirates, 09/2017 – 07/2018.</li>
     <li>Campus Council Member, Al-Ain Campuses, Higher Colleges of Technology, United Arab Emirates, 09/2018 – 07/2021.</li>
@@ -562,13 +596,13 @@
     <h2>Education</h2>
     
         <ul>
-            <li><strong>Doctor of Philosophy (Ph.D. Engineering) <a href="https://www.uni-kassel.de/uni/en/" target="_blank">University Kassel</a> . Germany . Aug 2014</strong>
-                <p>Title: “Adaptive Real-time Anomaly-based Intrusion Detection using Data Mining and Machine Learning Techniques” <a href="https://kobra.uni-kassel.de/handle/123456789/2014091546010" target="_blank">LINK</a></p>
+            <li><strong>Doctor of Philosophy (Ph.D. Engineering). University Kassel (<a href="https://www.uni-kassel.de/uni/en/" target="_blank">🔗</a>) . Germany . Aug 2014</strong>
+                <p>Title: “Adaptive Real-time Anomaly-based Intrusion Detection using Data Mining and Machine Learning Techniques” <a href="https://kobra.uni-kassel.de/handle/123456789/2014091546010" target="_blank">🔗</a></p>
             </li>
-            <li><strong>Master of Science (M.Sc. Computer Engineering) <a href="https://www.uni-due.de/en/" target="_blank">University Duisburg-Essen</a> . Germany . May 2006</strong>
+            <li><strong>Master of Science (M.Sc. Computer Engineering). University Duisburg-Essen (<a href="https://www.uni-due.de/en/" target="_blank">🔗</a>) . Germany . May 2006</strong>
                 <p>Title: “Developing of a secure web-based application for administrating Linux Cluster”</p>
             </li>
-            <li><strong>Bachelor of Science (B.Sc. Computer Engineering) <a href="https://www.just.edu.jo/Pages/Default.aspx" target="_blank">Jordan University of Science and Technology</a> . Jordan . May 2002</strong>
+            <li><strong>Bachelor of Science (B.Sc. Computer Engineering). Jordan University of Science and Technology ( <a href="https://www.just.edu.jo/Pages/Default.aspx" target="_blank">🔗</a>) . Jordan . May 2002</strong>
                 <p>Title: “Design and Implementation of a magnetic suspension and elevation system”</p>
             </li>
         </ul>
@@ -812,10 +846,10 @@
         <div class="details">
      <ul>
 		<li>Computer Forensics and Cybercrime</li>
-	    	<li>Systems Analysis and Design</li>
+	    <li>Systems Analysis and Design</li>
 		<li>Security Engineering</li>
-	     	<li>Information Systems Security</li>
-	     	<li>Statistics for Data Science</li>
+	     <li>Information Systems Security</li>
+	     <li>Statistics for Data Science</li>
 		<li>Security Testing (Pentest and Ethical Hacking)</li>
 		<li>Cybersecurity Analysis and Reporting</li>
 		<li>Ethical Hacking and Intrusion Detection</li>
@@ -895,10 +929,13 @@
 <section id="ProfessionalExperience">
     <h2>Professional Experience (Selected)</h2>
     <div class="project" onclick="toggleDetails(this)">
-        <h3>Committee member <p style="text-align: right; float: right;"> September 2017 - Present </P></h3>
+        <h3>Committee member <p style="text-align: right; float: right;"> Sep 2017 - Present </P></h3>
         <div class="details">
         <ul>
-            <li>2022 International Conference on Innovations in Computing Research (ICR’22)  </li>
+            <li>External Examiner Cyber Security for a leading university in the UK . November 2024 - Present</li>
+			<li>External Academic Panel Member at a prestigious academic institution in the UK  . November 2024 - Present</li>
+			<li>Evaluator and Assessor of Funding Projects at a prestigious academic institution in Saudi Arabia . August 2024 - October 2024</li>
+			<li>2022 International Conference on Innovations in Computing Research (ICR’22)  </li>
             <li>IEEE - HCT Information Technology Trends (ITT) Conference </li>
 			<li>Public Chair at ISICS 2020 conference  </li>
            </ul>
@@ -966,30 +1003,31 @@
     <h2>Publications (Selected)</h2>
 
 <ul class="references">
-    	<li>Al Tamimi, A., <strong>Salem, M.</strong>, Alwadan, T., Rodan, A., <strong class="highlight">(2024)</strong>. <i>The Power of the Gram: Leveraging Instagram for Effective Communication in Higher Education </i>. Social Media for Learning in Higher Education ( <a href="https://blogs.shu.ac.uk/socmedhe/socmedhe24/" target="_blank">SocMedHE24 </a> )Conference. – Just Accepted -</li>
-   	<li><strong>Salem, M.</strong>, Al Tamimi, A., Samara, K. <strong class="highlight">(2024)</strong>. <i>Navigating Challenges in Online Cybersecurity Education: Insights from Postgraduate Students and Prospects for a Standardized Framework</i>. ACM Transaction on Computing Education (TOCE). <a href="https://doi.org/10.1145/3703163" target="_blank">LINK</a></li>
-   	<li><strong>Salem, M.</strong> <strong class="highlight">(2024)</strong> <i>‘Enhancing Equality, Diversity, and Inclusion in Online Cybersecurity Education: A Multi-Layered Approach’</i>, HE Teaching Development Conference, Royal Holloway. Published <a href="https://thesis.psychologyresearch.co.uk/programme/#:~:text=1%20(Moore%20Auditorium)-,Enhancing%20Equality%2C%20Diversity%2C%20and%20Inclusion%20in%20Online%20Cybersecurity%20Education%3A%20A%20Multi%2DLayered%20Approach,-Maher%20Salem">LINK</a></li>
-    	<li><strong>Salem, M.</strong>, Samara, K., Pray, J., & Hussein, M. <strong class="highlight">(2024)</strong>. <i>Evaluating the Effectiveness of Online Cybersecurity Program in Higher Education</i>. In 2024 IEEE Global Engineering Education Conference (EDUCON) (pp. 1-9). IEEE. <a href="https://ieeexplore.ieee.org/document/10578833" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong> and A. -K. Al-Tamimi, "A Novel Threat Intelligence Detection Model Using Neural Networks," in <i>IEEE Access</i>, vol. 10, pp. 131229-131245, 2022, doi: 10.1109/ACCESS.2022.3229495.<a href="https://ieeexplore.ieee.org/document/9987501" target="_blank">LINK</a></li>
-    	<li>T Alwada’n, AK Al-Tamimi, AH Mohammad, M Salem, Y Muhammad (2023) <i>‘Dynamic congestion management system for cloud service broker’</i>, International Journal of Electrical and Computer Engineering (IJECE), 13(1), pp. 872–883.<a href="https://ijece.iaescore.com/index.php/IJECE/article/view/27587" target="_blank">LINK</a></li>
-   	 <li>Al-Tamimi, A.-K., Salem, M. and Al-Alami, A. (2020) <i>‘On the Use of Feature Selection for Music Genre Classification’</i>, in 2020 Seventh International Conference on Information Technology Trends (ITT). IEEE, pp. 1–6.<a href="https://ieeexplore.ieee.org/document/9320778" target="_blank">LINK</a></li>
-	<li>Abdennadher, S., Salem, M., Alkaabi, S.A.S., Alshebli, A.S. (2022). <i>‘Feasibility and Exploratory Study of Implementing the Blockchain Technology in the UAE Financial Markets.’</i>, In: Echchabi, A., Grassa, R., Sibanda, W. (eds) Contemporary Research in Accounting and Finance. Palgrave Macmillan, Singapore.<a href="https://doi.org/10.1007/978-981-16-8267-4_12" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong> (2020). <i>Blockchain-Based Authentication Approach for Securing Transportation System.</i> In: Brito-Loeza, C., Espinosa-Romero, A., Martin-Gonzalez, A., Safi, A. (eds) Intelligent Computing Systems. ISICS 2020. Communications in Computer and Information Science, vol 1187. Springer, Cham. <a href="https://doi.org/10.1007/978-3-030-43364-2_6" target="_blank"></a></li>
-    	<li>Hassan, D. et al. (2019) <i>‘Comparative study of using data mining techniques for bank telemarketing data’</i>, in 2019 Sixth HCT Information Technology Trends (ITT). IEEE, pp. 177–181.<a href="https://ieeexplore.ieee.org/document/9075123" target="_blank">LINK</a></li>
-    	<li>Manasrah, A. M., Abu Nasir, M. and Salem, M. (2020) <i>‘A privacy-preserving multi-keyword search approach in cloud computing’</i>, Soft Computing. Springer Berlin Heidelberg, 24(8), pp. 5609–5631.<a href="https://link.springer.com/article/10.1007/s00500-019-04033-z" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong>, Mohammed, M. and Rodan, A. (2019) <i>‘Security approach for in-vehicle networking using blockchain technology’</i>, in International Conference on Emerging Internetworking, Data & Web Technologies. Springer, Cham, pp. 504–515.<a href="https://link.springer.com/chapter/10.1007/978-3-030-12839-5_47" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong> and Mohammed, M. (2019) <i>‘Feasibility approach based on SecMonet framework to protect networks from advanced persistent threat attacks’</i>, in International Conference on Emerging Internetworking, Data & Web Technologies. Springer, Cham, pp. 333–343.<a href="https://link.springer.com/chapter/10.1007/978-3-030-12839-5_30" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong>, Samara, K. and Aldhaheri, M. S. (2019) <i>‘A novel integrated framework for securing online instructor-student communication’</i>, International Journal of Grid and Utility Computing. Inderscience Publishers (IEL), 10(1), pp. 42–52.<a href="https://www.inderscience.com/info/inarticle.php?artid=97229" target="_blank">LINK</a></li>
-	<li>Shawabkeh, A., Al-Beqain, F., Redan, A., & Salem, M. (2018, November).<i>‘Benzene air pollution monitoring model using ANN and SVM.’</i>,  In 2018 Fifth HCT Information Technology Trends (ITT) (pp. 197-204). IEEE.<a href="https://ieeexplore.ieee.org/abstract/document/8649497" target="_blank">LINK</a></li>
-	<li><strong>Salem, M.</strong>, Samara, K., & Aldhaheri, M. S. (2017, October).<i>‘Salem, M., Samara, K., & Aldhaheri, M. S. (2017, October). A secure heuristic framework for online instructor-student advising.’</i>,  In 2017 Fourth HCT Information Technology Trends (ITT) (pp. 39-44). IEEE.<a href="https://ieeexplore.ieee.org/abstract/document/8259564" target="_blank">LINK</a></li>
-	<li><strong>Salem, M.</strong>  and Buehler, U. (2014) <i>‘Transforming voluminous data flow into continuous connection vectors for IDS’</i>, International Journal of Internet Technology and Secured Transactions 8. Inderscience Publishers Ltd, 5(4), pp. 307–326.<a href="https://dl.acm.org/doi/10.1504/IJITST.2014.068710" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong> (2014) <i>Adaptive Real-time Anomaly-based Intrusion Detection using Data Mining and Machine Learning Techniques</i>.<a href="https://kobra.uni-kassel.de/handle/123456789/2014091546010?show=full" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong>, Buehler, U. and Reissmann, S. (2014) <i>‘Persistent Dataset Generation using Real-Time Operative Framework’</i>, in IEEE International Conference on Computing, Networking and Communications (ICNC). IEEE, pp. 1023–1027.<a href="https://ieeexplore.ieee.org/document/6785478" target="_blank">LINK</a></li>
-	<li><strong>Salem, M.</strong>, & Buehler, U. (2014).<i>‘Salem, M., & Buehler, U. (2014). A Comprehensive Model for Revealing Anomaly in Network Data Flow’</i>, In GI-Jahrestagung (pp. 913-924).<a href="https://cs.emis.de/LNI/Proceedings/Proceedings232/913.pdf" target="_blank">LINK</a></li>
-	<li><strong>Salem, M.</strong> and Buehler, U. (2013) <i>‘Reinforcing network security by converting massive data flow to continuous connections for IDS’</i>, in 8th International Conference for Internet Technology and Secured Transactions (ICITST-2013). IEEE, pp. 570–575.<a href="https://ieeexplore.ieee.org/document/6750267" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong> and Buehler, U. (2013) <i>‘An Enhanced GHSOM for IDS’</i>, in Systems, Man, and Cybernetics (SMC), 2013 IEEE International Conference on. IEEE, pp. 1138–1143.<a href="https://ieeexplore.ieee.org/document/6721951" target="_blank">LINK</a></li>
-    	<li><strong>Salem, M.</strong> and Buehler, U. (2012) <i>‘Mining Techniques in Network Security to Enhance Intrusion Detection Systems’</i>, International Journal of Network Security & Its Applications (IJNSA), 4(6).<a href="https://www.researchgate.net/publication/233871550_Mining_Techniques_in_Network_Security_to_Enhance_Intrusion_DetectionSystems" target="_blank">LINK</a></li>
-	<li><strong>Salem, M.</strong>, Bühler, U., Reißmann, S. (2012). <i>‘Improved Feature Selection Method using SBS-IG-Plus.’</i>, In: Pohlmann, N., Reimer, H., Schneider, W. (eds) ISSE 2011 Securing Electronic Business Processes. Vieweg+Teubner Verlag.<a href="https://doi.org/10.1007/978-3-8348-8652-1_31" target="_blank">LINK</a></li>
+		<li>Al Tamimi, A., <strong>Salem, M.</strong>, Alwadan, T., Rodan, A., <strong class="highlight">(2024)</strong>. <i>The Power of the Gram: Leveraging Instagram for Effective Communication in Higher Education </i>. Social Media for Learning in Higher Education (SocMedHE24) Conference. – Just Accepted - <a href="https://blogs.shu.ac.uk/socmedhe/socmedhe24/" target="_blank">🔗</a> </li>
+		<ul></ul>
+		<li><strong>Salem, M.</strong>, Al Tamimi, A., Samara, K. <strong class="highlight">(2024)</strong>. <i>Navigating Challenges in Online Cybersecurity Education: Insights from Postgraduate Students and Prospects for a Standardized Framework</i>. ACM Transaction on Computing Education (TOCE). <a href="https://doi.org/10.1145/3703163" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong> <strong class="highlight">(2024)</strong> <i>‘Enhancing Equality, Diversity, and Inclusion in Online Cybersecurity Education: A Multi-Layered Approach’</i>, HE Teaching Development Conference, Royal Holloway. Published <a href="https://thesis.psychologyresearch.co.uk/programme/#:~:text=1%20(Moore%20Auditorium)-,Enhancing%20Equality%2C%20Diversity%2C%20and%20Inclusion%20in%20Online%20Cybersecurity%20Education%3A%20A%20Multi%2DLayered%20Approach,-Maher%20Salem">🔗</a></li>
+		<li><strong>Salem, M.</strong>, Samara, K., Pray, J., & Hussein, M. <strong class="highlight">(2024)</strong>. <i>Evaluating the Effectiveness of Online Cybersecurity Program in Higher Education</i>. In 2024 IEEE Global Engineering Education Conference (EDUCON) (pp. 1-9). IEEE. <a href="https://ieeexplore.ieee.org/document/10578833" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong> and A. -K. Al-Tamimi, "A Novel Threat Intelligence Detection Model Using Neural Networks," in <i>IEEE Access</i>, vol. 10, pp. 131229-131245, 2022, doi: 10.1109/ACCESS.2022.3229495.<a href="https://ieeexplore.ieee.org/document/9987501" target="_blank">🔗</a></li>
+		<li>T Alwada’n, AK Al-Tamimi, AH Mohammad, M Salem, Y Muhammad (2023) <i>‘Dynamic congestion management system for cloud service broker’</i>, International Journal of Electrical and Computer Engineering (IJECE), 13(1), pp. 872–883.<a href="https://ijece.iaescore.com/index.php/IJECE/article/view/27587" target="_blank">🔗</a></li>
+		 <li>Al-Tamimi, A.-K., Salem, M. and Al-Alami, A. (2020) <i>‘On the Use of Feature Selection for Music Genre Classification’</i>, in 2020 Seventh International Conference on Information Technology Trends (ITT). IEEE, pp. 1–6.<a href="https://ieeexplore.ieee.org/document/9320778" target="_blank">🔗</a></li>
+		<li>Abdennadher, S., Salem, M., Alkaabi, S.A.S., Alshebli, A.S. (2022). <i>‘Feasibility and Exploratory Study of Implementing the Blockchain Technology in the UAE Financial Markets.’</i>, In: Echchabi, A., Grassa, R., Sibanda, W. (eds) Contemporary Research in Accounting and Finance. Palgrave Macmillan, Singapore.<a href="https://doi.org/10.1007/978-981-16-8267-4_12" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong> (2020). <i>Blockchain-Based Authentication Approach for Securing Transportation System.</i> In: Brito-Loeza, C., Espinosa-Romero, A., Martin-Gonzalez, A., Safi, A. (eds) Intelligent Computing Systems. ISICS 2020. Communications in Computer and Information Science, vol 1187. Springer, Cham. <a href="https://doi.org/10.1007/978-3-030-43364-2_6" target="_blank">🔗</a></li>
+		<li>Hassan, D. et al. (2019) <i>‘Comparative study of using data mining techniques for bank telemarketing data’</i>, in 2019 Sixth HCT Information Technology Trends (ITT). IEEE, pp. 177–181.<a href="https://ieeexplore.ieee.org/document/9075123" target="_blank">🔗</a></li>
+		<li>Manasrah, A. M., Abu Nasir, M. and Salem, M. (2020) <i>‘A privacy-preserving multi-keyword search approach in cloud computing’</i>, Soft Computing. Springer Berlin Heidelberg, 24(8), pp. 5609–5631.<a href="https://link.springer.com/article/10.1007/s00500-019-04033-z" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong>, Mohammed, M. and Rodan, A. (2019) <i>‘Security approach for in-vehicle networking using blockchain technology’</i>, in International Conference on Emerging Internetworking, Data & Web Technologies. Springer, Cham, pp. 504–515.<a href="https://link.springer.com/chapter/10.1007/978-3-030-12839-5_47" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong> and Mohammed, M. (2019) <i>‘Feasibility approach based on SecMonet framework to protect networks from advanced persistent threat attacks’</i>, in International Conference on Emerging Internetworking, Data & Web Technologies. Springer, Cham, pp. 333–343.<a href="https://link.springer.com/chapter/10.1007/978-3-030-12839-5_30" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong>, Samara, K. and Aldhaheri, M. S. (2019) <i>‘A novel integrated framework for securing online instructor-student communication’</i>, International Journal of Grid and Utility Computing. Inderscience Publishers (IEL), 10(1), pp. 42–52.<a href="https://www.inderscience.com/info/inarticle.php?artid=97229" target="_blank">🔗</a></li>
+		<li>Shawabkeh, A., Al-Beqain, F., Redan, A., & Salem, M. (2018, November).<i>‘Benzene air pollution monitoring model using ANN and SVM.’</i>,  In 2018 Fifth HCT Information Technology Trends (ITT) (pp. 197-204). IEEE.<a href="https://ieeexplore.ieee.org/abstract/document/8649497" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong>, Samara, K., & Aldhaheri, M. S. (2017, October).<i>‘Salem, M., Samara, K., & Aldhaheri, M. S. (2017, October). A secure heuristic framework for online instructor-student advising.’</i>,  In 2017 Fourth HCT Information Technology Trends (ITT) (pp. 39-44). IEEE.<a href="https://ieeexplore.ieee.org/abstract/document/8259564" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong>  and Buehler, U. (2014) <i>‘Transforming voluminous data flow into continuous connection vectors for IDS’</i>, International Journal of Internet Technology and Secured Transactions 8. Inderscience Publishers Ltd, 5(4), pp. 307–326.<a href="https://dl.acm.org/doi/10.1504/IJITST.2014.068710" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong> (2014) <i>Adaptive Real-time Anomaly-based Intrusion Detection using Data Mining and Machine Learning Techniques</i>.<a href="https://kobra.uni-kassel.de/handle/123456789/2014091546010?show=full" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong>, Buehler, U. and Reissmann, S. (2014) <i>‘Persistent Dataset Generation using Real-Time Operative Framework’</i>, in IEEE International Conference on Computing, Networking and Communications (ICNC). IEEE, pp. 1023–1027.<a href="https://ieeexplore.ieee.org/document/6785478" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong>, & Buehler, U. (2014).<i>‘Salem, M., & Buehler, U. (2014). A Comprehensive Model for Revealing Anomaly in Network Data Flow’</i>, In GI-Jahrestagung (pp. 913-924).<a href="https://cs.emis.de/LNI/Proceedings/Proceedings232/913.pdf" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong> and Buehler, U. (2013) <i>‘Reinforcing network security by converting massive data flow to continuous connections for IDS’</i>, in 8th International Conference for Internet Technology and Secured Transactions (ICITST-2013). IEEE, pp. 570–575.<a href="https://ieeexplore.ieee.org/document/6750267" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong> and Buehler, U. (2013) <i>‘An Enhanced GHSOM for IDS’</i>, in Systems, Man, and Cybernetics (SMC), 2013 IEEE International Conference on. IEEE, pp. 1138–1143.<a href="https://ieeexplore.ieee.org/document/6721951" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong> and Buehler, U. (2012) <i>‘Mining Techniques in Network Security to Enhance Intrusion Detection Systems’</i>, International Journal of Network Security & Its Applications (IJNSA), 4(6).<a href="https://www.researchgate.net/publication/233871550_Mining_Techniques_in_Network_Security_to_Enhance_Intrusion_DetectionSystems" target="_blank">🔗</a></li>
+		<li><strong>Salem, M.</strong>, Bühler, U., Reißmann, S. (2012). <i>‘Improved Feature Selection Method using SBS-IG-Plus.’</i>, In: Pohlmann, N., Reimer, H., Schneider, W. (eds) ISSE 2011 Securing Electronic Business Processes. Vieweg+Teubner Verlag.<a href="https://doi.org/10.1007/978-3-8348-8652-1_31" target="_blank">🔗</a></li>
 </ul>
     
 </section>
