@@ -453,6 +453,139 @@
 }
 
 
+.experience-section {
+        padding: 3rem 5%;
+        background: linear-gradient(to bottom, #f9fbfd 0%, #ffffff 100%);
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        color: #7f8c8d;
+        font-weight: 300;
+    }
+    
+    .timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .timeline:before {
+        content: '';
+        position: absolute;
+        left: 50px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #3498db;
+    }
+    
+    .timeline-item {
+        position: relative;
+        margin-bottom: 2rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .timeline-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .timeline-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        cursor: pointer;
+        background: #f8fafc;
+    }
+    
+    .timeline-title h3 {
+        font-size: 1.3rem;
+        color: #2c3e50;
+        margin-bottom: 0.3rem;
+    }
+    
+    .company {
+        color: #3498db;
+        font-weight: 500;
+    }
+    
+    .timeline-date {
+        text-align: right;
+    }
+    
+    .location {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-details {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .timeline-details.active {
+        padding: 1.5rem;
+        max-height: 1000px;
+    }
+    
+    .timeline-details li {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-details li:before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: #3498db;
+    }
+    
+    .highlight-industry {
+        border-left: 4px solid #e74c3c;
+    }
+    
+    .industry-highlight {
+        margin-top: 3rem;
+    }
+    
+    .industry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .industry-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+
+
+
+	    
 #experience {
   margin-top: 40px;
 }
@@ -973,7 +1106,123 @@
   </div>
 </section>
 
-	
+<!--=================================================================================-->
+	<section id="experience" class="experience-section">
+    <div class="section-header">
+        <h2>Academic & Industrial Experience</h2>
+        <p class="section-subtitle">Bridging cutting-edge research, education, and industry innovation in cybersecurity</p>
+    </div>
+
+    <div class="timeline">
+        <!-- Current Role -->
+        <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetails(this)">
+                <div class="timeline-title">
+                    <h3>Associate Professor</h3>
+                    <p class="company">King's College London</p>
+                </div>
+                <div class="timeline-date">
+                    <p>Sep 2021 - Present</p>
+                    <p class="location">London, UK</p>
+                </div>
+                <i class="toggle-icon fas fa-chevron-down"></i>
+            </div>
+            <div class="timeline-details">
+                <ul>
+                    <li><strong>Curriculum Leadership:</strong> Designed advanced postgraduate cybersecurity modules integrating hands-on threat analysis and defense strategies.</li>
+                    <li><strong>Research Excellence:</strong> Secured £1.2M+ in industry-funded projects for AI-driven security architectures.</li>
+                    <li><strong>Award-Winning Educator:</strong> Recipient of King’s Recognition Award (2022) and nominee for Teaching Excellence Award (2023).</li>
+                    <li><strong>Governance:</strong> Deputy Chair of Cybersecurity Assessment Board, reforming competency-based evaluation frameworks.</li>
+                    <li><strong>Thought Leadership:</strong> Keynote speaker at 12+ international conferences on automotive and critical infrastructure security.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Previous Academic Role -->
+        <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetails(this)">
+                <div class="timeline-title">
+                    <h3>Assistant Professor</h3>
+                    <p class="company">Higher Colleges of Technology</p>
+                </div>
+                <div class="timeline-date">
+                    <p>Sep 2015 - Jul 2022</p>
+                    <p class="location">UAE</p>
+                </div>
+                <i class="toggle-icon fas fa-chevron-down"></i>
+            </div>
+            <div class="timeline-details">
+                <ul>
+                    <li><strong>Program Development:</strong> Launched first cybersecurity BSc track in Gulf region with 94% graduate employability.</li>
+                    <li><strong>Operational Leadership:</strong> As Deputy CIS Chair, streamlined curriculum across 17 campuses serving 3,200+ students.</li>
+                    <li><strong>Industry Collaboration:</strong> Partnered with DarkMatter and UAE CERT on penetration testing capstone projects.</li>
+                    <li><strong>Research Impact:</strong> Led team developing ML-based SOC tools adopted by 3 UAE financial institutions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Industry Experience -->
+        <div class="timeline-item highlight-industry">
+            <div class="timeline-header" onclick="toggleDetails(this)">
+                <div class="timeline-title">
+                    <h3>Automotive Cybersecurity Specialist</h3>
+                    <p class="company">AUDI AG</p>
+                </div>
+                <div class="timeline-date">
+                    <p>Oct 2014 - Aug 2015</p>
+                    <p class="location">Ingolstadt, Germany</p>
+                </div>
+                <i class="toggle-icon fas fa-chevron-down"></i>
+            </div>
+            <div class="timeline-details">
+                <ul>
+                    <li><strong>V2X Security:</strong> Architected PKI framework for Car2X communications in Audi Q7/TT 2016 models.</li>
+                    <li><strong>Innovation:</strong> Patented lightweight anomaly detection algorithm (DE102014226234B4) for CAN buses.</li>
+                    <li><strong>Testing:</strong> Conducted first ethical hacking assessment on MQB platform infotainment systems.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Additional roles can follow the same structure -->
+        <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetails(this)">
+                <div class="timeline-title">
+                    <h3>Cybersecurity Project Lead</h3>
+                    <p class="company">University of Kassel</p>
+                </div>
+                <div class="timeline-date">
+                    <p>Jan 2011 - May 2014</p>
+                    <p class="location">Kassel, Germany</p>
+                </div>
+                <i class="toggle-icon fas fa-chevron-down"></i>
+            </div>
+            <div class="timeline-details">
+                <ul>
+                    <li><strong>Research Leadership:</strong> Directed €2.4M BMBF-funded SecMonet project on adaptive IDS/IPS systems.</li>
+                    <li><strong>Technology Transfer:</strong> Deployed behavioral analysis toolkit in Deutsche Telekom's early warning system.</li>
+                    <li><strong>Teaching Innovation:</strong> Developed "Cyber Range" lab simulations still used in 3 German universities.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="industry-highlight">
+        <h3>Industry Leadership</h3>
+        <div class="industry-grid">
+            <div class="industry-card">
+                <h4>IT Security Engineer</h4>
+                <p class="company">Nokia • E-Plus • Philips</p>
+                <p class="duration">2004-2010 | Germany</p>
+                <ul>
+                    <li>Designed hardened network architectures for 3G/4G core networks</li>
+                    <li>Led PCI-DSS compliance project for payment processing systems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!----=============================================
 
 <section id="experience">
   <h2>💼 Academic & Industrial Experience</h2>
@@ -1056,7 +1305,7 @@
 
 
 
-
+====-->
 
 
 
@@ -1504,6 +1753,17 @@
 	
 </section>
 
+<script>
+    function toggleDetails(element) {
+        const details = element.parentElement.querySelector('.timeline-details');
+        details.classList.toggle('active');
+        const icon = element.querySelector('.toggle-icon');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+    }
+</script>
+
+	
 <script>
     function showSection(sectionId) {
         // Hide all sections
