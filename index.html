@@ -1050,7 +1050,7 @@
     <div class="timeline">
         <!-- Current Role -->
         <div class="timeline-item">
-            <div class="timeline-header" onclick="toggleDetails(this)">
+            <div class="timeline-header" onclick="toggleDetailing(this)">
                 <div class="timeline-title">
                     <h3>Associate Professor</h3>
                     <p class="company">King's College London</p>
@@ -1074,7 +1074,7 @@
 
         <!-- Previous Academic Role -->
         <div class="timeline-item">
-            <div class="timeline-header" onclick="toggleDetails(this)">
+            <div class="timeline-header" onclick="toggleDetailing(this)">
                 <div class="timeline-title">
                     <h3>Assistant Professor</h3>
                     <p class="company">Higher Colleges of Technology</p>
@@ -1097,7 +1097,7 @@
 
         <!-- Industry Experience -->
         <div class="timeline-item highlight-industry">
-            <div class="timeline-header" onclick="toggleDetails(this)">
+            <div class="timeline-header" onclick="toggleDetailing(this)">
                 <div class="timeline-title">
                     <h3>Automotive Cybersecurity Specialist</h3>
                     <p class="company">AUDI AG</p>
@@ -1119,7 +1119,7 @@
 
         <!-- Additional roles can follow the same structure -->
         <div class="timeline-item">
-            <div class="timeline-header" onclick="toggleDetails(this)">
+            <div class="timeline-header" onclick="toggleDetailing(this)">
                 <div class="timeline-title">
                     <h3>Cybersecurity Project Lead</h3>
                     <p class="company">University of Kassel</p>
@@ -1148,7 +1148,7 @@
                 <p class="duration">2004-2010 | Germany</p>
                 <ul>
                     <li>Designed hardened network architectures for 3G/4G core networks</li>
-                    <li>IT Administyrator for installing, Configuring, and Monitoring Networks</li>
+                    <li>IT Administrator for installing, Configuring, and Monitoring Networks</li>
                 </ul>
             </div>
         </div>
@@ -1686,6 +1686,16 @@
 	
 </section>
 
+<script>
+    function toggleDetailing(element) {
+        const details = element.parentElement.querySelector('.timeline-details');
+        details.classList.toggle('active');
+        const icon = element.querySelector('.toggle-icon');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+    }
+</script>
+	
 <script>
     function toggleDetails(element) {
         const details = element.parentElement.querySelector('.timeline-details');
