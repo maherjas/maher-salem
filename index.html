@@ -422,7 +422,7 @@
 }
 
 
-	    .project-block {
+.project-block {
   border-left: 4px solid #007BFF;
   padding: 15px 20px;
   margin-bottom: 25px;
@@ -430,6 +430,16 @@
   border-radius: 6px;
 }
 
+.project-block:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, #007BFF, #00C4FF);
+  opacity: 0.5;
+  margin-top: 25px;
+}
+	    
 .project-block h3 {
   color: #003366;
   margin-bottom: 5px;
