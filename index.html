@@ -263,6 +263,37 @@
         color: red;
     }
 
+	.animated-attack-link {
+  display: inline-block;
+  background-color: yellow;
+  color: blue;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.animated-attack-link:hover {
+  background-color: #ffcc00; /* Lighter yellow on hover */
+  color: darkblue;
+  transform: translateY(-3px); /* Slight lift */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Pulsing animation for attention */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animated-attack-link:active {
+  animation: pulse 0.5s ease;
+}
+	
+
     .references {
         font-family: 'Roboto', serif;
         font-size: 14px;
@@ -673,6 +704,9 @@
 		<li>-------</li>  
 		<li><a href="#" onclick="showSection('Tools')">Tools</a></li>
 	    <li><a href="#" onclick="showSection('Students')" style="background-color: yellow; color: blue;">Supervised Works</a></li>
+	    <li>
+  		<a href="#" onclick="showSection('Students')" class="animated-attack-link">Animated Attacks</a>
+	    </li>
     </ul>
 </nav>
 
