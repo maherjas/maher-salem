@@ -319,6 +319,95 @@
         margin-bottom: 20px;
     }
 
+
+/* Gallery Grid Layout */
+.gif-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gif-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gif-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gif-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+
+.gif-caption {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Search & Filter Styling */
+.gif-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.search-bar, .filter-dropdown {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    margin: 5% auto;
+    border: 3px solid #ff5722;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ff5722;
+}
+	
+
     .right-sidebar {
         width: 20%;
         background: #003366;
@@ -736,12 +825,55 @@
  </div>
 
 
-<section id="Animated Attacks">
-    <h2>Animated Atatcks from the Web</h2>
+<section id="Animated-Attacks">
+    <h2>Animated Attacks from the Web</h2>
+    <p>Explore these interactive attack simulations to learn how web vulnerabilities work in action!</p>
     
-        <p>This is </p>
+    <!-- Search & Filter Bar -->
+    <div class="gif-controls">
+        <input type="text" id="gif-search" placeholder="Search attacks..." class="search-bar">
+        <select id="gif-filter" class="filter-dropdown">
+            <option value="mirai">Mirai</option>
+            <option value="xss">Cross-site-Scripting-XSS</option>
+            
+            <option value="csrf">CSRF</option>
+	   
+	    <option value="ddosntp">DDOS-Amplificacion-NTP</option>
+	    <option value="ddosdns">DDOS-Inundacion-DNS</option>
+		<option value="ddoshttp">DDOS-Inundacion-HTTP</option>
+		<option value="ddosmem">DDOS-MEMCACHED</option>
+		<option value="ddosslow">DDOS-Slowloris</option>
+		<option value="ddosssdp">DDOS-SSDP</option>
+		<option value="ddossyn">DDOS-TCP-SYN-FLOOD</option>
+		<option value="ddosvolume">DDOS-Volumetrico</option>
+		<option value="ddosby">Drive-by-Download</option>
+		<option value="decache">Envenenamiento-de-Cache-DNS</option>
+		<option value="idor">IDOR</option>
+		<option value="desql">Inyeccion-de-codigo-SQL</option>
+		<option value="mitm">Man-In-the-Middle</option>
+		<option value="ransome">Ransomware-v2</option>
+		<option value="salm">SALM-SSO</option>
+		<option value="social">Social-Engineering</option>
+		<option value="ssrf">SSRF</option>
+		<option value="su">Su-Domain Takeover</option>
+		<option value="xssref">XSS-REFLEJADO</option>
 		
+	
+        </select>
+    </div>
 
+    <!-- GIF Gallery Grid -->
+    <div class="gif-gallery">
+        <!-- Generated via JavaScript (see below) -->
+    </div>
+
+    <!-- Lightbox Modal (for enlarged GIFs) -->
+    <div id="gif-lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-gif" class="lightbox-content">
+        <div id="gif-caption"></div>
+    </div>
+</section>
 
 	
 
@@ -1965,6 +2097,78 @@ const questions = [
     }
 </script>
 
+
+<script>
+// Sample GIF data (replace with your actual GIFs and categories)
+const gifs = [
+    { id: 1, src: "Botnets-Mirai-5.gif", title: "Botnets Mirai", category: "mirai" },
+    { id: 2, src: "Cross-site-Scripting-XSS-4.gif", title: "Cross-site-Scripting-XSS", category: "xss" },
+	{ id: 3, src: "CSRF-2.gif", title: "CSRF", category: "csrf" },
+	{ id: 4, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 5, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 6, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 7, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 8, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 9, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 10, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 11, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 12, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 13, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	{ id: 14, src: ".gif", title: "Cross-site-Scripting-XSS", category: "" },
+	
+    // ... Add all 25 GIFs here
+];
+
+// Render GIFs dynamically
+function renderGifs(filter = "all") {
+    const gallery = document.querySelector('.gif-gallery');
+    gallery.innerHTML = '';
+    
+    gifs.filter(gif => filter === "all" || gif.category === filter).forEach(gif => {
+        gallery.innerHTML += `
+            <div class="gif-item" data-category="${gif.category}">
+                <img src="${gif.src}" alt="${gif.title}" onclick="openLightbox('${gif.src}', '${gif.title}')">
+                <div class="gif-caption">${gif.title}</div>
+            </div>
+        `;
+    });
+}
+
+// Lightbox functions
+function openLightbox(src, title) {
+    const lightbox = document.getElementById('gif-lightbox');
+    const lightboxImg = document.getElementById('lightbox-gif');
+    const caption = document.getElementById('gif-caption');
+    
+    lightbox.style.display = "block";
+    lightboxImg.src = src;
+    caption.innerHTML = title;
+}
+
+function closeLightbox() {
+    document.getElementById('gif-lightbox').style.display = "none";
+}
+
+// Event Listeners
+document.getElementById('gif-filter').addEventListener('change', (e) => {
+    renderGifs(e.target.value);
+});
+
+document.getElementById('gif-search').addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    document.querySelectorAll('.gif-item').forEach(item => {
+        const title = item.querySelector('.gif-caption').textContent.toLowerCase();
+        item.style.display = title.includes(searchTerm) ? "block" : "none";
+    });
+});
+
+document.querySelector('.close-btn').addEventListener('click', closeLightbox);
+
+// Initialize
+renderGifs();
+</script>
+
+	
 <footer>
     <p class ="social">Contact: <a href="mailto:maher.salem@kcl.ac.uk"><img src="https://maherjas.github.io\maher-salem\images\icons8-email-48.png" alt="Researchgate" style="width: 24px; height: 24px;  margin-right: 5px;"></a></p>
 	<div style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
