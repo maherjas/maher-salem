@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic CV: Maher Salem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .kpi-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            text-align: center;
+            border-left: 5px solid #0048BA;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #CCE0FF;
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: #0066FF;
+            border: 4px solid #f8fafc;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+            right: auto;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0048BA, #0066FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .section-title h2 {
+             font-size: 2.25rem;
+             line-height: 2.5rem;
+             font-weight: 800;
+             color: #1e293b;
+        }
+        .section-title p {
+            margin-top: 0.5rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+            color: #475569;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <header class="text-center py-12">
+            <h1 class="text-5xl md:text-7xl font-black gradient-text">Maher Salem, PhD, SFHEA</h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">An Associate Professor and Senior Fellow bridging the gap between industry and academia in Cybersecurity, with a proven track record of leadership, curriculum innovation, and enhancing the student experience.</p>
+        </header>
+
+        <main class="space-y-20">
+
+            <section>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="kpi-card">
+                        <p class="text-6xl font-extrabold text-[#0048BA]">20+</p>
+                        <p class="mt-2 text-xl font-semibold text-slate-800">Years Combined Experience</p>
+                        <p class="text-sm text-slate-500">Industry & Academia</p>
+                    </div>
+                    <div class="kpi-card">
+                        <p class="text-6xl font-extrabold text-[#0048BA]">Ph.D.</p>
+                        <p class="mt-2 text-xl font-semibold text-slate-800">Cybersecurity</p>
+                        <p class="text-sm text-slate-500">Machine Learning for IDS</p>
+                    </div>
+                    <div class="kpi-card">
+                        <p class="text-6xl font-extrabold text-[#0048BA]">SFHEA</p>
+                        <p class="mt-2 text-xl font-semibold text-slate-800">Senior Fellow HEA</p>
+                        <p class="text-sm text-slate-500">Excellence in Teaching</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <h2>Career Trajectory</h2>
+                    <p>A dynamic career path demonstrating a unique synthesis of hands-on industry expertise at leading global companies and impactful academic leadership at prestigious institutions.</p>
+                </div>
+                <div class="relative flex flex-col items-center timeline">
+                    <div class="timeline-item mb-8 w-full md:w-1/2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <span class="font-bold text-[#0048BA]">2021 – Present</span>
+                            <h3 class="text-lg font-semibold">King’s College London, UK</h3>
+                            <p class="text-sm text-slate-500">Associate Professor</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-8 w-full md:w-1/2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <span class="font-bold text-[#0066FF]">2015 – 2022</span>
+                            <h3 class="text-lg font-semibold">Higher Colleges of Technology, UAE</h3>
+                            <p class="text-sm text-slate-500">Assistant Professor</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-8 w-full md:w-1/2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <span class="font-bold text-[#0048BA]">2014 – 2015</span>
+                            <h3 class="text-lg font-semibold">AUDI AG, Germany</h3>
+                            <p class="text-sm text-slate-500">Automotive Cybersecurity Specialist</p>
+                        </div>
+                    </div>
+                     <div class="timeline-item mb-8 w-full md:w-1/2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <span class="font-bold text-[#0066FF]">2011 – 2014</span>
+                            <h3 class="text-lg font-semibold">Kassel University, Germany</h3>
+                            <p class="text-sm text-slate-500">Cybersecurity Project Lead</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item mb-8 w-full md:w-1/2">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <span class="font-bold text-[#0048BA]">2004 – 2010</span>
+                            <h3 class="text-lg font-semibold">Nokia, E-Plus, Philips, Germany</h3>
+                            <p class="text-sm text-slate-500">Network & System Security</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-8 rounded-xl shadow-lg order-2 lg:order-1">
+                    <h2 class="text-2xl font-bold text-slate-800">Academic & Strategic Leadership</h2>
+                    <p class="mt-2 text-slate-600">Driving excellence in cybersecurity education through a portfolio of key leadership roles focused on curriculum, student success, and industry alignment.</p>
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Lead Personal Tutor Review Process</li>
+						<li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Lead Career and Employability</li>
+                        <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Deputy Chair, Cybersecurity Assessment Board</li>
+                        <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Lead Cybersecurity Postgraduate Modules</li>
+                        <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Assessment and Feedback Coordinator</li>
+                        <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Enterprise and Engagement Member</li>
+                    </ul>
+                </div>
+                 <div class="bg-white p-8 rounded-xl shadow-lg order-1 lg:order-2">
+                    <h2 class="text-2xl font-bold text-slate-800">Core Competencies</h2>
+                     <p class="mt-2 text-slate-600">A balanced skill set honed across technical, educational, and strategic domains.</p>
+                    <div class="chart-container mt-4">
+                        <canvas id="skillsRadarChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="section-title">
+                    <h2>Research & Supervision</h2>
+                    <p>Fostering the next generation of cybersecurity talent through dedicated supervision and focusing research on pressing contemporary issues like GenAI security, threat intelligence, and educational innovation.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                    <div class="md:col-span-2 bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-center text-slate-800">Student Supervision Level</h3>
+                        <p class="text-center text-slate-500 mt-1">A strong commitment to developing talent at all academic stages.</p>
+                        <div class="chart-container h-64 max-h-64 mt-4">
+                            <canvas id="supervisionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-slate-800">Key Research Interests</h3>
+                        <ul class="mt-4 list-none space-y-3">
+                            <li class="flex items-start">
+                                <span class="font-bold text-[#0048BA] text-xl mr-3">➤</span>
+                                <div><span class="font-semibold">GenAI Security and LLMs:</span> Investigating emerging risks in the new AI era.</div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="font-bold text-[#0048BA] text-xl mr-3">➤</span>
+                                <div><span class="font-semibold">Threat Intelligence and Cybercrime:</span> Combating malicious actors and understanding their methods.</div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="font-bold text-[#0048BA] text-xl mr-3">➤</span>
+                                <div><span class="font-semibold">Cybersecurity and Education:</span> Developing innovative pedagogical approaches for online and project-based learning.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+             <section>
+                 <div class="section-title">
+                     <h2>Professional Recognition</h2>
+                     <p>A commitment to professional development and educational excellence, recognized through prestigious fellowships, awards, and industry certifications.</p>
+                 </div>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-[#0048BA] text-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
+                        <h3 class="font-bold text-lg">Senior Fellow HEA</h3>
+                        <p class="mt-1 text-sm opacity-80">SFHEA (2024)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="font-bold text-lg text-[#0066FF]">King's Education Award</h3>
+                        <p class="mt-1 text-sm text-slate-500">Nominated 2024 & 2025</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="font-bold text-lg text-[#0066FF]">CCNA Security</h3>
+                        <p class="mt-1 text-sm text-slate-500">Industry Standard Certification</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="font-bold text-lg text-[#0066FF]">ACM & BCS Professional</h3>
+                        <p class="mt-1 text-sm text-slate-500">Member of Leading Bodies</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-20 py-10 border-t border-slate-200">
+            <h2 class="text-2xl font-bold">Connect with Maher Salem</h2>
+            <div class="mt-4 flex justify-center space-x-6 text-slate-600">
+                <span>📞 +44 7736 082100</span>
+                <span><a href="mailto:maherjas@yahoo.com">📧 maherjas.at.yahoo.com</a></span>
+                <span><a href="https://www.linkedin.com/in/maher-j-a-salem" target="_blank">🌐 maher-j-a-salem (LinkedIn)</a></span>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        const skillsRadarCtx = document.getElementById('skillsRadarChart').getContext('2d');
+        new Chart(skillsRadarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Leadership', 'Teaching & Curriculum', 'Research & Supervision', ['Industry', 'Partnerships'], 'Technical Expertise'],
+                datasets: [{
+                    label: 'Core Competency Level',
+                    data: [9, 9.5, 8, 9, 8.5],
+                    backgroundColor: 'rgba(0, 102, 255, 0.2)',
+                    borderColor: '#0066FF',
+                    pointBackgroundColor: '#0066FF',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#0066FF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                 scales: {
+                    r: {
+                        angleLines: { color: '#e2e8f0' },
+                        grid: { color: '#e2e8f0' },
+                        pointLabels: { 
+                            font: { size: 12, family: "'Inter', sans-serif" },
+                            color: '#334155'
+                        },
+                        ticks: {
+                            display: false,
+                            stepSize: 2
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const supervisionCtx = document.getElementById('supervisionChart').getContext('2d');
+        new Chart(supervisionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['PhD Supervision', 'MSc Supervision', 'BSc Supervision'],
+                datasets: [{
+                    label: 'Project Count',
+                    data: [1, 6, 30],
+                    backgroundColor: ['#0048BA', '#3385FF', '#CCE0FF'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#475569',
+                            font: { family: "'Inter', sans-serif", size: 12 },
+                            boxWidth: 15,
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    </script>
+
+</body>
+</html>
