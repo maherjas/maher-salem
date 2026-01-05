@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://maherjas.github.io/maher-salem/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Maher Salem | Cybersecurity Expert & Academic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+<style>
+    :root {
+        --primary: #1a237e;
+        --secondary: #0d47a1;
+        --accent: #00bcd4;
+        --accent-dark: #0097a7;
+        --light: #f8f9fa;
+        --dark: #121212;
+        --gray: #424242;
+        --light-gray: #e0e0e0;
+        --success: #4caf50;
+        --warning: #ff9800;
+        --danger: #f44336;
+        --card-bg: #ffffff;
+        --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--dark);
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        padding: 30px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .header-content {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 4px solid var(--accent);
+        object-fit: cover;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        transition: var(--transition);
+    }
+
+    .profile-img:hover {
+        transform: scale(1.05);
+    }
+
+    .title-section h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        background: linear-gradient(90deg, #ffffff 0%, var(--accent) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .title-section .subtitle {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 4px;
+        font-weight: 300;
+    }
+
+    .title-section .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .badge {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .social-links {
+        display: flex;
+        gap: 12px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        transition: var(--transition);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .social-icon:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+    }
+
+    .header-tools {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tool-button {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+
+    .tool-button:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+    }
+
+    .tool-button.secondary {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .tool-button.secondary:hover {
+        background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: var(--card-shadow);
+        margin-top: 20px;
+        position: sticky;
+        top: 220px;
+        z-index: 999;
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .nav-item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-item h3 {
+        color: var(--primary);
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--accent);
+    }
+
+    .nav-link {
+        color: var(--gray);
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: var(--transition);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-link:hover {
+        background: rgba(0, 188, 212, 0.1);
+        color: var(--accent-dark);
+        transform: translateX(5px);
+    }
+
+    .nav-link i {
+        width: 20px;
+        text-align: center;
+    }
+
+    .nav-link.animated-attack-link {
+        background: linear-gradient(90deg, #ffeb3b 0%, #ff9800 100%);
+        color: var(--dark);
+        font-weight: 600;
+        border: none;
+    }
+
+    .nav-link.animated-attack-link:hover {
+        background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%);
+        color: white;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    main {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 30px;
+        margin: 30px 0;
+    }
+
+    .content-area {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 35px;
+        box-shadow: var(--card-shadow);
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--light-gray);
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        color: var(--primary);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .section-header h2 i {
+        color: var(--accent);
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        color: var(--gray);
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .sidebar-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: var(--card-shadow);
+    }
+
+    .sidebar-card h3 {
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .sidebar-card h3 i {
+        color: var(--accent);
+    }
+
+    .news-item {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .news-item:last-child {
+        border-bottom: none;
+    }
+
+    .news-item .date {
+        font-size: 0.85rem;
+        color: var(--accent-dark);
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .news-item p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .news-item a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+    }
+
+    .news-item a:hover {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid var(--accent);
+        transition: var(--transition);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+        color: var(--primary);
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card h3 .date {
+        font-size: 0.9rem;
+        color: var(--gray);
+        font-weight: 500;
+    }
+
+    .card .institution {
+        color: var(--accent-dark);
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .card ul {
+        padding-left: 20px;
+        margin: 15px 0;
+    }
+
+    .card li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+        position: relative;
+        padding-left: 30px;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom, var(--accent), var(--secondary));
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 30px;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -36px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px var(--accent);
+    }
+
+    .timeline-date {
+        font-size: 0.9rem;
+        color: var(--accent-dark);
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    /* ===== SKILLS GRID ===== */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .skill-category {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+    }
+
+    .skill-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-category h4 {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--accent);
+    }
+
+    .skill-category ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .skill-category li {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--light-gray);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .skill-category li:last-child {
+        border-bottom: none;
+    }
+
+    .skill-category li i {
+        color: var(--accent);
+        font-size: 0.9rem;
+    }
+
+    /* ===== PUBLICATIONS ===== */
+    .publication-item {
+        padding: 20px;
+        margin-bottom: 20px;
+        background: var(--card-bg);
+        border-radius: 10px;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+    }
+
+    .publication-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .publication-item strong {
+        color: var(--primary);
+    }
+
+    .publication-item .year {
+        background: var(--accent);
+        color: white;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+
+    .publication-item .doi {
+        display: inline-block;
+        margin-top: 10px;
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+    }
+
+    .publication-item .doi:hover {
+        color: var(--accent);
+        text-decoration: underline;
+    }
+
+    /* ===== GIF GALLERY ===== */
+    .gif-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .gif-item {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+    }
+
+    .gif-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .gif-item img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .gif-item:hover img {
+        transform: scale(1.05);
+    }
+
+    .gif-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+        color: white;
+        padding: 15px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .gif-controls {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .search-bar, .filter-dropdown {
+        flex: 1;
+        min-width: 200px;
+        padding: 12px 20px;
+        border: 2px solid var(--light-gray);
+        border-radius: 10px;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        transition: var(--transition);
+    }
+
+    .search-bar:focus, .filter-dropdown:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.2);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        padding: 40px 0;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+        font-weight: 500;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+
+    .copyright {
+        margin-top: 20px;
+        opacity: 0.8;
+        font-size: 0.9rem;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 1200px) {
+        main {
+            grid-template-columns: 1fr;
+        }
+        
+        .sidebar {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+    }
+
+    @media (max-width: 992px) {
+        .header-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 20px;
+        }
+        
+        .profile-section {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+        
+        .header-tools {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content-area {
+            padding: 25px;
+        }
+        
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .gif-gallery {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+        
+        .gif-controls {
+            flex-direction: column;
+        }
+        
+        .search-bar, .filter-dropdown {
+            min-width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .profile-img {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .title-section h1 {
+            font-size: 2rem;
+        }
+        
+        .section-header h2 {
+            font-size: 1.6rem;
+        }
+        
+        .card, .skill-category, .sidebar-card {
+            padding: 20px;
+        }
+        
+        .nav-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===== UTILITIES ===== */
+    .highlight {
+        background: linear-gradient(120deg, #e1f5fe 0%, #b3e5fc 100%);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: 600;
+    }
+
+    .tag {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin: 2px 5px 2px 0;
+    }
+
+    .tag.secondary {
+        background: var(--light-gray);
+        color: var(--gray);
+    }
+
+    .fade-in {
+        animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lightbox-content {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .close-btn:hover {
+        color: var(--accent);
+        transform: scale(1.2);
+    }
+
+    /* ===== VISITOR COUNTER ===== */
+    .visitor-counter {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 20px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .visitor-counter p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        opacity: 0.9;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div class="header-content">
+                <div class="profile-section">
+                    <img src="./MS_files/maher_salem.jpg" alt="Dr. Maher Salem" class="profile-img">
+                    <div class="title-section">
+                        <h1>Dr. Maher Salem</h1>
+                        <div class="subtitle">Associate Professor | Ph.D. Eng. | SFHEA</div>
+                        <div class="subtitle">Cybersecurity Expert & Educational Visionary</div>
+                        <div class="badges">
+                            <span class="badge">Cybersecurity</span>
+                            <span class="badge">AI & Machine Learning</span>
+                            <span class="badge">Digital Forensics</span>
+                            <span class="badge">Leadership (Research | Academic | Knowledge)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/maher-j-a-salem" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=WYlwawwAAAAJ&amp;hl=en" target="_blank" class="social-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://github.com/maherjas" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://orcid.org/0000-0002-6479-4335" target="_blank" class="social-icon">
+                        <i class="fab fa-orcid"></i>
+                    </a>
+                    <a href="mailto:maher.salem@kcl.ac.uk" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="header-tools">
+                    <a href="Maher-CV-Infographic.html" target="_blank" class="tool-button">
+                        <i class="fas fa-file-alt"></i> Infographic CV
+                    </a>
+                    <a href="CVSS-4.0-Calculator.html" target="_blank" class="tool-button secondary">
+                        <i class="fas fa-calculator"></i> CVSS 4.0 Calculator
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <div class="nav-grid">
+                <div class="nav-item">
+                    <h3>Academic Profile</h3>
+                    <a href="#" onclick="showSection('summary')" class="nav-link">
+                        <i class="fas fa-user"></i> Summary
+                    </a>
+                    <a href="#" onclick="showSection('education')" class="nav-link">
+                        <i class="fas fa-graduation-cap"></i> Education
+                    </a>
+                    <a href="#" onclick="showSection('AwardandMemberships')" class="nav-link">
+                        <i class="fas fa-award"></i> Awards & Memberships
+                    </a>
+                </div>
+                
+                <div class="nav-item">
+                    <h3>Professional</h3>
+                    <a href="#" onclick="showSection('Positions')" class="nav-link">
+                        <i class="fas fa-briefcase"></i> Positions
+                    </a>
+                    <a href="#" onclick="showSection('experience')" class="nav-link">
+                        <i class="fas fa-history"></i> Experience
+                    </a>
+                    <a href="#" onclick="showSection('ProfessionalExperience')" class="nav-link">
+                        <i class="fas fa-industry"></i> Professional Services
+                    </a>
+                </div>
+                
+                <div class="nav-item">
+                    <h3>Research</h3>
+                    <a href="#" onclick="showSection('projects')" class="nav-link">
+                        <i class="fas fa-flask"></i> Projects & Grants
+                    </a>
+                    <a href="#" onclick="showSection('Publications')" class="nav-link">
+                        <i class="fas fa-file-alt"></i> Publications
+                    </a>
+                    <a href="#" onclick="showSection('Students')" class="nav-link">
+                        <i class="fas fa-users"></i> Supervised Works
+                    </a>
+                </div>
+                
+                <div class="nav-item">
+                    <h3>Teaching & Skills</h3>
+                    <a href="#" onclick="showSection('Teaching')" class="nav-link">
+                        <i class="fas fa-chalkboard-teacher"></i> Teaching
+                    </a>
+                    <a href="#" onclick="showSection('skills')" class="nav-link">
+                        <i class="fas fa-code"></i> Skills
+                    </a>
+                    <a href="#" onclick="showSection('certifications')" class="nav-link">
+                        <i class="fas fa-certificate"></i> Certifications
+                    </a>
+                </div>
+                
+                <div class="nav-item">
+                    <h3>Resources</h3>
+                    <a href="#" onclick="showSection('Tools')" class="nav-link">
+                        <i class="fas fa-tools"></i> Tools (SW)
+                    </a>
+                    <a href="#" onclick="showSection('AnimatedAttacks')" class="nav-link animated-attack-link">
+                        <i class="fas fa-shield-alt"></i> Animated Attacks
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <div class="content-area">
+                <!-- Sections will be dynamically loaded here -->
+                <section id="summary" style="display: block;" class="fade-in">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user"></i> Professional Summary</h2>
+                    </div>
+                    <div class="card">
+                        <p>Strategic Academic Leader and Director of Research with a distinguished track record in driving institutional research agendas, knowledge exchange, 
+						and the delivery of high-impact cybersecurity programs across international markets.</p>
+                        
+                        <div style="margin-top: 25px;">
+                            <h4 style="color: var(--primary); margin-bottom: 15px;">Language Proficiency</h4>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                <div style="background: rgba(0, 188, 212, 0.1); padding: 15px; border-radius: 8px; flex: 1; min-width: 200px;">
+                                    <div style="font-weight: 600; color: var(--primary); margin-bottom: 5px;">Arabic</div>
+                                    <div style="color: var(--gray);">Native Proficiency</div>
+                                </div>
+                                <div style="background: rgba(0, 188, 212, 0.1); padding: 15px; border-radius: 8px; flex: 1; min-width: 200px;">
+                                    <div style="font-weight: 600; color: var(--primary); margin-bottom: 5px;">English</div>
+                                    <div style="color: var(--gray);">Professional Proficiency</div>
+                                </div>
+                                <div style="background: rgba(0, 188, 212, 0.1); padding: 15px; border-radius: 8px; flex: 1; min-width: 200px;">
+                                    <div style="font-weight: 600; color: var(--primary); margin-bottom: 5px;">German</div>
+                                    <div style="color: var(--gray);">Advanced Proficiency</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+<!-- ==================================================  Education ==================================================================-->
+
+                <section id="education" style="display: none;" class="fade-in">
+                    <h2>🎓 Education</h2>
+					  <ul style="list-style-type: none; padding-left: 0;">
+						
+						<li style="margin-bottom: 20px;">
+						  <strong>Ph.D. in Computer Science and Engineering (AI and Cybersecurity)</strong><br>
+						  <em>University of Kassel</em>, Germany <a href="https://www.uni-kassel.de/uni/en/" target="_blank">🌐</a> <br>
+						  <span><strong>Graduated:</strong> August 2014</span><br>
+						  <p><strong>Thesis:</strong> <em>Adaptive Real-time Anomaly-based Intrusion Detection using Data Mining and Machine Learning Techniques</em> 
+							<a href="https://kobra.uni-kassel.de/handle/123456789/2014091546010" target="_blank">[View Thesis]</a>
+						  </p>
+						</li>
+
+						<li style="margin-bottom: 20px;">
+						  <strong>M.Sc. in Computer Engineering (System-Security)</strong><br>
+						  <em>University of Duisburg-Essen</em>, Germany <a href="https://www.uni-due.de/en/" target="_blank">🌐</a> <br>
+						  <span><strong>Graduated:</strong> May 2006</span><br>
+						  <p><strong>Thesis:</strong> <em>Development of a Secure Web-Based Application for Managing Linux Clusters</em></p>
+						</li>
+
+						<li style="margin-bottom: 20px;">
+						  <strong>B.Sc. in Computer Engineering</strong><br>
+						  <em>Jordan University of Science and Technology</em>, Jordan <a href="https://www.just.edu.jo/Pages/Default.aspx" target="_blank">🌐</a> <br>
+						  <span><strong>Graduated:</strong> May 2002</span><br>
+						  <p><strong>Project:</strong> <em>Design and Implementation of a Magnetic Suspension and Elevation System</em></p>
+						</li>
+
+					  </ul>
+                </section>
+
+<!-- ==================================================  Awards ==================================================================-->
+
+                <section id="AwardandMemberships" style="display: none;" class="fade-in">
+                    <!-- Your content here -->
+					
+					<h2>Academic Awards &amp; 🎓 Professional Affiliations</h2>
+
+					  <div class="card-section">
+						<h3>🎖️ Academic Honors &amp; Recognitions</h3>
+						<ul class="styled-list">
+						  <li><strong>King’s Education Award</strong> – <em>Nominated</em>, King’s College London (2025)</li>
+						  <li><strong>King’s Education Award</strong> – <em>Nominated</em>, King’s College London (2024)</li>
+						  <li><strong>Senior Fellow (SFHEA)</strong> – Advance HE, United Kingdom (2024)</li>
+						  <li><strong>Recognition Awards</strong> – For Contributions to Teaching &amp; Innovation, King’s College London (2022 &amp; 2023)</li>
+						</ul>
+					  </div>
+
+					  <div class="card-section">
+						<h3>📚 Memberships in Professional &amp; Academic Communities</h3>
+						<ul class="styled-list">
+						  <li>Member – <strong>Professional member of the British Computer Society</strong> (April 2025 – Present)</li>
+						  <li>Member – <strong>Professional Member of Association for Computing Machinery (ACM)</strong> (April 2025 – Present)</li>
+						  <li>Member – <strong>King’s Computing Education Research Centre (CERC)</strong> (Sep 2024 – Present)</li>
+						  <li>Member – <strong>Society for Research into Higher Education (SRHE)</strong> (Jan 2024 – Present)</li>
+						  <li>Member – <strong>CSE Connect, King's College London</strong> (Cybersecurity Education Network, UK) (Jan 2024 – Present)</li>
+						  <li>Member – <strong>Association for Learning Development in Higher Education (ALDinHE)</strong> (Dec 2023 – Present)</li>
+						  <li>Member – <strong>King’s Academy of Education &amp; Innovation</strong> (Jan 2022 – Present)</li>
+						  <li>Cybersecurity Expert – <strong>Al Arabiya News</strong>, UK Broadcast Contributor (Jan 2022 – Present)</li>
+						  <li>Member – <strong>Cybersecurity Group, King’s College London</strong> (Enterprise &amp; Engagement Division) (Sep 2021 – Present)</li>
+						  <li>Member – <strong>Campus Council, Higher Colleges of Technology</strong> (UAE) (Sep 2019 – Jul 2021)</li>
+						</ul>
+					  </div>
+					
+                </section>
+				
+<!-- ==================================================  Positions ==================================================================-->
+
+                <section id="Positions" style="display: none;" class="fade-in">
+                    <!-- Your content here -->
+					
+					<h2>🧭 Leadership Roles &amp; Academic Governance</h2>
+
+					  <ul class="position-list">
+						<li>
+						  <div class="position-header">
+							<strong>Director Research and Knowledge Exchange</strong>
+							<span class="date">Nov 2025 – Present</span>
+						  </div>
+						  <em>Liverpool John Moores University | Oryx University Qatar</em>
+						  <p> provide strategic leadership for an organization's research activities and facilitate the translation of research findings into practical applications. 
+						      This involves fostering a research culture, securing funding, and building bridges between research teams and external partners to ensure knowledge generates tangible impac.</p>
+						</li>
+						
+						<li>
+						  <div class="position-header">
+							<strong>Programme Lead - Cybersecurity</strong>
+							<span class="date">Nov 2025 – Present</span>
+						  </div>
+						  <em>Liverpool John Moores University | Oryx University Qatar</em>
+						  <p> Direct and oversee the strategic development, delivery, and quality assurance of academic cybersecurity programs, ensuring curriculum relevance and educational excellence. </p>
+						</li>
+						
+						<li>
+						  <div class="position-header">
+							<strong>Module Lead – Advanced Cybersecurity (Postgraduate)</strong>
+							<span class="date">Sep 2021 – Present</span>
+						  </div>
+						  <em>King’s College London, UK</em>
+						  <p>Leading curriculum development and postgraduate delivery for the advanced cybersecurity track.</p>
+						</li>
+
+						<li>
+						  <div class="position-header">
+							<strong>Deputy Chair – Online Cybersecurity Assessment Sub-Board</strong>
+							<span class="date">Dec 2021 – Present</span>
+						  </div>
+						  <em>King’s College London, UK</em>
+						  <p>Oversight of academic assessment governance and quality assurance across online MSc programmes.</p>
+						</li>
+
+						<li>
+						  <div class="position-header">
+							<strong>Employability &amp; Career Lead – Informatics &amp; Engineering</strong>
+							<span class="date">Dec 2021 – Present</span>
+						  </div>
+						  <em>King’s College London, UK</em>
+						  <p>Driving career pathways, industry links, and student placement strategies across STEM departments.</p>
+						</li>
+
+						<li>
+						  <div class="position-header">
+							<strong>Acting Chair – Computer Information Systems</strong>
+							<span class="date">Sep 2017 – Jul 2018</span>
+						  </div>
+						  <em>Higher Colleges of Technology, UAE</em>
+						  <p>Managed faculty teams, strategic planning, and programme delivery at the departmental level.</p>
+						</li>
+
+						<li>
+						  <div class="position-header">
+							<strong>Campus Council Member – Al-Ain Campuses</strong>
+							<span class="date">Sep 2018 – Jul 2021</span>
+						  </div>
+						  <em>Higher Colleges of Technology, UAE</em>
+						  <p>Advised on institutional governance, student affairs, and academic development.</p>
+						</li>
+
+						<li>
+						  <div class="position-header">
+							<strong>System Course Team Leader – Computer Information Systems</strong>
+							<span class="date">Sep 2015 – Jul 2021</span>
+						  </div>
+						  <em>Higher Colleges of Technology, UAE</em>
+						  <p>Led system-wide curriculum alignment and digital learning integration across national campuses.</p>
+						</li>
+
+						<li>
+						  <div class="position-header">
+							<strong>Program Academic Committee Member – Computer Information Systems</strong>
+							<span class="date">Sep 2019 – Jul 2021</span>
+						  </div>
+						  <em>Higher Colleges of Technology, UAE</em>
+						  <p>Collaborated on curriculum review, quality assurance, and academic policy development.</p>
+						</li>
+					  </ul>
+					
+					
+                </section>
+<!-- ==================================================  Projects ==================================================================-->
+
+                <section id="projects" style="display: none;" class="fade-in">
+                    <!-- Your content here -->
+					
+					<h2>🔬 Selected Research Projects</h2>
+
+					  <div class="project-block">
+						<h3>King’s Undergraduate Research Fellowship</h3>
+						<p><strong>Institution:</strong> King’s College London</p>
+						<p><strong>Period:</strong> July 2023 &amp; July 2024</p>
+						<p><strong>Role:</strong> Principal Investigator</p>
+						<ul>
+						  <li>Supervised undergraduate and postgraduate cybersecurity research fellows.</li>
+						  <li>Coordinated multiple student-led cybersecurity investigations and publications.</li>
+						  <li><strong>Budget:</strong> £10,000</li>
+						</ul>
+					  </div>
+					<hr class="fancy-line">
+					  <div class="project-block">
+						<h3>Evaluating the Effectiveness of Online Cybersecurity Programs</h3>
+						<p><strong>Institution:</strong> King’s College London</p>
+						<p><strong>Period:</strong> May 2023 – Feb 2024</p>
+						<p><strong>Role:</strong> Principal Investigator</p>
+						<ul>
+						  <li>Assessed online cybersecurity programs from a career-readiness perspective.</li>
+						  <li>Bridged academic outcomes with practical industry demands for cybersecurity professionals.</li>
+						  <li><strong>Budget:</strong> £5,000</li>
+						</ul>
+					  </div>
+					<hr class="fancy-line">
+					  <div class="project-block">
+						<h3>CIREI – Smart Middleware for Assistive Robots in Frail Elderly Homes</h3>
+						<p><strong>Funding:</strong> UKRI EMERGENCE | King’s College London</p>
+						<p><strong>Period:</strong> 2023 – 2024</p>
+						<p><strong>Role:</strong> Co-Investigator</p>
+						<ul>
+						  <li>Built secure middleware architecture integrating IoT/robotics in home healthcare.</li>
+						  <li>Advanced smart-home cybersecurity for vulnerable populations.</li>
+						  <li><strong>Budget:</strong> £80,000</li>
+						</ul>
+					  </div>
+					<hr class="fancy-line">
+					  <div class="project-block">
+						<h3>Cybersecurity Training Program – Qatar Central Bank</h3>
+						<p><strong>Institution:</strong> King’s College London &amp; Qatar Central Bank</p>
+						<p><strong>Period:</strong> 2023</p>
+						<p><strong>Role:</strong> Lead Instructor &amp; Program Designer</p>
+						<ul>
+						  <li>Developed executive training on advanced cyber threats and response.</li>
+						  <li>Delivered real-world simulation-based modules to regulators and analysts.</li>
+						  <li><strong>Budget:</strong> Confidential</li>
+						</ul>
+					  </div>
+					<hr class="fancy-line">
+					  <div class="project-block">
+						<h3>Blockchain for Financial Market Infrastructure – UAE</h3>
+						<p><strong>Institution:</strong> Higher Colleges of Technology</p>
+						<p><strong>Period:</strong> 2020 – 2022</p>
+						<p><strong>Role:</strong> Principal Investigator</p>
+						<ul>
+						  <li>Explored blockchain-driven clearing and settlement systems for UAE financial markets.</li>
+						  <li>Proposed technical model for end-to-end digital transactions.</li>
+						  <li><strong>Budget:</strong> AED 200,000</li>
+						</ul>
+					  </div>
+					<hr class="fancy-line">
+					  <div class="project-block">
+						<h3>UAE-STUB – Securing Transportation Using Blockchain</h3>
+						<p><strong>Institution:</strong> Higher Colleges of Technology</p>
+						<p><strong>Period:</strong> 2019 – 2020</p>
+						<p><strong>Role:</strong> Principal Investigator</p>
+						<ul>
+						  <li>Developed blockchain-based vehicle monitoring for malicious activity detection.</li>
+						  <li><strong>Budget:</strong> AED 5,000</li>
+						</ul>
+					  </div>
+					<hr class="fancy-line">
+					  <div class="project-block">
+						<h3>Blockchain in Trading &amp; Clearing – Abu Dhabi Securities Exchange</h3>
+						<p><strong>Institution:</strong> Higher Colleges of Technology</p>
+						<p><strong>Period:</strong> 2019</p>
+						<p><strong>Role:</strong> Co-Investigator</p>
+						<ul>
+						  <li>Investigated blockchain use cases for national stock exchange operations.</li>
+						  <li><strong>Budget:</strong> AED 200,000</li>
+						</ul>
+					  </div>
+					<hr class="fancy-line">
+					  <div class="project-block">
+						<h3>IntErA – Intelligent Detection of Cyber-Attacks on IT Infrastructures</h3>
+						<p><strong>Institution:</strong> Kassel University (Germany)</p>
+						<p><strong>Period:</strong> 2014 – 2017</p>
+						<p><strong>Role:</strong> Principal Investigator</p>
+						<ul>
+						  <li>Secured €400K funding from the German Ministry for adaptive intrusion detection research.</li>
+						  <li>Proposed and built a prototype for pattern-based anomaly detection.</li>
+						  <li><strong>Budget:</strong> €400,000</li>
+						</ul>
+					  </div>
+					<hr class="fancy-line">
+					  <div class="project-block">
+						<h3>SecMonet – Research Project in Network Security</h3>
+						<p><strong>Institution:</strong> Kassel University (Germany)</p>
+						<p><strong>Period:</strong> 2011 – 2014</p>
+						<p><strong>Role:</strong> Principal Researcher</p>
+						<ul>
+						  <li>Designed adaptive intrusion detection using ML and feature selection techniques.</li>
+						  <li>Organized multiple international dissemination workshops and collaborations.</li>
+						  <li><strong>Budget:</strong> €370,000</li>
+						</ul>
+					  </div>
+					
+                </section>
+				
+<!-- ==================================================  experience ==================================================================-->
+
+                <section id="experience" style="display: none;" class="fade-in">
+                    <!-- Your content here -->
+					
+					 <div class="section-header">
+						<h2>Academic &amp; Industrial Experience</h2>
+						<p class="section-subtitle">Bridging cutting-edge research, education, and industry innovation in cybersecurity</p>
+					</div>
+
+					<div class="timeline">
+						<!-- Current Role -->
+						
+						<div class="timeline-item">
+							<div class="timeline-header" onclick="toggleDetailing(this)">
+								<div class="timeline-title">
+									<h3>Associate Professor</h3>
+									<p class="company">Liverpool John Moores University | Oryx University</p>
+								</div>
+								<div class="timeline-date">
+									<p>Oct 2025 - Present</p>
+									<p class="location">Doha, Qatar</p>
+								</div>
+								<i class="toggle-icon fas fa-chevron-down"></i>
+							</div>
+							<div class="timeline-details">
+								<ul>
+									<li><strong>Curriculum Leadership:</strong> Delivering cybersecurity modules and integrating advanced Cybersecurity activities.</li>
+									
+								</ul>
+							</div>
+						</div>
+						
+						
+						<div class="timeline-item">
+							<div class="timeline-header" onclick="toggleDetailing(this)">
+								<div class="timeline-title">
+									<h3>Visiting Professor (Affiliate)</h3>
+									<p class="company">King's College London</p>
+								</div>
+								<div class="timeline-date">
+									<p>Sep 2025 - Present</p>
+									<p class="location">London, UK</p>
+								</div>
+								<i class="toggle-icon fas fa-chevron-down"></i>
+							</div>
+							<div class="timeline-details">
+								<ul>
+									<li>PhD Research Supervision</li>
+									
+								</ul>
+							</div>
+						</div>
+						
+						
+						<div class="timeline-item">
+							<div class="timeline-header" onclick="toggleDetailing(this)">
+								<div class="timeline-title">
+									<h3>Associate Professor</h3>
+									<p class="company">King's College London</p>
+								</div>
+								<div class="timeline-date">
+									<p>Sep 2021 - Present</p>
+									<p class="location">London, UK</p>
+								</div>
+								<i class="toggle-icon fas fa-chevron-down"></i>
+							</div>
+							<div class="timeline-details">
+								<ul>
+									<li><strong>Curriculum Leadership:</strong> Designed advanced postgraduate cybersecurity modules integrating advanced Cybersecurity activities.</li>
+									<li><strong>Research Excellence:</strong> Secured funded projects and publish in top tier venues.</li>
+									<li><strong>Award-Winning Educator:</strong> Recipient of King’s Recognition Award (2022 &amp; 2023) and nominee for Teaching Excellence Award (2024 &amp; 2025).</li>
+									<li><strong>Governance:</strong> Deputy Chair of Cybersecurity Assessment Board, reforming competency-based evaluation frameworks.</li>
+									<li><strong>Thought Leadership:</strong> Keynote speaker at 12+ international conferences/Exhibitions/Events/News on Cybersecurity.</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Previous Academic Role -->
+						<div class="timeline-item">
+							<div class="timeline-header" onclick="toggleDetailing(this)">
+								<div class="timeline-title">
+									<h3>Assistant Professor</h3>
+									<p class="company">Higher Colleges of Technology</p>
+								</div>
+								<div class="timeline-date">
+									<p>Sep 2015 - Jul 2022</p>
+									<p class="location">UAE</p>
+								</div>
+								<i class="toggle-icon fas fa-chevron-down"></i>
+							</div>
+							<div class="timeline-details">
+								<ul>
+									<li><strong>Program Development:</strong> Design and develop undergraduate courses in Cybersecurity.</li>
+									<li><strong>Operational Leadership:</strong>Deputy CIS Chair, Campus council member, and Member of campus strategic planning .</li>
+									<li><strong>Industry Collaboration:</strong> Partnered with DarkMatter and UAE CERT on penetration testing capstone projects.</li>
+									<li><strong>Research Impact:</strong> Led team developing cybersecurity innovative solutions for UAE financial institutions.</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Industry Experience -->
+						<div class="timeline-item highlight-industry">
+							<div class="timeline-header" onclick="toggleDetailing(this)">
+								<div class="timeline-title">
+									<h3>Automotive Cybersecurity Specialist</h3>
+									<p class="company">AUDI AG</p>
+								</div>
+								<div class="timeline-date">
+									<p>Oct 2014 - Aug 2015</p>
+									<p class="location">Ingolstadt, Germany</p>
+								</div>
+								<i class="toggle-icon fas fa-chevron-down"></i>
+							</div>
+							<div class="timeline-details">
+								<ul>
+									<li><strong>V2X Security:</strong>Architected security solutions such as TPM and HSM, for in-vehicle ECUs. </li>
+									<li><strong>Innovation:</strong> Led an in-vehicle Intrusion Detection System project.</li>
+									<li><strong>Testing:</strong> Conducted penetration testing for automotive ECU security .</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Additional roles can follow the same structure -->
+						<div class="timeline-item">
+							<div class="timeline-header" onclick="toggleDetailing(this)">
+								<div class="timeline-title">
+									<h3>Cybersecurity Project Lead</h3>
+									<p class="company">University of Kassel</p>
+								</div>
+								<div class="timeline-date">
+									<p>Jan 2011 - May 2014</p>
+									<p class="location">Kassel, Germany</p>
+								</div>
+								<i class="toggle-icon fas fa-chevron-down"></i>
+							</div>
+							<div class="timeline-details">
+								<ul>
+									<li><strong>Research Leadership:</strong> Directed €370K BMBF-funded SecMonet project on adaptive IDS/IPS systems.</li>
+									<li><strong>Teaching Innovation:</strong> Teaching and administration Cybersecurity courses and labs.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="industry-highlight">
+						<h3>Industry Leadership</h3>
+						<div class="industry-grid">
+							<div class="industry-card">
+								<h4>IT Security Engineer</h4>
+								<p class="company">Nokia • E-Plus • Philips</p>
+								<p class="duration">2004-2010 | Germany</p>
+								<ul>
+									<li>Designed hardened network architectures for 3G/4G core networks</li>
+									<li>IT Administrator for installing, Configuring, and Monitoring Networks</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+	
+					
+                </section>
+
+
+<!-- ==================================================  Teaching ==================================================================-->
+
+
+                <section id="Teaching" style="display: none;" class="fade-in">
+                    <!-- Your content here -->
+					
+					<h2>📘 Teaching Experience &amp; Academic Training</h2>
+
+					  <!-- Courses Taught -->
+					  <div class="teaching-block">
+						<br>
+						  <h3>Courses Delivered</h3>
+					
+						<p><strong>Postgraduate &amp; Undergraduate Curriculum:</strong></p>
+						<ul class="two-column-list">
+						  <li>Cybersecurity Analysis &amp; Reporting</li>
+						  <li>Security Engineering</li>
+						  <li>Computer Forensics &amp; Cybercrime</li>
+						  <li>Security Testing (Pentest &amp; Ethical Hacking)</li>
+						  <li>Incident Response Planning</li>
+						  <li>Network Security &amp; IDS/IPS</li>
+						  <li>Ethical Hacking &amp; Intrusion Detection</li>
+						  <li>Systems Analysis &amp; Design</li>
+						  <li>Information Systems Security</li>
+						  <li>Security Intelligence</li>
+						  <li>Statistics for Data Science</li>
+						  <li>Risk Management</li>
+						  <li>Capstone Supervision Projects</li>
+						</ul>
+					  </div>
+
+					  <!-- Accreditation Participation -->
+					  <div class="teaching-block">
+						<br>
+						  <h3>Participation in Academic Accreditation</h3>
+						
+						<ul>
+						  <li><strong>Artificial Intelligence BSc Programme</strong> – Academic Career Lead, King’s College London  
+							<span class="sub-detail">British Computer Society | 06/2023 – 06/2026</span></li>
+						  <li><strong>Cybersecurity MSc (Online)</strong> – Module Lead, King’s College London  
+							<span class="sub-detail">National Cybersecurity Centre (NCSC) | 03/2024 – Present</span></li>
+						  <li><strong>Computer Information Systems BSc</strong> – Contributor, HCT  
+							<span class="sub-detail">Canada’s Association of IT Professionals (CIPS) | 05/2018 – 05/2021</span></li>
+						</ul>
+					  </div>
+
+					  <!-- Student Supervision -->
+					  <div class="teaching-block">
+						<br>
+						  <h3>Research Student Supervision</h3>
+						
+						<ul>
+						  <li><strong>PhD:</strong> Critical Software Vulnerability Discovery using AI – 2024/25</li>
+						  <li><strong>BSc:</strong> Combating Fake Social Media Accounts Using Threat Intelligence – 2024/25</li>
+						  <li><strong>BSc:</strong> Inclusive Virtual Machine for Cybersecurity Testing – 2023/24</li>
+						  <li><strong>MSc:</strong> AI Protection for Senior Citizens – 2023</li>
+						  <li><strong>BSc:</strong> Project-Based Cybersecurity Learning Model – 2022/23</li>
+						  <li><strong>MSc:</strong> Adaptive Malware Pattern Generation (Awarded Best Project) – 2021/22</li>
+						  <li><strong>BSc:</strong> Detecting Malware in WhatsApp Using ML – 2021/22</li>
+						  <li><strong>MSc:</strong> Hierarchical SOM for Malware Detection – 2021/22</li>
+						  <li><strong>BSc:</strong> Analyzing Student Feedback using ML – 2022/23</li>
+						  <li><strong>BSc:</strong> 50+ Projects Supervised in Cybersecurity (2015–2020)</li>
+						  <li><strong>MSc &amp; BSc:</strong> IPv6 &amp; Intrusion Detection Projects (2011–2014)</li>
+						</ul>
+					  </div>
+
+					  <!-- Academic Training -->
+					  <div class="teaching-block">
+						<br>
+						  <h3>Academic Training &amp; Certifications</h3>
+						
+						<ul class="multi-column-list">
+						  <li>Module Design – King’s Academy (UK)</li>
+						  <li>Tutorship Training – King’s Academy (UK)</li>
+						  <li>PhD Supervision – King’s Academy (UK)</li>
+						  <li>Diversity &amp; Bystander Training – King’s Academy (UK)</li>
+						  <li>Interactive Learning Resources – King’s Academy (UK)</li>
+						  <li>Personalised Learning – King’s Academy (UK)</li>
+						  <li>Instructional Design – Becker Academy (USA)</li>
+						  <li>Blackboard Teacher Certification – HCT</li>
+						  <li>Technology Integration in Online Classes – HCT</li>
+						  <li>Online Collaboration with Office 365, Teams, Nearpod – HCT</li>
+						  <li>UKPSF Classroom Observation Standards – HCT</li>
+						</ul>
+					  </div>
+					
+                </section>
+
+<!-- ==================================================  certifications ==================================================================-->
+
+                <section id="certifications" style="display: none;" class="fade-in">
+				
+								<h2>Certifications (Selected)</h2>
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>CISSP (Certified Information Systems Security Professional) 		<p style="text-align: right; float: right;"> ISC2 2024 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>(Note) : in the process of obtaining this certificate</li>
+							<li>CISSP is a globally recognized certification in information security. It validates your knowledge and expertise in a wide range of security domains</li>
+							<li><!-- Skill --></li>
+						</ul>
+						</div>
+					</div>
+					
+					
+				<div class="project" onclick="toggleDetails(this)">
+						<h3>Data Protection and Information Security  		<p style="text-align: right; float: right;"> King's College London . 2021 </p> </h3>
+						<div class="details">
+						<ul>
+						<li>The Data Protection and Information Security (Information Compliance) certificate is typically awarded to individuals who have completed training or 
+							education in the areas of data protection, information security, and regulatory compliance. This certification usually covers key topics: 
+							<ul>
+						<li>Data Protection Regulations</li>
+						<li>Information Security</li>
+						<li> Information Compliance</li>
+						<li>Risk Management</li>
+						<li>Confidentiality and Integrity</li>
+							</ul>
+						</li>
+						</ul>
+						</div>
+					</div>
+					
+					
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Personal Tutor Training certificate  		<p style="text-align: right; float: right;"> King's College London . 2021 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>Completing a full training course of personal tutor.  </li>
+						</ul>
+						</div>
+					</div>
+					
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Ethical Hacking: Exploit and The Complete Malware Analysis Process  		<p style="text-align: right; float: right;"> Coursera . 2020 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>Advances in Malware analysis and the use of top ethical hacking tools and scripts </li>
+						</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>IBM Blockchain Developer Training and Certification 		<p style="text-align: right; float: right;"> IBM . 2020 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>This certificate provides individuals with the skills and knowledge needed to develop and deploy blockchain applications on the Hyperledger Fabric platform. Through comprehensive training programs, participants gain hands-on experience with blockchain concepts, architecture, and development tools. The certification validates their expertise and opens up opportunities for careers in blockchain technology.</li>
+						</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Management Services (CPE) 		<p style="text-align: right; float: right;"> Becker Professional Education . 2020 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>Becker Professional Education offers a variety of Management Services (CPE) courses designed to help professionals maintain their continuing professional education requirements. These courses cover a wide range of topics, including leadership, management, business strategy, and ethics.</li>
+						</ul>
+						</div>
+					</div>
+					
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>certificate of Appreciation 		<p style="text-align: right; float: right;"> HCT Academic Succes Center . 2020 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>In recognition of my dedication and valuable contribution as a Faculty Tutor at Academic Success Center in the HCT</li>
+						</ul>
+						</div>
+					</div>
+					
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>IBM Security Intelligence - IBM Q Radar 		<p style="text-align: right; float: right;"> IBM - Higher Colleges of Technology . 2019 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>IBM QRadar is a comprehensive security information and event management (SIEM) platform that helps organizations detect and respond to cyber threats. It collects and analyzes data from various sources, including network devices, servers, and applications, to identify suspicious activity and potential security breaches. QRadar provides real-time threat detection, incident response capabilities, and compliance reporting, enabling organizations to protect their valuable assets and maintain a strong security posture.</li>
+						</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>CCNA Security Certificate 		<p style="text-align: right; float: right;"> CISCO Academy . 2019 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>Cover all important network security fundamentals</li>
+						</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Hikvision Certified Security Associate (HCSA) Certificate		<p style="text-align: right; float: right;"> HikVision . 2019 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>The Hikvision Certified Security Associate (HCSA) certificate is a valuable credential for individuals working in the security industry. It demonstrates a solid understanding of Hikvision security products and solutions, including video surveillance systems, access control, and intrusion detection. By obtaining the HCSA certification, individuals can enhance their career prospects, increase their earning potential, and gain a competitive edge in the job market.</li>
+						</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>AccessData (FTK) Certified Examiner 		<p style="text-align: right; float: right;"> Exterro (Former is AccessData) . 2018 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>Very well certificate covering advances in digital forensics</li>
+						</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Emirates Technology Innovation Competition (Cybersecurity) 		<p style="text-align: right; float: right;"> Emirates Technology Innovation Competition (Cybersecurity) . 2017 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>My Team won the Gold Award ( 1st Rank) in Cybersecurity Competition nation wide </li>
+						</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Elsevier Certificate of reviewing 		<p style="text-align: right; float: right;"> November, 2017 </p> </h3>
+						<div class="details">
+						<ul>
+							<li>Recognition of the review contributed to the journal of King Saud University - Computer and Information Sciences </li>
+						</ul>
+						</div>
+					</div>
+                    <!-- Your content here -->
+                </section>
+
+<!-- ==================================================  Professional Experience ==================================================================-->
+
+                <section id="ProfessionalExperience" style="display: none;" class="fade-in">
+				
+				 <h2>Professional Experience (Selected)</h2>
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Committee member <p style="text-align: right; float: right;"> Sep 2017 - Present </p></h3>
+						<div class="details">
+						<ul>
+							<li>External Examiner Cyber Security for a leading university in the UK . November 2024 - Present</li>
+							<li>Organizing Committee Member at CONF-MPCS 2025  . Oxford - UK</li>
+							<li>External Academic Panel Member at a prestigious academic institution in the UK  . November 2024 - Present</li>
+							<li>Evaluator and Assessor of Funding Projects at a prestigious academic institution in Saudi Arabia . August 2024 - October 2024</li>
+							<li>Technical Member at 2022 International Conference on Innovations in Computing Research (ICR’22)  </li>
+									<li>Technical Member at IEEE - HCT Information Technology Trends (ITT) Conference </li>
+							<li>Public Chair at ISICS 2020 conference  </li>
+						   </ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Lead Cybersecurity Educator – Harbour Education(Beijing) <p style="text-align: right; float: right;"> Jan 2022 - Jul 2023 </p></h3>
+						<div class="details">
+						<ul>
+							<li>Design and develop three main cybersecurity module for professionals and elite students in China. </li>
+							<li>Deliver hybrid sessions and webinars of advance topics in cybersecurity. </li>
+						</ul>
+						</div>
+					</div>
+					
+					
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Reviewer at Elsevier top tier (Q1) Journals<p style="text-align: right; float: right;"> Jan 2020 - Present </p></h3>
+						<div class="details">
+						<ul>
+							<li>Journal Computers &amp; Security  </li>
+							<li>Journal of Information Security and Applications. </li>
+						</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Service and Talks to Professional / Public / Industry<p style="text-align: right; float: right;"> Jan 2015 - Present </p></h3>
+						<div class="details">
+						<ul>
+							
+						<li>Invited Keynote Speaker at <a href="https://gisec.ae/huawei-executive-boardroom" target="_blank"> Huawei Cloud Executive Boardroom session </a> during <a href="https://gisec.ae/" target="_blank"> GISEC 2025</a></li>
+						<li>Invited Keynote Speaker at <a href="https://www.confmpcs.org/index.html" target="_blank"> CONF-MPCS 2025</a></li>
+						<li>King’s College London Representative for CTF Competitions for London University</li>
+						<li>Panel Member of King’s Professional Recognition in Teaching and Learning programme</li>
+						<li>Professional Development Participator for Cybersecurity Education</li>
+						<li>Lead Career and employability</li>
+						<li>Panel member for the KCL Tech Summit. October 7th, 2023.</li>
+						<li>Conference committee member. International Conference on Innovations in Computing Research (ICR’22).</li>
+						<li>Co-organizing Tech Start-ups event at King’s College London. October 13, 2022</li>
+						<li>Secure industrial partnerships with TryTerra and Sahaj to employ graduate students. Accordingly, they become members of the Industrial Advisory Board. 2022 and 2023.</li>
+						<li>Co-organizing Cybersecurity Workshop Day at King’s College London. May 2023.</li>
+						<li>Lead a workshop of Cybersecurity employability and Career pathway. May 2023</li>
+						<li>Lead a workshop of Collaboration with Microsoft Digital Skills. June 20, 2003.</li>
+						<li>Lead a workshop of collaboration with Apple Secure Programming. October 30, 2024.</li>
+						<li>Interview Panel member for cybersecurity hiring at King’s College London. April 23, 2024.</li>
+						<li>Invited Speaker for Lighting Lunch about Cybersecurity EDI at King’s College London. October 2nd, 2024.</li>
+						<li>Invited Speaker for lunch with lecturer about Cybersecurity Education and AI at King’s College London. November 30, 2022.</li>
+						<li>Invited panel member at Women Of MENA In Technology about Cybersecurity Defense and Offense using AI. June 27, 2024.</li>
+						<li>Invited speaker at Al-Arabiya net about Cybercriminal threats. November 2023.</li>
+						<li>Lead and deliver as a cybersecurity trainer about advanced topics in cybersecurity in Qatar Central Bank. October 2023.</li>
+						<li>Campus Council Member at the Higher College of Technology, Al Ain. Sep 2019 – Oct 2020.</li>
+						</ul>
+						</div>
+					</div>
+	
+                    <!-- Your content here -->
+                </section>
+				
+<!-- ==================================================  Publications ==================================================================-->
+
+                <section id="Publications" style="display: none;" class="fade-in">
+				<h2>Publications (Selected)</h2>
+				<ul class="references">
+		
+						<li><em>Al-Tamimi, A.-K.</em>, Hewitt, L., Cameron, D., <strong><em>Salem, M.</em></strong>, Moemeni, A.<strong class="highlight">(2025)</strong>. <i>Challenges of Integrating Assistive Technologies and Robots with Embodied Intelligence in the Homes of Older People Living with Frailty</i>. <i>Applied Sciences</i>. 15(15):8415. <a href="https://doi.org/10.3390/app15158415" target="_blank">🔗</a></li>		
+						<li><strong><em>Salem, M. </em></strong><strong class="highlight">(2025)</strong>. <i>Redefining Threat Intelligence: How LLMs Revolutionize Malware Detection </i>. The 5th International Conference on Electrical, Computer and Energy Technologies (ICECET)  – Just Accepted - <a href="https://www.icecet.com/home" target="_blank">🔗</a> </li>
+						<li><strong><em></em>Salem, M. </strong>, Mrian, M., <strong class="highlight">(2025)</strong>. <i>AI-driven penetration testing: Automating exploits with LLMs and Metasploit – A VSFTPD case study </i>. The 3rd International Conference on new Trends in Computing Sciences (ICTCS’25) <a href="https://ieeexplore.ieee.org/document/10989363" target="_blank">🔗</a> </li>
+						<li>Al Tamimi, A., <strong>Salem, M.</strong>, Alwadan, T., Rodan, A., <strong class="highlight">(2024)</strong>. <i>The Power of the Gram: Leveraging Instagram for Effective Communication in Higher Education </i>. Social Media for Learning in Higher Education (SocMedHE24) Conference. <a href="https://blogs.shu.ac.uk/socmedhe/socmedhe24/" target="_blank">🔗</a> </li>
+						<li><strong>Salem, M.</strong>, Al Tamimi, A., Samara, K. <strong class="highlight">(2024)</strong>. <i>Navigating Challenges in Online Cybersecurity Education: Insights from Postgraduate Students and Prospects for a Standardized Framework</i>. ACM Transaction on Computing Education (TOCE). <a href="https://doi.org/10.1145/3703163" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong> <strong class="highlight">(2024)</strong> <i>‘Enhancing Equality, Diversity, and Inclusion in Online Cybersecurity Education: A Multi-Layered Approach’</i>, HE Teaching Development Conference, Royal Holloway. Published <a href="https://thesis.psychologyresearch.co.uk/programme/#:~:text=1%20(Moore%20Auditorium)-,Enhancing%20Equality%2C%20Diversity%2C%20and%20Inclusion%20in%20Online%20Cybersecurity%20Education%3A%20A%20Multi%2DLayered%20Approach,-Maher%20Salem">🔗</a></li>
+						<li><strong>Salem, M.</strong>, Samara, K., Pray, J., &amp; Hussein, M. <strong class="highlight">(2024)</strong>. <i>Evaluating the Effectiveness of Online Cybersecurity Program in Higher Education</i>. In 2024 IEEE Global Engineering Education Conference (EDUCON) (pp. 1-9). IEEE. <a href="https://ieeexplore.ieee.org/document/10578833" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong> and A. -K. Al-Tamimi, "A Novel Threat Intelligence Detection Model Using Neural Networks," in <i>IEEE Access</i>, vol. 10, pp. 131229-131245, 2022, doi: 10.1109/ACCESS.2022.3229495.<a href="https://ieeexplore.ieee.org/document/9987501" target="_blank">🔗</a></li>
+						<li>T Alwada’n, AK Al-Tamimi, AH Mohammad, M Salem, Y Muhammad (2023) <i>‘Dynamic congestion management system for cloud service broker’</i>, International Journal of Electrical and Computer Engineering (IJECE), 13(1), pp. 872–883.<a href="https://ijece.iaescore.com/index.php/IJECE/article/view/27587" target="_blank">🔗</a></li>
+						 <li>Al-Tamimi, A.-K., Salem, M. and Al-Alami, A. (2020) <i>‘On the Use of Feature Selection for Music Genre Classification’</i>, in 2020 Seventh International Conference on Information Technology Trends (ITT). IEEE, pp. 1–6.<a href="https://ieeexplore.ieee.org/document/9320778" target="_blank">🔗</a></li>
+						<li>Abdennadher, S., Salem, M., Alkaabi, S.A.S., Alshebli, A.S. (2022). <i>‘Feasibility and Exploratory Study of Implementing the Blockchain Technology in the UAE Financial Markets.’</i>, In: Echchabi, A., Grassa, R., Sibanda, W. (eds) Contemporary Research in Accounting and Finance. Palgrave Macmillan, Singapore.<a href="https://doi.org/10.1007/978-981-16-8267-4_12" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong> (2020). <i>Blockchain-Based Authentication Approach for Securing Transportation System.</i> In: Brito-Loeza, C., Espinosa-Romero, A., Martin-Gonzalez, A., Safi, A. (eds) Intelligent Computing Systems. ISICS 2020. Communications in Computer and Information Science, vol 1187. Springer, Cham. <a href="https://doi.org/10.1007/978-3-030-43364-2_6" target="_blank">🔗</a></li>
+						<li>Hassan, D. et al. (2019) <i>‘Comparative study of using data mining techniques for bank telemarketing data’</i>, in 2019 Sixth HCT Information Technology Trends (ITT). IEEE, pp. 177–181.<a href="https://ieeexplore.ieee.org/document/9075123" target="_blank">🔗</a></li>
+						<li>Manasrah, A. M., Abu Nasir, M. and Salem, M. (2020) <i>‘A privacy-preserving multi-keyword search approach in cloud computing’</i>, Soft Computing. Springer Berlin Heidelberg, 24(8), pp. 5609–5631.<a href="https://link.springer.com/article/10.1007/s00500-019-04033-z" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong>, Mohammed, M. and Rodan, A. (2019) <i>‘Security approach for in-vehicle networking using blockchain technology’</i>, in International Conference on Emerging Internetworking, Data &amp; Web Technologies. Springer, Cham, pp. 504–515.<a href="https://link.springer.com/chapter/10.1007/978-3-030-12839-5_47" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong> and Mohammed, M. (2019) <i>‘Feasibility approach based on SecMonet framework to protect networks from advanced persistent threat attacks’</i>, in International Conference on Emerging Internetworking, Data &amp; Web Technologies. Springer, Cham, pp. 333–343.<a href="https://link.springer.com/chapter/10.1007/978-3-030-12839-5_30" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong>, Samara, K. and Aldhaheri, M. S. (2019) <i>‘A novel integrated framework for securing online instructor-student communication’</i>, International Journal of Grid and Utility Computing. Inderscience Publishers (IEL), 10(1), pp. 42–52.<a href="https://www.inderscience.com/info/inarticle.php?artid=97229" target="_blank">🔗</a></li>
+						<li>Shawabkeh, A., Al-Beqain, F., Redan, A., &amp; Salem, M. (2018, November).<i>‘Benzene air pollution monitoring model using ANN and SVM.’</i>,  In 2018 Fifth HCT Information Technology Trends (ITT) (pp. 197-204). IEEE.<a href="https://ieeexplore.ieee.org/abstract/document/8649497" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong>, Samara, K., &amp; Aldhaheri, M. S. (2017, October).<i>‘Salem, M., Samara, K., &amp; Aldhaheri, M. S. (2017, October). A secure heuristic framework for online instructor-student advising.’</i>,  In 2017 Fourth HCT Information Technology Trends (ITT) (pp. 39-44). IEEE.<a href="https://ieeexplore.ieee.org/abstract/document/8259564" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong>  and Buehler, U. (2014) <i>‘Transforming voluminous data flow into continuous connection vectors for IDS’</i>, International Journal of Internet Technology and Secured Transactions 8. Inderscience Publishers Ltd, 5(4), pp. 307–326.<a href="https://dl.acm.org/doi/10.1504/IJITST.2014.068710" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong> (2014) <i>Adaptive Real-time Anomaly-based Intrusion Detection using Data Mining and Machine Learning Techniques</i>.<a href="https://kobra.uni-kassel.de/handle/123456789/2014091546010?show=full" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong>, Buehler, U. and Reissmann, S. (2014) <i>‘Persistent Dataset Generation using Real-Time Operative Framework’</i>, in IEEE International Conference on Computing, Networking and Communications (ICNC). IEEE, pp. 1023–1027.<a href="https://ieeexplore.ieee.org/document/6785478" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong>, &amp; Buehler, U. (2014).<i>‘Salem, M., &amp; Buehler, U. (2014). A Comprehensive Model for Revealing Anomaly in Network Data Flow’</i>, In GI-Jahrestagung (pp. 913-924).<a href="https://cs.emis.de/LNI/Proceedings/Proceedings232/913.pdf" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong> and Buehler, U. (2013) <i>‘Reinforcing network security by converting massive data flow to continuous connections for IDS’</i>, in 8th International Conference for Internet Technology and Secured Transactions (ICITST-2013). IEEE, pp. 570–575.<a href="https://ieeexplore.ieee.org/document/6750267" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong> and Buehler, U. (2013) <i>‘An Enhanced GHSOM for IDS’</i>, in Systems, Man, and Cybernetics (SMC), 2013 IEEE International Conference on. IEEE, pp. 1138–1143.<a href="https://ieeexplore.ieee.org/document/6721951" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong> and Buehler, U. (2012) <i>‘Mining Techniques in Network Security to Enhance Intrusion Detection Systems’</i>, International Journal of Network Security &amp; Its Applications (IJNSA), 4(6).<a href="https://www.researchgate.net/publication/233871550_Mining_Techniques_in_Network_Security_to_Enhance_Intrusion_DetectionSystems" target="_blank">🔗</a></li>
+						<li><strong>Salem, M.</strong>, Bühler, U., Reißmann, S. (2012). <i>‘Improved Feature Selection Method using SBS-IG-Plus.’</i>, In: Pohlmann, N., Reimer, H., Schneider, W. (eds) ISSE 2011 Securing Electronic Business Processes. Vieweg+Teubner Verlag.<a href="https://doi.org/10.1007/978-3-8348-8652-1_31" target="_blank">🔗</a></li>
+				</ul>
+                    <!-- Your content here -->
+                </section>
+				
+<!-- ==================================================  skills ==================================================================-->
+                <section id="skills" style="display: none;" class="fade-in">
+				
+					<h2>Acaademic-Industrial experiences</h2>
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Technical Skills</h3>
+						<div class="details">
+						<ul>
+							<li><strong>OSINT:</strong> Proficient in gathering and analyzing publicly available data to support cybersecurity efforts and threat assessments. Skilled in using OSINT tools and techniques to inform decision-making and enhance security posture, with a focus on teaching students the importance of leveraging open source data in their security practices.</li>
+							<li><strong>Endpoint Security:</strong> Expertise in securing end-user devices through antivirus solutions, encryption, patch management, and endpoint detection and response (EDR), emphasizing practical applications for students.</li>
+							<li><strong>Application Security:</strong> Proficient in secure coding practices and conducting vulnerability testing (SAST/DAST), aimed at integrating these principles into the curriculum for future developers.</li>
+							<li><strong>Incident Response:</strong> Strong skills in identifying, responding to, and mitigating cyber incidents, including forensic analysis and root cause investigation, with a focus on developing case studies for educational purposes.</li>
+							<li><strong>Threat Intelligence and Analysis:</strong> Ability to gather and analyze threat intelligence data to stay ahead of emerging threats, integrating real-world scenarios into teaching.</li>
+							<li><strong>Penetration Testing &amp; Ethical Hacking:</strong> Proficient in penetration testing techniques, vulnerability assessment, and the use of tools such as Metasploit, Burp Suite, and Wireshark.</li>
+							<li><strong>Compliance and Risk Management:</strong> Familiarity with industry standards and regulations (e.g., GDPR, ISO 27001), guiding students in understanding compliance frameworks within the context of information systems.</li>
+							<li><strong>Security Operations:</strong> Familiarity with Security Information and Event Management (SIEM) systems, log analysis, and continuous monitoring.</li>
+							<li><strong>Malware Analysis and Reverse Engineering:</strong> Skills in identifying and analyzing malware behavior to develop defense strategies, providing students with hands-on learning opportunities.</li>
+					</ul>
+						</div>
+					</div>
+
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Instructional Skills</h3>
+						<div class="details">
+						<ul>
+					<li><strong>Curriculum Development:</strong> Expertise in designing and implementing comprehensive curricula that align with industry standards and best practices in information systems and cybersecurity, ensuring students acquire relevant skills for their future careers.</li>
+					<li><strong>Active Learning Strategies:</strong> Proficient in employing active learning techniques to engage students, including case studies, group projects, and problem-based learning, fostering critical thinking and practical application of concepts.</li>
+					<li><strong>Technical Instruction:</strong> Ability to teach complex technical topics clearly and effectively, utilizing a variety of instructional methods, such as lectures, hands-on labs, and online resources, to accommodate diverse learning styles.</li>
+					<li><strong>Assessment and Evaluation:</strong> Skilled in developing and implementing assessment strategies that accurately measure student learning outcomes, providing constructive feedback to enhance student performance and understanding.</li>
+					<li><strong>Mentorship and Student Engagement:</strong> Committed to mentoring students through academic projects, research opportunities, and career guidance, creating an inclusive and supportive learning environment that promotes student success.</li>
+					<li><strong>Interdisciplinary Collaboration:</strong> Experience in collaborating with faculty across disciplines to enhance learning experiences, integrating insights from various fields, including computer science, business, and data science.</li>
+					<li><strong>Use of Technology in Education:</strong> Proficient in utilizing educational technologies and learning management systems to enhance teaching effectiveness and facilitate online and hybrid learning environments.</li>
+					<li><strong>Research Integration in Teaching:</strong> Ability to incorporate current research and trends in information systems and cybersecurity into the classroom, ensuring that students are exposed to the latest developments in the field.</li>
+					<li><strong>Diversity and Inclusion in Teaching:</strong> Strong commitment to fostering an inclusive classroom environment that respects diverse perspectives and backgrounds, enabling all students to thrive academically and personally.</li>
+				</ul>
+						</div>
+					</div>
+
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Soft Skills</h3>
+						<div class="details">
+							<ul>
+					<li><strong>Communication:</strong> Strong verbal and written communication skills, enabling clear and effective interaction with students, colleagues, and industry professionals.</li>
+					<li><strong>Empathy:</strong> Ability to understand and respond to the diverse needs and challenges of students, fostering a supportive and inclusive classroom environment.</li>
+					<li><strong>Adaptability:</strong> Flexibility in adapting teaching methods and materials to meet the evolving needs of students and the rapidly changing landscape of information systems and cybersecurity.</li>
+					<li><strong>Collaboration:</strong> Skilled in working collaboratively with faculty, staff, and industry partners to enhance educational programs and create interdisciplinary learning opportunities.</li>
+					<li><strong>Mentorship:</strong> Passion for guiding and supporting students in their academic and professional journeys, helping them navigate challenges and achieve their goals.</li>
+					<li><strong>Critical Thinking:</strong> Analytical skills to assess cybersecurity risks and devise effective teaching strategies to address them.</li>
+					<li><strong>Problem-Solving:</strong> Strong analytical and critical thinking skills, enabling the identification of challenges and the development of effective solutions in both academic and collaborative settings.</li>
+					<li><strong>Time Management:</strong> Effective in balancing multiple responsibilities, including teaching, research, and administrative duties, while ensuring timely completion of tasks and projects.</li>
+					<li><strong>Cultural Competence:</strong> Awareness and appreciation of diverse cultural perspectives, enhancing the learning experience for a broad range of students in a multicultural environment.</li>
+					<li><strong>Continuous Learning:</strong> Commitment to personal and professional development, staying current with trends in information systems and education to enhance teaching practices.</li>
+				</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Industry Knowledge &amp; Research</h3>
+						<div class="details">
+							<ul>
+					<li><strong>Industry Trends Awareness:</strong> Deep understanding of current trends and developments in information systems and cybersecurity, enabling the integration of real-world applications into the curriculum.</li>
+					<li><strong>Research Methodology:</strong> Proficient in qualitative and quantitative research methods, equipping students with the skills to conduct their own research and engage in critical analysis of data.</li>
+					<li><strong>Applied Research Experience:</strong> Demonstrated experience in conducting applied research that addresses practical challenges in the field, contributing to the advancement of knowledge and best practices.</li>
+					<li><strong>Partnership Development:</strong> Ability to establish and maintain collaborative relationships with industry partners, enhancing opportunities for student internships, projects, and guest lectures.</li>
+					<li><strong>Grant Writing and Funding Acquisition:</strong> Experience in writing successful grant proposals and securing funding for research initiatives, providing insights into the research funding landscape.</li>
+					<li><strong>Publication Record:</strong> A strong track record of publishing research in reputable journals and conferences, showcasing expertise and contributing to the academic community.</li>
+					<li><strong>Curriculum Integration of Research:</strong> Skill in integrating research findings into course content, ensuring that students are exposed to the latest developments and methodologies in the field.</li>
+					<li><strong>Interdisciplinary Research Collaboration:</strong> Ability to collaborate on interdisciplinary research projects that combine insights from information systems, data science, and related fields.</li>
+					<li><strong>Consultative Expertise:</strong> Experience providing consulting services to organizations, allowing for the practical application of research findings and theories in real-world scenarios.</li>
+					<li><strong>Community Engagement:</strong> Commitment to engaging with the local and global community through research initiatives, workshops, and outreach programs that promote knowledge-sharing and collaboration.</li>
+				</ul>
+						</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+						<h3>Educational Technologies</h3>
+						<div class="details">
+							<ul>
+					<li><strong>Learning Management Systems (LMS):</strong> Proficient in using LMS platforms (e.g., Moodle, Blackboard) for course management, communication, and assessment, enhancing the online learning experience for students.</li>
+					<li><strong>Online and Hybrid Teaching Tools:</strong> Skilled in employing various online teaching tools (e.g., Zoom, Microsoft Teams, Google Classroom) to facilitate engaging and interactive learning environments for both in-person and remote learners.</li>
+					<li><strong>Multimedia Content Creation:</strong> Ability to create and integrate multimedia resources (videos, podcasts, interactive simulations) into course materials, catering to diverse learning styles and enhancing student engagement.</li>
+					<li><strong>Assessment Technologies:</strong> Familiarity with digital assessment tools (e.g., Turnitin, Quizlet, Kahoot) for creating formative and summative assessments that provide timely feedback to students.</li>
+					<li><strong>Data Analytics in Education:</strong> Knowledge of using data analytics tools to track student performance and engagement, enabling data-driven decision-making to improve teaching strategies and student outcomes.</li>
+					<li><strong>Gamification:</strong> Experience in incorporating gamification techniques within the curriculum to motivate and engage students, making learning more interactive and enjoyable.</li>
+					<li><strong>Adaptive Learning Technologies:</strong> Understanding of adaptive learning platforms that personalize the learning experience based on individual student needs and progress.</li>
+					<li><strong>E-Portfolio Systems:</strong> Familiarity with e-portfolio platforms that allow students to showcase their work and reflect on their learning experiences, promoting self-assessment and career readiness.</li>
+					<li><strong>Virtual and Augmented Reality:</strong> Awareness of the potential applications of VR and AR in education, exploring innovative ways to enhance learning experiences in information systems and cybersecurity.</li>
+					<li><strong>Technical Support and Training:</strong> Ability to provide technical support and training for students and faculty on the effective use of educational technologies, ensuring smooth integration into the learning process.</li>
+				</ul>
+						</div>
+					</div>
+					
+					 <div class="project" onclick="toggleDetails(this)">
+						<h3>Ethical and Legal Knowledge</h3>
+						<div class="details">
+							<ul>
+					<li><strong>Ethical Hacking Standards:</strong> Knowledge of ethical hacking laws and guidelines, ensuring ethical conduct in penetration testing and vulnerability assessments.</li>
+					<li><strong>Data Privacy and Compliance:</strong> Awareness of data protection laws such as GDPR.</li>
+					<li><strong>Professional Ethics:</strong> Upholding and teaching the principles of cybersecurity ethics, including the responsible use of information, tools, and access to sensitive data.</li>
+				</ul>
+						</div>
+					</div>
+	
+                    <!-- Your content here -->
+                </section>
+
+<!-- ==================================================  Tools ==================================================================-->
+                <section id="Tools" style="display: none;" class="fade-in">
+				
+					<h2>Tools for IDS and More</h2>
+
+					<div class="project" onclick="toggleDetails(this)">
+							<h3>AI-VSFTPD-Exploit</h3>
+							<div class="details">
+								A tool to automate the exploit of VSFTPD backdoor vulnerability AI-driven approach
+								<p>Available on :<a href="https://github.com/maherjas/AI-VSFTPD-Exploit" target="_blank"><img src="./MS_files/icons8-github-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 5px;"></a>
+								</p>
+							</div>
+					</div>
+					
+					<div class="project" onclick="toggleDetails(this)">
+							<h3>MalwareXplorer</h3>
+							<div class="details">
+								Your gateway to malware classification and MITRE ATT&amp;CK insights
+								<p>Available on :<a href="https://github.com/maherjas/MalwareXplorer" target="_blank"><img src="./MS_files/icons8-github-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 5px;"></a>
+								</p>
+							</div>
+					</div>
+					
+						<div class="project" onclick="toggleDetails(this)">
+							<h3>IDSify</h3>
+							<div class="details">
+								This tool can help process your dataset that include mixture of numerical and nominal features. The tool will help converting all nominal features into numeric ones
+								<p>Available on :<a href="https://github.com/maherjas/Data_Proecssing_IDS" target="_blank"><img src="./MS_files/icons8-github-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 5px;"></a>
+								</p>
+							</div>
+					</div>
+
+					<div class="project" onclick="toggleDetails(this)">
+							<h3>ConfusionCalc IDS</h3>
+							<div class="details">
+								This is a GUI tool help calculates the confusion matrix of intrusion detection system if you have already : True Negative, True Positive, False Negative, False Positive. 
+								<p>Available on :<a href="https://github.com/maherjas/IDS_Confusion_Matrix_Calc" target="_blank"> <img src="./MS_files/icons8-github-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 5px;"></a>
+								</p>
+							</div>
+					</div>
+
+					<div class="project" onclick="toggleDetails(this)">
+							<h3>DictHunter</h3>
+							<div class="details">
+								This tool is to demonstrate a dictionary attack on the Damn Vulnerable Web Application (DVWA). 
+								<p>Available on :<a href="https://github.com/maherjas/Dictionary_Attack_DVWA" target="_blank"> <img src="./MS_files/icons8-github-48.png" alt="GitHub" style="width: 24px; height: 24px; margin-right: 5px;"></a>
+								</p>
+							</div>
+					</div>
+	
+                    <!-- Your content here -->
+                </section>
+
+<!-- ==================================================  Students ==================================================================-->
+                <section id="Students" style="display: none;" class="fade-in">
+				
+				<h2>Supervised Student Research Projects - Selected</h2>
+				  <dl>
+					<dt>2024 – 2028</dt>
+					<dd>Generative Artificial Intelligence (GenAI) Risks in Cybersecurity and Privacy Era (PhD Supervision)</dd>
+
+					<dt>2024 – 2028</dt>
+					<dd>Critical Software Vulnerability Discovery using AI (PhD Supervision)</dd>
+
+					<dt>2024 – 2025</dt>
+					<dd>Combating Social Network Fake Accounts Using Threat Intelligence (BSc Supervision)</dd>
+
+					<dt>2023 – 2024</dt>
+					<dd>Building a Self-contained Inclusive Virtual Machine for Security Testing in Online Cybersecurity Programs (BSc Supervision)</dd>
+
+					<dt>2023</dt>
+					<dd>Investigating the Use of AI in Protecting Senior Citizens from Cybercriminals (MSc Supervision)</dd>
+
+					<dt>2022 – 2023</dt>
+					<dd>A Project-Based Learning Approach for Cybersecurity Online Programs (BSc Supervision)</dd>
+
+					<dt>2021 – 2022</dt>
+					<dd>Adaptive Malware Pattern Generation Using Machine Learning (Best Project Award) (MSc Supervision)</dd>
+
+					<dt>2021 – 2022</dt>
+					<dd>Evaluation of Machine Learning Techniques for Detecting Malware in WhatsApp Messages (BSc Supervision)</dd>
+
+					<dt>2021 – 2022</dt>
+					<dd>Investigating Malware Detection Techniques Using Growing Hierarchical Self-Organizing Map (MSc Supervision)</dd>
+
+					<dt>2022 – 2023</dt>
+					<dd>Analyzing Student Feedback of an Online Cybersecurity Program using ML (BSc Supervision)</dd>
+
+					<dt>2015 – 2020</dt>
+					<dd>Supervised 50 BSc Graduation Projects in Cybersecurity Domains (Various Topics)</dd>
+
+					<dt>2011 – 2014</dt>
+					<dd>Supervised Two MSc Projects in IPv6 Security and Four BSc Projects in Intrusion Detection (MSc and BSc Supervision)</dd>
+				  </dl>
+  
+                    <!-- Your content here -->
+                </section>
+
+<!-- ==================================================  Animated Attacks ==================================================================-->
+                <section id="AnimatedAttacks" style="display: none;" class="fade-in">
+                    <!-- Your content here -->
+					
+					<h2>Animated Attacks from the Web</h2>
+    <p>Explore these interactive attack simulations to learn how web vulnerabilities work in action!</p>
+	<p>credit to <a href="https://secpro.llc/" target="_blank">SecPro</a> </p>
+    
+    <!-- Search & Filter Bar -->
+    <div class="gif-controls">
+        <input type="text" id="gif-search" placeholder="Search attacks..." class="search-bar">
+        <select id="gif-filter" class="filter-dropdown">
+            <option value="mirai">Mirai</option>
+            <option value="xss">Cross-site-Scripting-XSS</option>
+            
+            <option value="csrf">CSRF</option>
+	   
+	    <option value="ddosntp">DDOS-Amplificacion-NTP</option>
+	    <option value="ddosdns">DDOS-Inundacion-DNS</option>
+		<option value="ddoshttp">DDOS-Inundacion-HTTP</option>
+		<option value="ddosmem">DDOS-MEMCACHED</option>
+		<option value="ddosslow">DDOS-Slowloris</option>
+		<option value="ddosssdp">DDOS-SSDP</option>
+		<option value="ddossyn">DDOS-TCP-SYN-FLOOD</option>
+		<option value="ddosvolume">DDOS-Volumetrico</option>
+		<option value="ddosby">Drive-by-Download</option>
+		<option value="decache">Envenenamiento-de-Cache-DNS</option>
+		<option value="idor">IDOR</option>
+		<option value="desql">Inyeccion-de-codigo-SQL</option>
+		<option value="mitm">Man-In-the-Middle</option>
+		<option value="ransome">Ransomware-v2</option>
+		<option value="salm">SALM-SSO</option>
+		<option value="social">Social-Engineering</option>
+		<option value="ssrf">SSRF</option>
+		<option value="su">Su-Domain Takeover</option>
+		<option value="xssref">XSS-REFLEJADO</option>
+		
+	
+        </select>
+    </div>
+
+    <!-- GIF Gallery Grid -->
+    <div class="gif-gallery">
+            <div class="gif-item" data-category="mirai">
+                <img src="./MS_files/Botnets-Mirai-5.gif" alt="Botnets Mirai" onclick="openLightbox(&#39;images/Botnets-Mirai-5.gif&#39;, &#39;Botnets Mirai&#39;)">
+                <div class="gif-caption">Botnets Mirai</div>
+            </div>
+        
+            <div class="gif-item" data-category="xss">
+                <img src="./MS_files/Cross-site-Scripting-XSS-4.gif" alt="Cross-site-Scripting-XSS" onclick="openLightbox(&#39;images/Cross-site-Scripting-XSS-4.gif&#39;, &#39;Cross-site-Scripting-XSS&#39;)">
+                <div class="gif-caption">Cross-site-Scripting-XSS</div>
+            </div>
+        
+            <div class="gif-item" data-category="csrf">
+                <img src="./MS_files/CSRF-2.gif" alt="CSRF" onclick="openLightbox(&#39;images/CSRF-2.gif&#39;, &#39;CSRF&#39;)">
+                <div class="gif-caption">CSRF</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddosntp">
+                <img src="./MS_files/DDOS-Amplificacion-NTP-4.gif" alt="DDOS-Amplificacion-NTP" onclick="openLightbox(&#39;images/DDOS-Amplificacion-NTP-4.gif&#39;, &#39;DDOS-Amplificacion-NTP&#39;)">
+                <div class="gif-caption">DDOS-Amplificacion-NTP</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddosdns">
+                <img src="./MS_files/DDOS-Inundacion-DNS-8.gif" alt="DDOS-Inundacion-DNS" onclick="openLightbox(&#39;images/DDOS-Inundacion-DNS-8.gif&#39;, &#39;DDOS-Inundacion-DNS&#39;)">
+                <div class="gif-caption">DDOS-Inundacion-DNS</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddoshttp">
+                <img src="./MS_files/DDOS-Inundacion-HTTP-8-1.gif" alt="DDOS-Inundacion-HTTP" onclick="openLightbox(&#39;images/DDOS-Inundacion-HTTP-8-1.gif&#39;, &#39;DDOS-Inundacion-HTTP&#39;)">
+                <div class="gif-caption">DDOS-Inundacion-HTTP</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddosmem">
+                <img src="./MS_files/DDOS-MEMCACHED-7.gif" alt="DDOS-MEMCACHED" onclick="openLightbox(&#39;images/DDOS-MEMCACHED-7.gif&#39;, &#39;DDOS-MEMCACHED&#39;)">
+                <div class="gif-caption">DDOS-MEMCACHED</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddosslow">
+                <img src="./MS_files/DDOS-Slowloris-7.gif" alt="DDOS-Slowloris" onclick="openLightbox(&#39;images/DDOS-Slowloris-7.gif&#39;, &#39;DDOS-Slowloris&#39;)">
+                <div class="gif-caption">DDOS-Slowloris</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddosssdp">
+                <img src="./MS_files/DDOS-SSDP-5.gif" alt="DDOS-SSDP" onclick="openLightbox(&#39;images/DDOS-SSDP-5.gif&#39;, &#39;DDOS-SSDP&#39;)">
+                <div class="gif-caption">DDOS-SSDP</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddossyn">
+                <img src="./MS_files/DDOS-TCP-SYN-FLOOD-4.gif" alt="DDOS-TCP-SYN-FLOOD" onclick="openLightbox(&#39;images/DDOS-TCP-SYN-FLOOD-4.gif&#39;, &#39;DDOS-TCP-SYN-FLOOD&#39;)">
+                <div class="gif-caption">DDOS-TCP-SYN-FLOOD</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddosvolume">
+                <img src="./MS_files/DDOS-Volumetrico-1.gif" alt="DDOS-Volumetrico" onclick="openLightbox(&#39;images/DDOS-Volumetrico-1.gif&#39;, &#39;DDOS-Volumetrico&#39;)">
+                <div class="gif-caption">DDOS-Volumetrico</div>
+            </div>
+        
+            <div class="gif-item" data-category="ddosby">
+                <img src="./MS_files/Drive-by-Download-1.gif" alt="Drive-by-Download" onclick="openLightbox(&#39;images/Drive-by-Download-1.gif&#39;, &#39;Drive-by-Download&#39;)">
+                <div class="gif-caption">Drive-by-Download</div>
+            </div>
+        
+            <div class="gif-item" data-category="decache">
+                <img src="./MS_files/Envenenamiento-de-Cache-DNS-4.gif" alt="Envenenamiento-de-Cache-DNS" onclick="openLightbox(&#39;images/Envenenamiento-de-Cache-DNS-4.gif&#39;, &#39;Envenenamiento-de-Cache-DNS&#39;)">
+                <div class="gif-caption">Envenenamiento-de-Cache-DNS</div>
+            </div>
+        
+            <div class="gif-item" data-category="idor">
+                <img src="./MS_files/IDOR-8.gif" alt="IDOR" onclick="openLightbox(&#39;images/IDOR-8.gif&#39;, &#39;IDOR&#39;)">
+                <div class="gif-caption">IDOR</div>
+            </div>
+        
+            <div class="gif-item" data-category="desql">
+                <img src="./MS_files/Inyeccion-de-codigo-SQL-3.gif" alt="Inyeccion-de-codigo-SQL" onclick="openLightbox(&#39;images/Inyeccion-de-codigo-SQL-3.gif&#39;, &#39;Inyeccion-de-codigo-SQL&#39;)">
+                <div class="gif-caption">Inyeccion-de-codigo-SQL</div>
+            </div>
+        
+            <div class="gif-item" data-category="mitm">
+                <img src="./MS_files/Man-In-the-Middle-7.gif" alt="Man-In-the-Middle" onclick="openLightbox(&#39;images/Man-In-the-Middle-7.gif&#39;, &#39;Man-In-the-Middle&#39;)">
+                <div class="gif-caption">Man-In-the-Middle</div>
+            </div>
+        
+            <div class="gif-item" data-category="ransome">
+                <img src="./MS_files/Ransomware-v2-5.gif" alt="Ransomware" onclick="openLightbox(&#39;images/Ransomware-v2-5.gif&#39;, &#39;Ransomware&#39;)">
+                <div class="gif-caption">Ransomware</div>
+            </div>
+        
+            <div class="gif-item" data-category="salm">
+                <img src="./MS_files/SALM-SSO-3.gif" alt="SALM-SSO" onclick="openLightbox(&#39;images/SALM-SSO-3.gif&#39;, &#39;SALM-SSO&#39;)">
+                <div class="gif-caption">SALM-SSO</div>
+            </div>
+        
+            <div class="gif-item" data-category="social">
+                <img src="./MS_files/Social-Engineering.gif" alt="Social-Engineering" onclick="openLightbox(&#39;images/Social-Engineering.gif&#39;, &#39;Social-Engineering&#39;)">
+                <div class="gif-caption">Social-Engineering</div>
+            </div>
+        
+            <div class="gif-item" data-category="ssrf">
+                <img src="./MS_files/SSRF-3.gif" alt="SSRF" onclick="openLightbox(&#39;images/SSRF-3.gif&#39;, &#39;SSRF&#39;)">
+                <div class="gif-caption">SSRF</div>
+            </div>
+        
+            <div class="gif-item" data-category="su">
+                <img src="./MS_files/Su-Domain Takeover.gif" alt="Su-Domain Takeover" onclick="openLightbox(&#39;images/Su-Domain Takeover.gif&#39;, &#39;Su-Domain Takeover&#39;)">
+                <div class="gif-caption">Su-Domain Takeover</div>
+            </div>
+        
+            <div class="gif-item" data-category="xssref">
+                <img src="./MS_files/XSS-REFLEJADO-4.gif" alt="XSS-REFLEJADO" onclick="openLightbox(&#39;images/XSS-REFLEJADO-4.gif&#39;, &#39;XSS-REFLEJADO&#39;)">
+                <div class="gif-caption">XSS-REFLEJADO</div>
+            </div>
+        </div>
+
+    <!-- Lightbox Modal (for enlarged GIFs) -->
+    <div id="gif-lightbox" class="lightbox">
+        <span class="close-btn">×</span>
+        <img id="lightbox-gif" class="lightbox-content">
+        <div id="gif-caption"></div>
+    </div>
+</section>
+</div>
+            <!-- SIDEBAR -->
+            <div class="sidebar">
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-newspaper"></i> Recent News & Updates</h3>
+                    
+                    <div class="news-item">
+                        <div class="date">Upcoming Presentation</div>
+                        <p>Presenting paper at <a href="https://conferences.sigappfr.org/aiccsa2025/" target="_blank">IEEE/AICCSA 2025</a> Conference in Qatar</p>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="date">Keynote Speaker</div>
+                        <p>Invited Keynote at <a href="https://gisec.ae/huawei-executive-boardroom" target="_blank">Huawei Cloud Executive Boardroom</a> GISEC Global 2025</p>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="date">Editorial Board</div>
+                        <p>Joined editorial boards of <a href="https://www.ewadirect.com/journal/aei/home/index" target="_blank">Applied and Computational Engineering</a> and <a href="https://www.ewadirect.com/journal/aei/home/index" target="_blank">Advances in Engineering Innovation</a></p>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="date">Research Publication</div>
+                        <p>New publication in ACM Transactions on Computing Education (TOCE) on online cybersecurity education</p>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="date">Industry Collaboration</div>
+                        <p>Organized Apple Tech Talk on Formal Verification at KCL campus (October 2024)</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-chart-line"></i> Research Impact</h3>
+                    <div style="display: flex; justify-content: space-around; text-align: center; margin-top: 20px;">
+                        <div>
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--accent);">20+</div>
+                            <div style="font-size: 0.9rem; color: var(--gray);">Years Experience</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--accent);">50+</div>
+                            <div style="font-size: 0.9rem; color: var(--gray);">Publications</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--accent);">€1M+</div>
+                            <div style="font-size: 0.9rem; color: var(--gray);">Research Grants</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-clock"></i> Quick Access</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                        <a href="https://scholar.google.com/citations?user=WYlwawwAAAAJ&hl=en" target="_blank" style="display: flex; align-items: center; gap: 10px; color: var(--secondary); text-decoration: none; padding: 10px; border-radius: 8px; background: rgba(0, 188, 212, 0.1); transition: var(--transition);">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Google Scholar Profile</span>
+                        </a>
+                        <a href="https://github.com/maherjas" target="_blank" style="display: flex; align-items: center; gap: 10px; color: var(--secondary); text-decoration: none; padding: 10px; border-radius: 8px; background: rgba(0, 188, 212, 0.1); transition: var(--transition);">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub Repositories</span>
+                        </a>
+                        <a href="mailto:maher.salem@kcl.ac.uk" style="display: flex; align-items: center; gap: 10px; color: var(--secondary); text-decoration: none; padding: 10px; border-radius: 8px; background: rgba(0, 188, 212, 0.1); transition: var(--transition);">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact via Email</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="visitor-counter">
+                    <p>Site Visitors</p>
+                    <div id="sfclnbbh5n6698gswryeeyz1hn3wf3m35k9">
+                        <a href="https://www.freecounterstat.com/geozoom.php?c=lnbbh5n6698gswryeeyz1hn3wf3m35k9&amp;base=counter6&amp;type_clic=1" target="_blank">
+                            <img border="0" src="./MS_files/counter.php" alt="Click to see detail of visits and stats for this site" title="Click to see detail of visits and stats for this site">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 20px;">
+                Dr. Maher Salem | Cybersecurity Research & Education
+            </div>
+            
+            <div class="footer-links">
+                <a href="mailto:[maher].[s][@][oryx].[edu].qa"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="https://www.linkedin.com/in/maher-j-a-salem" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=WYlwawwAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                <a href="https://github.com/maherjas" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 Dr. Maher Salem. Director at Oryx University. All rights reserved.</p>
+             </div>
+        </div>
+    </footer>
+
+    
+<script>
+    // Section Navigation
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('main .content-area > section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Show the selected section
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+            selectedSection.classList.add('fade-in');
+            
+            // Scroll to top of content area
+            document.querySelector('.content-area').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Initialize with summary section
+    document.addEventListener('DOMContentLoaded', function() {
+        showSection('summary');
+    });
+
+    // Toggle functions for expandable content
+    function toggleDetails(element) {
+        const details = element.querySelector('.details');
+        if (details.style.display === 'block' || details.style.maxHeight) {
+            details.style.display = 'none';
+            details.style.maxHeight = null;
+        } else {
+            details.style.display = 'block';
+            details.style.maxHeight = details.scrollHeight + "px";
+        }
+    }
+
+    function toggleDetailing(element) {
+        const details = element.parentElement.querySelector('.timeline-details');
+        details.classList.toggle('active');
+        const icon = element.querySelector('.toggle-icon');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+    }
+
+    // Lightbox functions for GIF gallery
+    function openLightbox(src, title) {
+        const lightbox = document.getElementById('gif-lightbox');
+        const lightboxImg = document.getElementById('lightbox-gif');
+        const caption = document.getElementById('gif-caption');
+        
+        lightbox.style.display = "flex";
+        lightboxImg.src = src;
+        caption.innerHTML = title;
+    }
+
+    function closeLightbox() {
+        document.getElementById('gif-lightbox').style.display = "none";
+    }
+
+    // Close lightbox when clicking outside
+    window.addEventListener('click', function(event) {
+        const lightbox = document.getElementById('gif-lightbox');
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // GIF Gallery functionality
+    const gifs = [
+        { id: 1, src: "images/Botnets-Mirai-5.gif", title: "Botnets Mirai", category: "mirai" },
+        { id: 2, src: "images/Cross-site-Scripting-XSS-4.gif", title: "Cross-site-Scripting-XSS", category: "xss" },
+        { id: 3, src: "images/CSRF-2.gif", title: "CSRF", category: "csrf" },
+        // ... Add all your GIFs here (same as original)
+    ];
+
+    // Initialize GIF gallery when Animated Attacks section is shown
+    document.addEventListener('click', function(e) {
+        if (e.target && (e.target.matches('[onclick*="showSection(\'AnimatedAttacks\')"]') || 
+                         e.target.closest('[onclick*="showSection(\'AnimatedAttacks\')"]'))) {
+            setTimeout(initializeGifGallery, 100);
+        }
+    });
+
+    function initializeGifGallery() {
+        const searchInput = document.getElementById('gif-search');
+        const filterSelect = document.getElementById('gif-filter');
+        
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                document.querySelectorAll('.gif-item').forEach(item => {
+                    const title = item.querySelector('.gif-caption').textContent.toLowerCase();
+                    item.style.display = title.includes(searchTerm) ? "block" : "none";
+                });
+            });
+        }
+        
+        if (filterSelect) {
+            filterSelect.addEventListener('change', function(e) {
+                const filter = e.target.value;
+                document.querySelectorAll('.gif-item').forEach(item => {
+                    const category = item.dataset.category;
+                    item.style.display = (filter === "all" || category === filter) ? "block" : "none";
+                });
+            });
+        }
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
