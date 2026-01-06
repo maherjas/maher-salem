@@ -427,6 +427,45 @@
         transform: scale(1.2);
     }
 
+	/* ===== FOOTER ===== */
+    footer {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+        padding: 40px 0;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        transition: var(--transition);
+        font-weight: 500;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+
+    .copyright {
+        margin-top: 20px;
+        opacity: 0.8;
+        font-size: 0.9rem;
+    }
     /* ===== VISITOR COUNTER ===== */
     .visitor-counter {
         background: rgba(255, 255, 255, 0.1);
