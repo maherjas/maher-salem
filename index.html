@@ -96,11 +96,12 @@
     }
 
     .profile-img {
-        width: 150px;
-        height: auto;
-        border-radius: 100%;
-        margin-right: 20px;
-        transition: transform 0.3s;
+    width: 150px;          /* Set a fixed width */
+    height: 150px;         /* Set a fixed height to maintain aspect ratio */
+    border-radius: 50%;    /* Use 50% for a perfect circle */
+    margin-right: 20px;    /* Space to the right of the image */
+    object-fit: cover;      /* Ensures image covers the container without distortion */
+    transition: transform 0.3s; /* Add transitions effects */
     }
 
     .profile-img:hover {
