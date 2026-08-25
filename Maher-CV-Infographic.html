@@ -6,10 +6,13 @@
     <title>Infographic CV: Maher Salem</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { max-width: 100%; overflow-x: hidden; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
@@ -97,9 +100,57 @@
             margin-right: auto;
             color: #475569;
         }
+        /* ---- shared top-right navigation ---- */
+        :root{ --navy:#0b1531; --navy-2:#122a63; --accent:#00bcd4; --accent-dark:#0097a7; }
+        .menu-open{overflow:hidden;}
+        .topbar{position:sticky;top:0;z-index:1200;background:linear-gradient(120deg,var(--navy),var(--navy-2));box-shadow:0 4px 20px rgba(0,0,0,.18);}
+        .topbar-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+        .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;}
+        .brand i{color:var(--accent);font-size:1.3rem;}
+        .brand-name{font-weight:700;font-family:'Playfair Display',serif;font-size:1rem;}
+        .menu-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:9px;cursor:pointer;z-index:1300;}
+        .menu-toggle span{display:block;width:18px;height:2px;background:#fff;margin:0 auto;transition:.25s;}
+        .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+        .menu-toggle.open span:nth-child(2){opacity:0;}
+        .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+        .nav-overlay{display:none;position:fixed;inset:0;background:rgba(6,10,25,.55);z-index:1150;}
+        .nav-overlay.show{display:block;}
+        .site-nav{display:flex;align-items:center;gap:6px;}
+        .site-nav a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.88);text-decoration:none;font-size:.86rem;font-weight:600;padding:9px 14px;border-radius:8px;transition:.25s;white-space:nowrap;}
+        .site-nav a:hover{background:rgba(255,255,255,.12);color:#fff;}
+        .site-nav a.current{background:rgba(0,188,212,.22);color:#fff;}
+        .site-nav a.cta{background:var(--accent);color:#fff;margin-left:6px;}
+        .site-nav a.cta:hover{background:var(--accent-dark);}
+        @media (max-width:860px){
+            .menu-toggle{display:flex;}
+            .site-nav{position:fixed;top:0;right:-280px;width:260px;height:100vh;background:#fff;flex-direction:column;align-items:stretch;padding:90px 18px 30px;gap:6px;box-shadow:-10px 0 40px rgba(0,0,0,.25);transition:right .3s ease;z-index:1200;}
+            .site-nav.open{right:0;}
+            .site-nav a{color:var(--navy-2);}
+            .site-nav a:hover{background:rgba(0,188,212,.1);}
+            .site-nav a.cta{color:#fff;justify-content:center;}
+        }
+        @media (max-width:640px){
+            .timeline-item{width:100%;padding-left:2.5rem;padding-right:0;text-align:left !important;}
+            .timeline-item::after{left:6px !important;right:auto !important;}
+            .timeline::before{left:16px;transform:none;}
+        }
     </style>
 </head>
 <body class="bg-slate-50">
+
+<div class="topbar">
+    <div class="topbar-inner">
+        <a href="index.html" class="brand"><i class="fas fa-shield-halved"></i><span class="brand-name">Dr. Maher Salem</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <nav class="site-nav" id="siteNav">
+            <a href="index.html"><i class="fas fa-home"></i> Portfolio Home</a>
+            <a href="Info-Graphics.html"><i class="fas fa-chart-pie"></i> Infographics</a>
+            <a href="CVSS-4.0-Calculator.html"><i class="fas fa-calculator"></i> CVSS Calculator</a>
+            <a href="#" class="current cta"><i class="fas fa-file-alt"></i> Infographic CV</a>
+        </nav>
+    </div>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
 
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
 
@@ -115,7 +166,7 @@
                     <div class="kpi-card">
                         <p class="text-6xl font-extrabold text-[#0048BA]">20+</p>
                         <p class="mt-2 text-xl font-semibold text-slate-800">Years Combined Experience</p>
-                        <p class="text-sm text-slate-500">Industry & Academia</p>
+                        <p class="text-sm text-slate-500">Industry &amp; Academia</p>
                     </div>
                     <div class="kpi-card">
                         <p class="text-6xl font-extrabold text-[#0048BA]">Ph.D.</p>
@@ -139,7 +190,7 @@
                     <div class="timeline-item mb-8 w-full md:w-1/2">
                         <div class="bg-white p-6 rounded-lg shadow-md">
                             <span class="font-bold text-[#0048BA]">2021 – Present</span>
-                            <h3 class="text-lg font-semibold">King’s College London, UK</h3>
+                            <h3 class="text-lg font-semibold">King's College London, UK</h3>
                             <p class="text-sm text-slate-500">Associate Professor</p>
                         </div>
                     </div>
@@ -168,19 +219,19 @@
                         <div class="bg-white p-6 rounded-lg shadow-md">
                             <span class="font-bold text-[#0048BA]">2004 – 2010</span>
                             <h3 class="text-lg font-semibold">Nokia, E-Plus, Philips, Germany</h3>
-                            <p class="text-sm text-slate-500">Network & System Security</p>
+                            <p class="text-sm text-slate-500">Network &amp; System Security</p>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="bg-white p-8 rounded-xl shadow-lg order-2 lg:order-1">
-                    <h2 class="text-2xl font-bold text-slate-800">Academic & Strategic Leadership</h2>
+                    <h2 class="text-2xl font-bold text-slate-800">Academic &amp; Strategic Leadership</h2>
                     <p class="mt-2 text-slate-600">Driving excellence in cybersecurity education through a portfolio of key leadership roles focused on curriculum, student success, and industry alignment.</p>
                     <ul class="mt-6 space-y-4">
                         <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Lead Personal Tutor Review Process</li>
-						<li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Lead Career and Employability</li>
+                        <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Lead Career and Employability</li>
                         <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Deputy Chair, Cybersecurity Assessment Board</li>
                         <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Lead Cybersecurity Postgraduate Modules</li>
                         <li class="flex items-center"><span class="text-2xl text-[#0066FF] mr-3">✔</span> Assessment and Feedback Coordinator</li>
@@ -198,7 +249,7 @@
 
             <section>
                 <div class="section-title">
-                    <h2>Research & Supervision</h2>
+                    <h2>Research &amp; Supervision</h2>
                     <p>Fostering the next generation of cybersecurity talent through dedicated supervision and focusing research on pressing contemporary issues like GenAI security, threat intelligence, and educational innovation.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
@@ -228,7 +279,7 @@
                     </div>
                 </div>
             </section>
-            
+
              <section>
                  <div class="section-title">
                      <h2>Professional Recognition</h2>
@@ -241,14 +292,14 @@
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                         <h3 class="font-bold text-lg text-[#0066FF]">King's Education Award</h3>
-                        <p class="mt-1 text-sm text-slate-500">Nominated 2024 & 2025</p>
+                        <p class="mt-1 text-sm text-slate-500">Nominated 2024 &amp; 2025</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg text-center">
                         <h3 class="font-bold text-lg text-[#0066FF]">CCNA Security</h3>
                         <p class="mt-1 text-sm text-slate-500">Industry Standard Certification</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                        <h3 class="font-bold text-lg text-[#0066FF]">ACM & BCS Professional</h3>
+                        <h3 class="font-bold text-lg text-[#0066FF]">ACM &amp; BCS Professional</h3>
                         <p class="mt-1 text-sm text-slate-500">Member of Leading Bodies</p>
                     </div>
                 </div>
@@ -258,7 +309,7 @@
 
         <footer class="text-center mt-20 py-10 border-t border-slate-200">
             <h2 class="text-2xl font-bold">Connect with Maher Salem</h2>
-            <div class="mt-4 flex justify-center space-x-6 text-slate-600">
+            <div class="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-slate-600">
                 <span>📞 +44 7736 082100</span>
                 <span><a href="mailto:maherjas@yahoo.com">📧 maherjas.at.yahoo.com</a></span>
                 <span><a href="https://www.linkedin.com/in/maher-j-a-salem" target="_blank">🌐 maher-j-a-salem (LinkedIn)</a></span>
@@ -268,6 +319,21 @@
     </div>
 
     <script>
+        // ---- top-right menu ----
+        const menuToggle = document.getElementById('menuToggle');
+        const siteNav = document.getElementById('siteNav');
+        const navOverlay = document.getElementById('navOverlay');
+        function closeMenu(){siteNav.classList.remove('open');menuToggle.classList.remove('open');navOverlay.classList.remove('show');document.body.classList.remove('menu-open');}
+        menuToggle.addEventListener('click', function(){
+            const willOpen = !siteNav.classList.contains('open');
+            siteNav.classList.toggle('open', willOpen);
+            menuToggle.classList.toggle('open', willOpen);
+            navOverlay.classList.toggle('show', willOpen);
+            document.body.classList.toggle('menu-open', willOpen);
+        });
+        navOverlay.addEventListener('click', closeMenu);
+        window.addEventListener('resize', function(){ if (window.innerWidth > 860) closeMenu(); });
+
         const skillsRadarCtx = document.getElementById('skillsRadarChart').getContext('2d');
         new Chart(skillsRadarCtx, {
             type: 'radar',
@@ -292,7 +358,7 @@
                     r: {
                         angleLines: { color: '#e2e8f0' },
                         grid: { color: '#e2e8f0' },
-                        pointLabels: { 
+                        pointLabels: {
                             font: { size: 12, family: "'Inter', sans-serif" },
                             color: '#334155'
                         },

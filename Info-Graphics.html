@@ -6,10 +6,13 @@
     <title>Maher Salem - Infographics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { max-width: 100%; overflow-x: hidden; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
@@ -33,9 +36,52 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* ---- shared top-right navigation ---- */
+        :root{ --navy:#0b1531; --navy-2:#122a63; --accent:#00bcd4; --accent-dark:#0097a7; }
+        .menu-open{overflow:hidden;}
+        .topbar{position:sticky;top:0;z-index:1200;background:linear-gradient(120deg,var(--navy),var(--navy-2));box-shadow:0 4px 20px rgba(0,0,0,.18);}
+        .topbar-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+        .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;}
+        .brand i{color:var(--accent);font-size:1.3rem;}
+        .brand-name{font-weight:700;font-family:'Playfair Display',serif;font-size:1rem;}
+        .menu-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:9px;cursor:pointer;z-index:1300;}
+        .menu-toggle span{display:block;width:18px;height:2px;background:#fff;margin:0 auto;transition:.25s;}
+        .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+        .menu-toggle.open span:nth-child(2){opacity:0;}
+        .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+        .nav-overlay{display:none;position:fixed;inset:0;background:rgba(6,10,25,.55);z-index:1150;}
+        .nav-overlay.show{display:block;}
+        .site-nav{display:flex;align-items:center;gap:6px;}
+        .site-nav a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.88);text-decoration:none;font-size:.86rem;font-weight:600;padding:9px 14px;border-radius:8px;transition:.25s;white-space:nowrap;}
+        .site-nav a:hover{background:rgba(255,255,255,.12);color:#fff;}
+        .site-nav a.current{background:rgba(0,188,212,.22);color:#fff;}
+        .site-nav a.cta{background:var(--accent);color:#fff;margin-left:6px;}
+        .site-nav a.cta:hover{background:var(--accent-dark);}
+        @media (max-width:860px){
+            .menu-toggle{display:flex;}
+            .site-nav{position:fixed;top:0;right:-280px;width:260px;height:100vh;background:#fff;flex-direction:column;align-items:stretch;padding:90px 18px 30px;gap:6px;box-shadow:-10px 0 40px rgba(0,0,0,.25);transition:right .3s ease;z-index:1200;}
+            .site-nav.open{right:0;}
+            .site-nav a{color:var(--navy-2);}
+            .site-nav a:hover{background:rgba(0,188,212,.1);}
+            .site-nav a.cta{color:#fff;justify-content:center;}
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
+
+<div class="topbar">
+    <div class="topbar-inner">
+        <a href="index.html" class="brand"><i class="fas fa-shield-halved"></i><span class="brand-name">Dr. Maher Salem</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <nav class="site-nav" id="siteNav">
+            <a href="index.html"><i class="fas fa-home"></i> Portfolio Home</a>
+            <a href="Maher-CV-Infographic.html"><i class="fas fa-file-alt"></i> Infographic CV</a>
+            <a href="CVSS-4.0-Calculator.html"><i class="fas fa-calculator"></i> CVSS Calculator</a>
+            <a href="#" class="current cta"><i class="fas fa-chart-pie"></i> Infographics</a>
+        </nav>
+    </div>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
 
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
 
@@ -46,7 +92,7 @@
         </header>
 
         <main class="mt-8 space-y-12">
-            
+
             <section class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
                     <p class="text-6xl font-black text-[#0048BA]">20</p>
@@ -64,13 +110,13 @@
                     <p class="text-sm text-slate-500">Secured via Microsoft partnership to provide free, industry-recognized skills.</p>
                 </div>
             </section>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-                
+
                 <div class="lg:col-span-3 bg-white p-8 rounded-xl shadow-lg">
                     <h2 class="text-2xl font-bold text-slate-800">Strategic Leadership in Student Employability</h2>
                     <p class="mt-2 text-slate-600">My focus has been to create a holistic employability framework that moves beyond theory to deliver tangible value. This involves building robust industry partnerships and creating a structured pipeline of skill development opportunities for every student.</p>
-                    
+
                     <div class="mt-8 space-y-6">
                         <div class="flex items-start space-x-4">
                             <div class="flex-shrink-0 w-12 h-12 bg-[#CCE0FF] text-[#0048BA] rounded-full flex items-center justify-center font-bold text-xl">1</div>
@@ -129,13 +175,13 @@
                      <p class="text-center font-semibold text-slate-700">A key outcome from this data-driven process was providing the foundational evidence for the department's new online MSc Cybersecurity programme, launching in 2026.</p>
                  </div>
             </section>
-            
+
             <section>
-                 <h2 class="text-2xl font-bold text-center text-slate-800">Proven Leadership & Collaborative Experience</h2>
+                 <h2 class="text-2xl font-bold text-center text-slate-800">Proven Leadership &amp; Collaborative Experience</h2>
                  <p class="mt-2 text-center max-w-3xl mx-auto text-slate-600">My career is defined by a commitment to leadership roles that bridge academic, pastoral, and professional support for students.</p>
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-                        <h3 class="font-bold text-lg text-[#0066FF]">Career & Employability Lead</h3>
+                        <h3 class="font-bold text-lg text-[#0066FF]">Career &amp; Employability Lead</h3>
                         <p class="mt-2 text-sm text-slate-500">Architect of the departmental employability strategy and key industry liaison.</p>
                     </div>
                      <div class="bg-white p-6 rounded-xl shadow-lg text-center">
@@ -156,12 +202,27 @@
         </main>
 
         <footer class="text-center mt-16 py-8 border-t border-slate-200">
-            <p class="text-slate-600">Eager to apply this expertise on a broader scale and lead strategic initiatives for an exceptional student experience at King’s.</p>
+            <p class="text-slate-600">Eager to apply this expertise on a broader scale and lead strategic initiatives for an exceptional student experience at King's.</p>
         </footer>
 
     </div>
 
     <script>
+        // ---- top-right menu ----
+        const menuToggle = document.getElementById('menuToggle');
+        const siteNav = document.getElementById('siteNav');
+        const navOverlay = document.getElementById('navOverlay');
+        function closeMenu(){siteNav.classList.remove('open');menuToggle.classList.remove('open');navOverlay.classList.remove('show');document.body.classList.remove('menu-open');}
+        menuToggle.addEventListener('click', function(){
+            const willOpen = !siteNav.classList.contains('open');
+            siteNav.classList.toggle('open', willOpen);
+            menuToggle.classList.toggle('open', willOpen);
+            navOverlay.classList.toggle('show', willOpen);
+            document.body.classList.toggle('menu-open', willOpen);
+        });
+        navOverlay.addEventListener('click', closeMenu);
+        window.addEventListener('resize', function(){ if (window.innerWidth > 860) closeMenu(); });
+
         const innovationCtx = document.getElementById('innovationChart').getContext('2d');
         new Chart(innovationCtx, {
             type: 'doughnut',
